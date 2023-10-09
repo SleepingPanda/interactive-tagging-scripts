@@ -1,2 +1,2 @@
 # manual-comictagger-cli
-Tired of the poor selection of default sources in comictagger? Do it yourself!
+Tired of the default metadata source in comictagger? Do it yourself!
