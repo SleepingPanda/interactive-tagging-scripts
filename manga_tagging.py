@@ -73,11 +73,21 @@ def process_cbz_files(dir_path, specific_file=None):
     print("Job completed.")
 
 def extract_volume_number(title):
-    match = re.search(r"\d{1,3}$", title)
+    """Extract the volume number from a title.
+
+    Args:
+        title (str): The comic book title.
+
+    Returns:
+        str: The extracted volume number, or an empty string if not found.
+    """
+    # Use a regular expression to match the volume number as a digit
+    # The pattern matches the word 'volume', 'vol', '#', or 'v', followed by one or more digits
+    # The digits are captured in a group that can be accessed later
+    match = re.search(r"(?:volume|vol\.?|#|v)(\d+)", title, re.IGNORECASE)
     if match:
-        return match.group()
-    else:
-        return ""
+        return match.group(1)
+    return ""
 
 directories, files = list_directories_and_files()
 if len(directories) == 0 and len(files) == 0:
