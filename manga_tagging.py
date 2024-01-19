@@ -39,51 +39,37 @@ def get_directory_path(directory):
 def check_directory_exists(directory_path):
     return os.path.exists(directory_path)
 
-def process_cbz_files(directory_path, specific_file=None):
-    for file in os.listdir(directory_path):
-        if file.endswith(".cbz"):
-            if specific_file is not None and file != specific_file:
-                continue
-            file_path = os.path.join(directory_path, file)
-            print(f"Working on file: {file}")
-            choice = input("Do you want to skip to the next file? (y/n) ")
-            if choice.lower() == 'y':
-                continue
-            metadata = {}
-            year = input("Enter the year: ")
-            if year:
-                metadata['year'] = year
-            month = input("Enter the month: ")
-            if month:
-                metadata['month'] = month
-            day = input("Enter the day: ")
-            if day:
-                metadata['day'] = day
-            title = input("Enter the title: ")
-            if title:
-                metadata['title'] = title.replace(',', '^,').replace('=', '^=').strip().replace('  ', ' ').replace('\n', '').replace('...', '…')
-                volume = extract_volume_number(title)
-                if volume:
-                    metadata['volume'] = volume
-            comments = input("Enter the comments: ")
-            if comments:
-                metadata['comments'] = comments.replace(',', '^,').replace('=', '^=').strip().replace('  ', ' ').replace('\n', '').replace('...', '…')
-            
-            if metadata:  # Only run comictagger if there's at least one field to update
-                command = [
-                    "comictagger",
-                    "-s",
-                    "-t",
-                    "CR",
-                    "--overwrite",
-                    "--metadata",
-                    ','.join(f"{key}={value}" for key, value in metadata.items()),
-                    file_path
-                ]
-                subprocess.run(command)
+def process_cbz_files(dir_path, specific_file=None):
+    """Process CBZ files in a directory and update their metadata interactively.
+
+    Args:
+        directory_path (str): The absolute path of the directory containing CBZ files.
+        specific_file (str): The specific CBZ file to process, or None to process all CBZ files in the directory.
+    """
+    cbz_files = [file for file in os.listdir(dir_path) if file.endswith(".cbz")]
+    cbz_files.sort(key=lambda x: int(extract_volume_number(x)) if extract_volume_number(x) else float('inf'))
+
+    for file in cbz_files:
+        if specific_file is not None and file != specific_file:
+            continue
+        file_path = os.path.join(dir_path, file)
+        print(f"Working on file: {file}")
+        choice = input("Do you want to skip to the next file? (y/n) ")
+        if choice.lower() == 'y':
+            continue
+        metadata = get_metadata_input()
+
+        if metadata:
+            command = get_comictagger_command(metadata, file_path)
+            try:
+                subprocess.run(command, check=True)
                 print("Tagging completed for file:", file)
                 print("Updated tags:")
-                subprocess.run(["comictagger", "-p", "--type", "CR", file_path])
+                subprocess.run(["comictagger", "-p", "--type", "CR", file_path], check=True)
+            except subprocess.CalledProcessError as e:
+                print("Tagging failed for file:", file)
+                print("Error:", e)
+
     print("Job completed.")
 
 def extract_volume_number(title):
