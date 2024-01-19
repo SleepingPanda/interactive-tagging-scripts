@@ -1,19 +1,14 @@
-# coding=utf8
-"""Tired of the default metadata source in comictagger? Do it yourself!"""
 import os
 import subprocess
 import re
 import argparse
+import logging
 from colorama import Fore, init
 
+# Initialize colorama and logging
 init()
-
-def parse_arguments():
-    """Parse command-line arguments."""
-    parser = argparse.ArgumentParser(description="Interactive Manga Tagging Script")
-    parser.add_argument("-d", "--directory", help="Specify the directory to process")
-    parser.add_argument("-f", "--file", help="Specify a specific file to process")
-    return parser.parse_args()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def list_directories_and_files():
     """List directories and CBZ files in the current working directory.
@@ -23,14 +18,8 @@ def list_directories_and_files():
                The 'dir_list' list contains the names of directories in the current directory,
                and the 'file_list' list contains the names of CBZ files.
     """
-
-    dir_list = []
-    file_list = []
-    for item in os.listdir('.'):
-        if os.path.isdir(item):
-            dir_list.append(item)
-        elif item.endswith(".cbz"):
-            file_list.append(item)
+    dir_list = [item for item in os.listdir('.') if os.path.isdir(item)]
+    file_list = [item for item in os.listdir('.') if item.endswith(".cbz")]
     return dir_list, file_list
 
 def choose_directory_or_file(directories, files):
@@ -47,11 +36,11 @@ def choose_directory_or_file(directories, files):
     """
     while True:
         print(Fore.YELLOW + "Directories:")
-        for i, dir_list in enumerate(directories, 1):
-            print(Fore.RED + f"{i}." + Fore.GREEN + f" {dir_list}")
+        for i, dir_item in enumerate(directories, 1):
+            print(Fore.RED + f"{i}." + Fore.GREEN + f" {dir_item}")
         print(Fore.YELLOW + "Files:")
-        for i, file_list in enumerate(files, 1):
-            print(Fore.RED + f"{i+len(directories)}." + Fore.BLUE + f" {file_list}")
+        for i, file_item in enumerate(files, 1):
+            print(Fore.RED + f"{i + len(directories)}." + Fore.BLUE + f" {file_item}")
         choice = input(Fore.RESET + "Enter the number of the directory or file you want to work on or type 'exit' to quit: ")
         if choice.lower() == 'exit':
             return None, None
@@ -116,8 +105,10 @@ def process_cbz_files(dir_path, specific_file=None):
                 print("Updated tags:")
                 subprocess.run(["comictagger", "-p", "--type", "CR", file_path], check=True)
             except subprocess.CalledProcessError as e:
-                print("Tagging failed for file:", file)
-                print("Error:", e)
+                logger.error("Error while tagging file: %s", file)
+                logger.error("Error message: %s", str(e))
+        else:
+            logger.warning("Skipping file %s due to missing metadata.", file)
 
     print("Job completed.")
 
@@ -214,6 +205,13 @@ def extract_volume_number(title):
         return match.group(1)
     return ""
 
+def parse_arguments():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(description="Interactive Manga Tagging Script")
+    parser.add_argument("-d", "--directory", help="Specify the directory to process")
+    parser.add_argument("-f", "--file", help="Specify a specific file to process")
+    return parser.parse_args()
+
 if __name__ == "__main__":
     # Parse command-line arguments
     args = parse_arguments()
@@ -222,7 +220,7 @@ if __name__ == "__main__":
         # If the -d/--directory option is provided, process the specified directory
         directory_path = get_directory_path(args.directory)
         if not check_directory_exists(directory_path):
-            print("Directory does not exist.")
+            logger.error("Directory does not exist: %s", args.directory)
         else:
             process_cbz_files(directory_path, specific_file=args.file)
     elif args.file:
@@ -232,7 +230,7 @@ if __name__ == "__main__":
         # Otherwise, present the user with a list of directories and files to choose from
         directories, files = list_directories_and_files()
         if len(directories) == 0 and len(files) == 0:
-            print("No directories or .cbz files found in the current working directory.")
+            logger.warning("No directories or .cbz files found in the current working directory.")
         else:
             selected_directory, selected_file = choose_directory_or_file(directories, files)
             if selected_directory is None and selected_file is None:
@@ -240,7 +238,7 @@ if __name__ == "__main__":
             elif selected_directory is not None:
                 directory_path = get_directory_path(selected_directory)
                 if not check_directory_exists(directory_path):
-                    print("Directory does not exist.")
+                    logger.error("Directory does not exist: %s", selected_directory)
                 else:
                     process_cbz_files(directory_path)
             else:
