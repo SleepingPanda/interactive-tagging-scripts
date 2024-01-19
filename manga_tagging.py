@@ -1,9 +1,19 @@
+# coding=utf8
+"""Tired of the default metadata source in comictagger? Do it yourself!"""
 import os
 import subprocess
 import re
-from colorama import Fore, Style
+import argparse
+from colorama import Fore, init
 
 init()
+
+def parse_arguments():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(description="Interactive Manga Tagging Script")
+    parser.add_argument("-d", "--directory", help="Specify the directory to process")
+    parser.add_argument("-f", "--file", help="Specify a specific file to process")
+    return parser.parse_args()
 
 def list_directories_and_files():
     """List directories and CBZ files in the current working directory.
@@ -197,7 +207,7 @@ def extract_volume_number(title):
         str: The extracted volume number, or an empty string if not found.
     """
     # Use a regular expression to match the volume number as a digit
-    # The pattern matches the word 'volume', 'vol', '#', or 'v', followed by one or more digits
+    # The pattern matches the word 'volume', 'vol', or '#', followed by an optional space, followed by one or more digits
     # The digits are captured in a group that can be accessed later
     match = re.search(r"(?:volume|vol\.?|#|v)(\d+)", title, re.IGNORECASE)
     if match:
@@ -205,18 +215,33 @@ def extract_volume_number(title):
     return ""
 
 if __name__ == "__main__":
-    directories, files = list_directories_and_files()
-    if len(directories) == 0 and len(files) == 0:
-        print("No directories or .cbz files found in the current working directory.")
-    else:
-        selected_directory, selected_file = choose_directory_or_file(directories, files)
-        if selected_directory is None and selected_file is None:
-            print("Exiting the program.")
-        elif selected_directory is not None:
-            directory_path = get_directory_path(selected_directory)
-            if not check_directory_exists(directory_path):
-                print("Directory does not exist.")
-            else:
-                process_cbz_files(directory_path)
+    # Parse command-line arguments
+    args = parse_arguments()
+
+    if args.directory:
+        # If the -d/--directory option is provided, process the specified directory
+        directory_path = get_directory_path(args.directory)
+        if not check_directory_exists(directory_path):
+            print("Directory does not exist.")
         else:
-            process_cbz_files('.', selected_file)
+            process_cbz_files(directory_path, specific_file=args.file)
+    elif args.file:
+        # If the -f/--file option is provided, process the specified file
+        process_cbz_files('.', specific_file=args.file)
+    else:
+        # Otherwise, present the user with a list of directories and files to choose from
+        directories, files = list_directories_and_files()
+        if len(directories) == 0 and len(files) == 0:
+            print("No directories or .cbz files found in the current working directory.")
+        else:
+            selected_directory, selected_file = choose_directory_or_file(directories, files)
+            if selected_directory is None and selected_file is None:
+                print("Exiting the program.")
+            elif selected_directory is not None:
+                directory_path = get_directory_path(selected_directory)
+                if not check_directory_exists(directory_path):
+                    print("Directory does not exist.")
+                else:
+                    process_cbz_files(directory_path)
+            else:
+                process_cbz_files('.', selected_file)
