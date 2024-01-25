@@ -18,14 +18,14 @@ def list_dirs_and_files(directory='.'):
                The 'dir_list' list contains the names of directories in the specified directory,
                and the 'file_list' list contains the names of CBZ files.
     """
-    dir_list = [
-        item for item in os.listdir(directory)
-        if os.path.isdir(os.path.join(directory, item))
-    ]
-    file_list = [
-        item for item in os.listdir(directory)
-        if item.endswith(".cbz")
-    ]
+    dir_list = []
+    file_list = []
+    for item in os.listdir(directory):
+        full_path = os.path.join(directory, item)
+        if os.path.isdir(full_path):
+            dir_list.append(item)
+        elif item.endswith(".cbz"):
+            file_list.append(item)
     return dir_list, file_list
 
 def choose_dir_or_file(directories, files):
@@ -89,8 +89,7 @@ def process_cbz_files(directory_to_process, specific_file=None):
         choice = input("Do you want to skip to the next file? (y/n) ")
         if choice.lower() == 'y':
             continue
-        metadata = get_metadata_input()
-        if metadata:
+        if metadata := get_metadata_input():
             command = get_comictagger_command(metadata, file_path_to_process)
             try:
                 subprocess.run(command, check=True)
@@ -113,29 +112,23 @@ def get_metadata_input():
     """
     metadata = {}
     try:
-        year = input("Enter the year: ")
-        if year:
+        if year := input("Enter the year: "):
             if not year.isnumeric() or not 1900 <= int(year) <= 2100:
                 raise ValueError
             metadata['year'] = year
-        month = input("Enter the month: ")
-        if month:
+        if month := input("Enter the month: "):
             if not month.isnumeric() or not 1 <= int(month) <= 12:
                 raise ValueError
             metadata['month'] = month
-        day = input("Enter the day: ")
-        if day:
+        if day := input("Enter the day: "):
             if not day.isnumeric() or not 1 <= int(day) <= 31:
                 raise ValueError
             metadata['day'] = day
-        title = input("Enter the title: ")
-        if title:
+        if title := input("Enter the title: "):
             metadata['title'] = clean_string(title)
-            volume = extract_volume_number(title)
-            if volume:
+            if volume := extract_volume_number(title):
                 metadata['volume'] = volume
-        comments = input("Enter the comments: ")
-        if comments:
+        if comments := input("Enter the comments: "):
             metadata['comments'] = clean_string(comments)
         return metadata
     except ValueError as e:
@@ -146,14 +139,9 @@ def clean_string(string):
     Returns:
         str: The cleaned string.
     """
-    return (
-        string.replace(',', '^,')
-        .replace('=', '^=')
-        .strip()
-        .replace('  ', ' ')
-        .replace('\n', '')
-        .replace('...', '…')
-    )
+    string = string.replace(',', '^,').replace('=', '^=').strip()
+    string = re.sub(r'\s+', ' ', string)
+    return string.replace('\n', '').replace('...', '…')
 
 def get_comictagger_command(metadata, file_path):
     """Construct the ComicTagger command for updating metadata.
@@ -183,9 +171,8 @@ def extract_volume_number(title):
     Returns:
         str: The extracted volume number, or an empty string if not found.
     """
-    match = re.search(r"(?:volume|vol\.?|#|v)(\d+)", title, re.IGNORECASE)
-    if match:
-        return match.group(1)
+    if match := re.search(r"(?:volume|vol\.?|#|v)(\d+)", title, re.IGNORECASE):
+        return match[1]
     return ""
 
 def parse_arguments():
