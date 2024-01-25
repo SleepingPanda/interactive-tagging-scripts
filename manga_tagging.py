@@ -37,12 +37,12 @@ def choose_dir_or_file(directories, files):
                selected_file (str): The selected CBZ file name, or None if no CBZ file is selected.
     """
     while True:
-        print(Fore.YELLOW + "Directories:")
+        print(f"{Fore.YELLOW}Directories:")
         for i, dir_item in enumerate(directories, 1):
-            print(Fore.RED + f"{i}." + Fore.GREEN + f" {dir_item}")
-        print(Fore.YELLOW + "Files:")
+            print(f"{Fore.RED}{i}.{Fore.GREEN}" + f" {dir_item}")
+        print(f"{Fore.YELLOW}Files:")
         for i, file_item in enumerate(files, 1):
-            print(Fore.RED + f"{i + len(directories)}." + Fore.BLUE + f" {file_item}")
+            print(f"{Fore.RED}{i + len(directories)}.{Fore.BLUE}" + f" {file_item}")
         choice = input(Fore.RESET + "Enter the number of the directory or file you want to work on "
                        "or type 'exit' to quit: ")
         if choice.lower() == 'exit':
