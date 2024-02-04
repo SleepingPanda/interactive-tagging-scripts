@@ -1,5 +1,6 @@
 """Tired of the default metadata source in comictagger? Do it yourself!"""
 import os
+import glob
 import re
 import sys
 import subprocess
@@ -13,59 +14,87 @@ logger = logging.getLogger(__name__)
 
 def list_dirs_and_files(directory='.'):
     """List directories and CBZ files in the specified directory.
+
+    Args:
+        directory (str, optional): The directory path to scan. Defaults to '.'.
+
     Returns:
         Tuple: A tuple containing two lists - dir_list and file_list.
-               The 'dir_list' list contains the names of directories in the specified directory,
-               and the 'file_list' list contains the names of CBZ files.
+        The 'dir_list' list contains the names of directories in the specified directory, and
+        the 'file_list' list contains the names of individual CBZ files.
+
+    Example:
+        Given directory structure:
+        /my_directory
+            ├── subdirectory1/
+            ├── subdirectory2/
+            ├── file1.cbz
+            ├── file2.cbz
+            ├── other_file.txt
+
+        Usage:
+        >>> list_dirs_and_files('/my_directory')
+        (['subdirectory1', 'subdirectory2'], ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
-    dir_list = []
-    file_list = []
-    for item in os.listdir(directory):
-        full_path = os.path.join(directory, item)
-        if os.path.isdir(full_path):
-            dir_list.append(item)
-        elif item.endswith(".cbz"):
-            file_list.append(item)
-    return dir_list, file_list
+    dir_list = (item for item in os.listdir(directory) if os.path.isdir(os.path.join(directory, item)))
+    file_list = glob.glob(os.path.join(directory, '*.cbz'))
+    return list(dir_list), file_list
 
 def choose_dir_or_file(directories, files):
     """Allow the user to interactively choose a directory or CBZ file.
     Returns:
-        Tuple: A tuple containing two items - selected_directory and selected_file.
-               selected_directory (str): The selected directory name, or None
-               if no directory is selected.
-               selected_file (str): The selected CBZ file name, or None if no CBZ file is selected.
+        Tuple: A tuple containing two items - selected_cbz_directory and selected_cbz_file.
+        selected_cbz_directory (str): The selected directory name, or None
+        if no directory is selected.
+        selected_cbz_file (str): The selected CBZ file
+        name, or None if no CBZ file is selected.
     """
     while True:
         print(f"{Fore.YELLOW}Directories:")
-        for i, dir_item in enumerate(directories, 1):
-            print(f"{Fore.RED}{i}.{Fore.GREEN}" + f" {dir_item}")
+        for i, selected_cbz_directory in enumerate(directories, 1):
+            print(f"{Fore.RED}{i}.{Fore.GREEN} {selected_cbz_directory}")
         print(f"{Fore.YELLOW}Files:")
-        for i, file_item in enumerate(files, 1):
-            print(f"{Fore.RED}{i + len(directories)}.{Fore.BLUE}" + f" {file_item}")
-        choice = input(Fore.RESET + "Enter the number of the directory or file you want to work on "
-                       "or type 'exit' to quit: ")
+        for i, selected_cbz_file in enumerate(files, 1):
+            print(f"{Fore.RED}{i + len(directories)}.{Fore.BLUE} {selected_cbz_file}")
+        choice = input(f"{Fore.RESET}Enter the number of the directory or file you want to work on or type 'exit' to quit: ")
         if choice.lower() == 'exit':
             return None, None
-        try:
+        if choice.isdigit():
             choice = int(choice)
-            if choice < 1 or choice > len(directories) + len(files):
-                raise ValueError
-            if choice <= len(directories):
-                return directories[choice - 1], None
-            return None, files[choice - len(directories) - 1]
-        except ValueError:
-            print("Invalid choice. Please enter a valid number.")
+            if 1 <= choice <= len(directories) + len(files):
+                if choice <= len(directories):
+                    return directories[choice - 1], None
+                return None, files[choice - len(directories) - 1]
+            else:
+                print("Invalid choice. Please enter a valid number.")
+        else:
+            print("Invalid input. Please enter a valid number.")
 
-def get_directory_path(directory):
+def get_directory_path(directory: str) -> str:
     """Get the absolute path of a directory.
+
+    Args:
+        directory (str): The directory path to be validated and converted to absolute path.
+
     Returns:
         str: The absolute path of the directory.
+        
+    Raises:
+        ValueError: If the input directory is an empty string.
+        TypeError: If the input directory is not a string.
     """
+    if not isinstance(directory, str):
+        raise TypeError("Input directory must be a string.")
+    elif not directory:
+        raise ValueError("Input directory cannot be an empty string.")
     return os.path.abspath(directory)
 
-def check_directory_exists(directory_path):
+def check_directory_exists(directory_path: str) -> bool:
     """Check if a directory exists.
+
+    Args:
+        directory_path (str): The directory path to be checked.
+
     Returns:
         bool: True if the directory exists, False otherwise.
     """
@@ -81,14 +110,18 @@ def process_cbz_files(directory_to_process, specific_file=None):
         key=lambda x: int(extract_volume_number(x))
         if extract_volume_number(x) else float('inf')
     )
-    for file_to_process in cbz_files_to_process:
+
+    for idx, file_to_process in enumerate(cbz_files_to_process):
         if specific_file is not None and file_to_process != specific_file:
             continue
+
         file_path_to_process = os.path.join(directory_to_process, file_to_process)
-        print(f"Working on file: {file_to_process}")
+        print(f"Working on file {idx + 1}/{len(cbz_files_to_process)}: {file_to_process}")
+
         choice = input("Do you want to skip to the next file? (y/n) ")
         if choice.lower() == 'y':
             continue
+
         if metadata := get_metadata_input():
             command = get_comictagger_command(metadata, file_path_to_process)
             try:
@@ -103,45 +136,65 @@ def process_cbz_files(directory_to_process, specific_file=None):
                 logger.error("Error message: %s", str(e))
         else:
             logger.warning("Skipping file %s due to missing metadata.", file_to_process)
+
     print("Job completed.")
 
-def get_metadata_input():
+def get_metadata_input() -> dict:
     """Prompt the user to input metadata fields for a CBZ file.
     Returns:
         dict: A dictionary containing metadata fields (year, month, day, title, comments).
     """
     metadata = {}
+    
+    validation_ranges = {
+        'year': (1900, 2100),
+        'month': (1, 12),
+        'day': (1, 31)
+    }
+
     try:
-        if year := input("Enter the year: "):
-            if not year.isnumeric() or not 1900 <= int(year) <= 2100:
-                raise ValueError
-            metadata['year'] = year
-        if month := input("Enter the month: "):
-            if not month.isnumeric() or not 1 <= int(month) <= 12:
-                raise ValueError
-            metadata['month'] = month
-        if day := input("Enter the day: "):
-            if not day.isnumeric() or not 1 <= int(day) <= 31:
-                raise ValueError
-            metadata['day'] = day
-        if title := input("Enter the title: "):
-            metadata['title'] = clean_string(title)
-            if volume := extract_volume_number(title):
+        for field in ['year', 'month', 'day']:
+            if input_value := input(f"Enter the {field}: "):
+                parsed_value = int(input_value)
+                if not input_value.isnumeric() or not (validation_ranges[field][0] <= parsed_value <= validation_ranges[field][1]):
+                    raise ValueError(f"Invalid {field}. Please enter a valid numeric value within the specified range.")
+                metadata[field] = str(parsed_value)
+
+        if title_input := input("Enter the title: "):
+            metadata['title'] = clean_string(title_input)
+            if volume := extract_volume_number(title_input):
                 metadata['volume'] = volume
-        if comments := input("Enter the comments: "):
-            metadata['comments'] = clean_string(comments)
+
+        if comments_input := input("Enter the comments: "):
+            metadata['comments'] = clean_string(comments_input)
+
         return metadata
     except ValueError as e:
-        raise ValueError("Invalid input. Please enter a valid value.") from e
+        raise ValueError(f"Invalid input. {e}") from e
 
-def clean_string(string):
+CHAR_REPLACEMENT_MAPPING = {
+    ',': '^,',
+    '=': '^=',
+}
+
+def clean_string(input_string: str) -> str:
     """Clean a string by replacing certain characters.
+
+    This function takes a string as input and performs the following operations:
+    1. Replaces specified characters according to CHAR_REPLACEMENT_MAPPING.
+    2. Strips leading and trailing whitespaces.
+    3. Replaces consecutive whitespaces with a single space.
+    4. Replaces '...' with the ellipsis character '…'.
+
+    Args:
+        input_string (str): The input string to be cleaned.
+
     Returns:
         str: The cleaned string.
     """
-    string = string.replace(',', '^,').replace('=', '^=').strip()
-    string = re.sub(r'\s+', ' ', string)
-    return string.replace('\n', '').replace('...', '…')
+    cleaned_string = re.sub(r'[,\n=]', lambda x: CHAR_REPLACEMENT_MAPPING[x.group()], input_string).strip()
+    cleaned_string = re.sub(r'\s+', ' ', cleaned_string)
+    return cleaned_string.replace('...', '…')
 
 def get_comictagger_command(metadata, file_path):
     """Construct the ComicTagger command for updating metadata.
@@ -153,7 +206,7 @@ def get_comictagger_command(metadata, file_path):
     # The -s flag means to write tags to the zip comment
     # The -t CR flag means to use the ComicRack tag format
     # The --overwrite flag means to overwrite existing tags
-    # The --metadata flag allows to specify the metadata fields and values to update
+    # The --metadata flag allows specifying the metadata fields and values to update
     # The file_path is the path to the CBZ file
     return [
         "comictagger",
@@ -166,20 +219,50 @@ def get_comictagger_command(metadata, file_path):
         file_path
     ]
 
-def extract_volume_number(title):
+def extract_volume_number(title: str) -> str:
     """Extract the volume number from a title.
+
+    Args:
+        title (str): The title from which to extract the volume number.
+
     Returns:
         str: The extracted volume number, or an empty string if not found.
+
+    Raises:
+        ValueError: If the title is not a string.
+
+    Examples:
+        >>> extract_volume_number("Volume 3")
+        '3'
+        >>> extract_volume_number("Vol. 5")
+        '5'
+        >>> extract_volume_number("Chapter 7")
+        '7'
+        >>> extract_volume_number("v09")
+        '09'
+        
+    Note:
+        The function looks for specific patterns like 'v,' 'volume,' 'vol,' or '#' followed by digits
+        to extract the volume number. It provides flexibility for different volume number formats.
     """
-    if match := re.search(r"(?:volume|vol\.?|#|v)(\d+)", title, re.IGNORECASE):
-        return match[1]
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+
+    if (match := re.search(r"v(\d+)|volume (\d+)|vol\.? (\d+)|#(\d+)", title, re.IGNORECASE)):
+        return next(filter(None, match.groups()), "")
     return ""
 
 def parse_arguments():
     """Parse command-line arguments."""
-    parser = argparse.ArgumentParser(description="Interactive Manga Tagging Script")
+    parser = argparse.ArgumentParser(description="Tired of the default metadata source in comictagger? Do it yourself!")
     parser.add_argument("-d", "--directory", help="Specify the directory to process")
-    return parser.parse_args()
+    cbz_args = parser.parse_args()
+    directory = cbz_args.directory
+
+    # Validate that the specified directory exists
+    if directory and not os.path.exists(directory):
+        parser.error(f"The specified directory '{directory}' does not exist.")
+    return cbz_args
 
 if __name__ == "__main__":
     try:
