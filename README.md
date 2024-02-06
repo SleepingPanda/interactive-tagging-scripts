@@ -29,8 +29,8 @@ The Interactive Manga Tagging Script is a Python script designed to facilitate t
 ## Usage
 1. **Clone the Repository:**
     ```
-    git clone https://github.com/SleepingPanda/interactive-manga-tagging-script.git
-    cd manual-comictagger-cli
+    git clone https://github.com/SleepingPanda/interactive-cbz-tagging-script.git
+    cd interactive-cbz-tagging-script
     ```
 2. **Install Dependencies:**
     ```
