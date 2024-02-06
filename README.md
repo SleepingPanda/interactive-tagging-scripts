@@ -39,11 +39,11 @@ The Interactive Manga Tagging Script is a Python script designed to facilitate t
 3. **Run the Script:**
   - To process a specific directory:
     ```
-    python manga_tagging.py -d /path/to/your/directory
+    python cbz_tagging.py -d /path/to/your/directory
     ```
   - To process the current working directory or select a directory interactively:
     ```
-    python manga_tagging.py
+    python cbz_tagging.py
     ```
 5. **Follow On-Screen Instructions:**
    
