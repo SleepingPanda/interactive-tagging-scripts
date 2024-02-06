@@ -34,7 +34,7 @@ The Interactive Manga Tagging Script is a Python script designed to facilitate t
     ```
 2. **Install Dependencies:**
     ```
-    pip install -u colorama comictagger[all]
+    pip install -r requirements.txt
     ```
 3. **Run the Script:**
   - To process a specific directory:
