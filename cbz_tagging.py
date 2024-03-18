@@ -13,6 +13,8 @@ import sys
 from colorama import Fore, init
 
 init()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 def list_dirs_and_files(directory="."):
