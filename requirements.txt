@@ -1,2 +1,2 @@
-comictagger[all]==1.5.5
+comictagger[GUI]==1.5.5
 colorama==0.4.6

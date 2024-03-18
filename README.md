@@ -1,42 +1,42 @@
-# Interactive Manga Tagging Script
+# Interactive Tagging Scripts
 ## Overview
 
-The Interactive Manga Tagging Script is a Python script designed to facilitate the interactive tagging of metadata for CBZ (Comic Book ZIP) files using the ComicTagger tool. It provides a user-friendly interface for processing directories containing CBZ files, allowing users to update metadata fields such as year, month, day, title, and comments interactively.
+Interactive Tagging Scripts are a collection of Python scripts designed to facilitate the interactive tagging of metadata for CBZ (Comic Book ZIP) files using the ComicTagger tool. They provides a user-friendly interface for processing directories containing CBZ files, allowing users to update metadata fields interactively.
 
 ## Features
 - **Directory and File Listing:**
 
-  The script can list directories and CBZ files in the specified directory, providing users with an overview of available options.
+  The scripts can list directories and CBZ files in a specified directory, providing users with an overview of available options.
 - **Interactive Selection:**
 
-  Users can interactively choose a directory or CBZ file, making the tagging process more flexible.
+  Users can interactively choose directories of files or individual CBZ files to work on, making the tagging process more flexible.
 - **Metadata Input:**
 
-  The script prompts users to input metadata fields for each CBZ file, including year, month, day, title, and comments.
+  The scripts prompts users to input metadata fields for each CBZ file or use a predefined json file to automatically tag entire directories.
 - **Metadata Cleaning:**
 
-  Metadata inputs are cleaned to ensure proper formatting and replace certain characters, making them compatible with ComicTagger.
+  Metadata inputs are cleaned to ensure proper formatting and replaces certain characters, making them compatible with ComicTagger.
 - **Volume Number Extraction:**
 
-  The script can extract volume numbers from titles, providing additional information for the tagging process.
+  The scripts can extract volume numbers from filenames automatically, providing additional information for the tagging process.
 - **Error Handling:**
 
-  The script incorporates error handling for invalid user inputs and provides clear error messages.
+  The scripts incorporates error handling for invalid user inputs and provides clear error messages.
 - **User-Friendly Interface:**
 
-  The script utilizes the Colorama library for colored console output, enhancing the user interface.
+  The scripts utilize the Colorama library for colored console output, enhancing the user experience.
 
 ## Usage
 1. **Clone the Repository:**
     ```
-    git clone https://github.com/SleepingPanda/interactive-cbz-tagging-script.git
-    cd interactive-cbz-tagging-script
+    git clone https://github.com/SleepingPanda/interactive-tagging-scripts.git
+    cd interactive-tagging-scripts
     ```
 2. **Install Dependencies:**
     ```
     pip install -r requirements.txt
     ```
-3. **Run the Script:**
+3. **Run the Scripts:**
   - To process a specific directory:
     ```
     python cbz_tagging.py -d /path/to/your/directory
@@ -45,15 +45,16 @@ The Interactive Manga Tagging Script is a Python script designed to facilitate t
     ```
     python cbz_tagging.py
     ```
+  - To automatically tag an entire dir of files:
+    ```
+    python manga_dir_tagging.py
+    ```
 5. **Follow On-Screen Instructions:**
    
-   The script will prompt you to choose a directory or CBZ file and interactively input metadata.
-7. **Enjoy Interactive Manga/Comic Tagging:**
-   
-   The script will process CBZ files, allowing you to update metadata interactively using ComicTagger.
+   The scripts will prompt you to choose from directories or individual CBZ files and interactively input metadata.
 
 ## Contribution
 Contributions are welcome! Feel free to fork the repository, make improvements, and submit a pull request.
 
 ## License
-This script is licensed under the GPLv3 License.
+These scripts are licensed under the GPLv3 License.

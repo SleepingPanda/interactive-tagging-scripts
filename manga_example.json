@@ -1,0 +1,34 @@
+{
+    "books": {
+        "Flying Witch (Manga Dir Name)": {
+            "manga": "Yes",
+            "black_and_white": "Yes",
+            "language": "en",
+            "genre": "Comics & Graphic Novels",
+            "maturity_rating": "Everyone",
+            "publisher": "Kodansha USA Publishing",
+            "imprint": "Kodansha Comics",
+            "series": "Flying Witch",
+            "series_group": "Flying Witch",
+            "web_link": "https://kodansha.us/series/flying-witch",
+            "credit": {
+                "Writer": "Chihiro Ishizuka",
+                "Penciller": "Chihiro Ishizuka",
+                "Inker": "Chihiro Ishizuka",
+                "Cover": "Chihiro Ishizuka"
+            },
+            "characters": [
+                "Makoto Kowata",
+                "Chito",
+                "Chinatsu Kuramoto",
+                "Kei Kuramoto",
+                "Keiji Kuramoto",
+                "Nana Kuramoto",
+                "Akane Kowata",
+                "Kenny",
+                "Nao Ishiwatari",
+                "Inukai"
+            ]
+        }
+    }
+}
