@@ -69,16 +69,16 @@ def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Option
             f"{Fore.RED}Enter the number of the directory "
             f"{Fore.RED}or file you want to work on, or type 'exit' to quit: "
         )
-        if choice.lower() == "exit":
-            return None, None
-        if choice.isdigit():
+        try:
             choice = int(choice)
             if 1 <= choice <= len(directories) + len(files):
                 if choice <= len(directories):
                     return directories[choice - 1], None
                 return None, files[choice - len(directories) - 1]
             print(f"{Fore.RED}Invalid choice. Please enter a valid number.")
-        else:
+        except ValueError:
+            if choice.lower() == "exit":
+                return None, None
             print(f"{Fore.RED}Invalid input. Please enter a valid number.")
 
 
