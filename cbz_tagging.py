@@ -247,11 +247,10 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
         if not Path(directory_to_process).is_dir():
             print(f"Directory does not exist: {directory_to_process}")
             return
-        cbz_files_to_process = [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()]
-        if not cbz_files_to_process:
-            print(f"No CBZ files found in directory: {directory_to_process}")
-            return
-        cbz_files_to_process.sort(key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf")))
+        cbz_files_to_process = sorted(
+            [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()],
+            key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf"))
+        )
         for idx, file_to_process in enumerate(cbz_files_to_process):
             if specific_file is not None and file_to_process.name != specific_file:
                 continue
@@ -268,11 +267,7 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
                 try:
                     subprocess.run(command, check=True)
                     print(f"{Fore.RED}Tagging completed for file:", file_to_process.name)
-                    print(f"{Fore.RED}Updated tags:")
-                    subprocess.run(
-                        ["comictagger", "-p", "--type", "CR", str(file_path_to_process)],
-                        check=True,
-                    )
+                    print_tagged_file_metadata(file_path_to_process)
                 except subprocess.CalledProcessError as e:
                     logger.error("Error while tagging file: %s", file_to_process.name)
                     logger.error("Error message: %s", str(e))
@@ -281,6 +276,18 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
         print(f"{Fore.RED}Job completed.")
     except KeyboardInterrupt:
         print(f"{Fore.RED}\nExiting.")
+
+
+def print_tagged_file_metadata(file_path: Path):
+    try:
+        print(f"{Fore.RED}Updated tags for file:", file_path.name)
+        subprocess.run(
+            ["comictagger", "-p", "--type", "CR", str(file_path)],
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        logger.error("Error while printing updated metadata for file: %s", file_path.name)
+        logger.error("Error message: %s", str(e))
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -303,14 +310,14 @@ if __name__ == "__main__":
     try:
         args = parse_arguments()
         if args.directory:
-            dir_to_process = get_directory_path(args.directory_path)
+            dir_to_process = get_directory_path(args.directory)
             if not check_directory_exists(dir_to_process):
                 print(f"{Fore.RED}Directory does not exist.")
             else:
                 process_cbz_files(dir_to_process)
         else:
             available_directories, available_files = list_dirs_and_files()
-            if len(available_directories) == 0 and len(available_files) == 0:
+            if not (available_directories or available_files):
                 print(
                     f"{Fore.RED}No directories or .cbz files "
                     f"{Fore.RED}found in the current working directory."
