@@ -181,38 +181,37 @@ def extract_volume_number(title: str) -> str:
     return ""
 
 
+VALIDATION_RANGES = {"year": (1900, 2100), "month": (1, 12), "day": (1, 31)}
+
+
 def get_metadata_input() -> Dict[str, str]:
     """
     Prompt the user to input metadata fields for a CBZ file.
     Returns:
-        dict: A dictionary containing metadata
+        Dict[str, str]: A dictionary containing metadata
         fields (year, month, day, title, comments).
     """
     metadata = {}
-    validation_ranges = {"year": (1900, 2100), "month": (1, 12), "day": (1, 31)}
-    try:
-        for field in ["year", "month", "day"]:
-            if input_value := input(f"{Fore.RED}Enter the {field}: "):
+    for field in ["year", "month", "day"]:
+        while True:
+            input_value = input(f"{Fore.RED}Enter the {field}: ")
+            if input_value.isnumeric():
                 parsed_value = int(input_value)
-                if not input_value.isnumeric() or not (
-                    validation_ranges[field][0]
-                    <= parsed_value
-                    <= validation_ranges[field][1]
+                if (
+                    VALIDATION_RANGES[field][0] <= parsed_value <= VALIDATION_RANGES[field][1]
                 ):
-                    raise ValueError(
-                        f"{Fore.RED}Invalid {field}. Please enter a valid numeric "
-                        f"{Fore.RED}value within the specified range."
-                    )
-                metadata[field] = str(parsed_value)
-        if title_input := input(f"{Fore.RED}Enter the title: "):
-            metadata["title"] = clean_string(title_input)
-            if volume := extract_volume_number(title_input):
-                metadata["volume"] = volume
-        if comments_input := input(f"{Fore.RED}Enter the comments: "):
-            metadata["comments"] = clean_string(comments_input)
-        return metadata
-    except ValueError as e:
-        raise ValueError(f"{Fore.RED}Invalid input. {e}") from e
+                    metadata[field] = str(parsed_value)
+                    break
+            print(
+                f"{Fore.RED}Invalid {field}. Please enter a valid numeric "
+                f"{Fore.RED}value within the specified range."
+            )
+    metadata_fields = ["title", "comments"]
+    for field in metadata_fields:
+        input_value = input(f"{Fore.RED}Enter the {field}: ")
+        if input_value:
+            metadata[field] = clean_string(input_value)
+    return metadata
 
 
 def get_comictagger_command(metadata: Dict[str, str], file_path: str) -> List[str]:
