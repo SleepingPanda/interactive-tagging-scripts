@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def list_dirs_and_files(directory=".") -> Tuple[List[str], List[str]]:
+def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
     """
     List directories and CBZ files in the specified directory.
     Args:
@@ -41,9 +41,9 @@ def list_dirs_and_files(directory=".") -> Tuple[List[str], List[str]]:
         (['subdirectory1', 'subdirectory2'],
         ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
-    directory = os.path.abspath(directory)
-    dir_list = [item for item in os.listdir(directory) if os.path.isdir(os.path.join(directory, item))]
-    file_list = [os.path.join(directory, item) for item in os.listdir(directory) if item.endswith(".cbz")]
+    directory = Path(directory)
+    dir_list = [item.name for item in directory.iterdir() if item.is_dir()]
+    file_list = [item.name for item in directory.glob("*.cbz") if item.is_file()]
     return dir_list, file_list
 
 
@@ -100,12 +100,12 @@ def get_directory_path(directory_path: str) -> str:
         raise TypeError("Input directory must be a string.")
     if not directory_path:
         raise ValueError("Input directory cannot be an empty string.")
-    abs_path = os.path.abspath(directory_path)
-    if not os.path.exists(abs_path):
+    abs_path = Path(directory_path).resolve()
+    if not abs_path.exists():
         raise FileNotFoundError(f"The directory '{abs_path}' does not exist.")
-    if not os.access(abs_path, os.R_OK):
-        raise PermissionError(f"Permission denied for directory '{abs_path}'.")
-    return abs_path
+    if not abs_path.is_dir():
+        raise NotADirectoryError(f"The path '{abs_path}' is not a directory.")
+    return str(abs_path)
 
 
 def check_directory_exists(directory_exists: str) -> bool:
@@ -245,43 +245,43 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
     Process CBZ files in a directory and update their metadata interactively.
     """
     try:
-        if not os.path.isdir(directory_to_process):
+        if not Path(directory_to_process).is_dir():
             print(f"Directory does not exist: {directory_to_process}")
             return
-        cbz_files_to_process = [file for file in os.listdir(directory_to_process) if file.endswith(".cbz")]
+        cbz_files_to_process = [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()]
         if not cbz_files_to_process:
             print(f"No CBZ files found in directory: {directory_to_process}")
             return
-        cbz_files_to_process.sort(key=lambda x: (int(extract_volume_number(x)) if extract_volume_number(x) else float("inf")))
+        cbz_files_to_process.sort(key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf")))
         for idx, file_to_process in enumerate(cbz_files_to_process):
-            if specific_file is not None and file_to_process != specific_file:
+            if specific_file is not None and file_to_process.name != specific_file:
                 continue
-            file_path_to_process = os.path.join(directory_to_process, file_to_process)
+            file_path_to_process = file_to_process.resolve()
             print(
                 f"{Fore.RED}Working on file "
-                f"{Fore.RED}{idx + 1}/{len(cbz_files_to_process)}: {file_to_process}"
+                f"{Fore.RED}{idx + 1}/{len(cbz_files_to_process)}: {file_to_process.name}"
             )
             choice = input(f"{Fore.RED}Do you want to skip to the next file? (y/n) ")
             if choice.lower() == "y":
                 continue
             if metadata := get_metadata_input():
-                command = get_comictagger_command(metadata, file_path_to_process)
+                command = get_comictagger_command(metadata, str(file_path_to_process))
                 try:
                     subprocess.run(command, check=True)
-                    print(f"{Fore.RED}Tagging completed for file:", file_to_process)
+                    print(f"{Fore.RED}Tagging completed for file:", file_to_process.name)
                     print(f"{Fore.RED}Updated tags:")
                     subprocess.run(
-                        ["comictagger", "-p", "--type", "CR", file_path_to_process],
+                        ["comictagger", "-p", "--type", "CR", str(file_path_to_process)],
                         check=True,
                     )
                 except subprocess.CalledProcessError as e:
-                    logger.error("Error while tagging file: %s", file_to_process)
+                    logger.error("Error while tagging file: %s", file_to_process.name)
                     logger.error("Error message: %s", str(e))
             else:
-                logger.warning("Skipping file %s due to missing metadata.", file_to_process)
+                logger.warning("Skipping file %s due to missing metadata.", file_to_process.name)
         print(f"{Fore.RED}Job completed.")
     except KeyboardInterrupt:
-        print(f"\nExiting.")
+        print(f"{Fore.RED}\nExiting.")
 
 
 def parse_arguments() -> argparse.Namespace:
