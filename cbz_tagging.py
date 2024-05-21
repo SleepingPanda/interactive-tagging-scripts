@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
+def list_dirs_and_files(directory=".") -> Tuple[List[str], List[str]]:
     """
     List directories and CBZ files in the specified directory.
     Args:
@@ -41,9 +41,9 @@ def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
         (['subdirectory1', 'subdirectory2'],
         ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
-    directory = Path(directory)
-    dir_list = [item.name for item in directory.iterdir() if item.is_dir()]
-    file_list = [str(item) for item in directory.glob("*.cbz")]
+    directory = os.path.abspath(directory)
+    dir_list = [item for item in os.listdir(directory) if os.path.isdir(os.path.join(directory, item))]
+    file_list = [os.path.join(directory, item) for item in os.listdir(directory) if item.endswith(".cbz")]
     return dir_list, file_list
 
 
