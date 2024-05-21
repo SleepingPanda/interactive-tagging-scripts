@@ -3,7 +3,6 @@ Tired of the default metadata source in comictagger? Do it yourself!
 """
 
 import argparse
-import glob
 import logging
 import os
 import re
@@ -11,6 +10,7 @@ import subprocess
 import sys
 
 from colorama import Fore, init
+from pathlib import Path
 
 init()
 logging.basicConfig(level=logging.INFO)
@@ -40,13 +40,10 @@ def list_dirs_and_files(directory="."):
         (['subdirectory1', 'subdirectory2'],
         ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
-    dir_list = (
-        item
-        for item in os.listdir(directory)
-        if os.path.isdir(os.path.join(directory, item))
-    )
-    file_list = glob.glob(os.path.join(directory, "*.cbz"))
-    return list(dir_list), file_list
+    directory = Path(directory)
+    dir_list = [item.name for item in directory.iterdir() if item.is_dir()]
+    file_list = [str(item) for item in directory.glob("*.cbz")]
+    return dir_list, file_list
 
 
 def choose_dir_or_file(directories, files):
