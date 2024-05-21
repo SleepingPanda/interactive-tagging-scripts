@@ -11,13 +11,14 @@ import sys
 
 from colorama import Fore, init
 from pathlib import Path
+from typing import List, Tuple, Optional, Dict
 
 init()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def list_dirs_and_files(directory="."):
+def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
     """
     List directories and CBZ files in the specified directory.
     Args:
@@ -46,7 +47,7 @@ def list_dirs_and_files(directory="."):
     return dir_list, file_list
 
 
-def choose_dir_or_file(directories, files):
+def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Optional[str], Optional[str]]:
     """
     Allow the user to interactively choose a directory or CBZ file.
     Returns:
@@ -173,7 +174,7 @@ def extract_volume_number(title: str) -> str:
     return ""
 
 
-def get_metadata_input() -> dict:
+def get_metadata_input() -> Dict[str, str]:
     """
     Prompt the user to input metadata fields for a CBZ file.
     Returns:
@@ -207,7 +208,7 @@ def get_metadata_input() -> dict:
         raise ValueError(f"{Fore.RED}Invalid input. {e}") from e
 
 
-def get_comictagger_command(metadata, file_path):
+def get_comictagger_command(metadata: Dict[str, str], file_path: str) -> List[str]:
     """
     Construct the ComicTagger command for updating metadata.
     Returns:
@@ -232,7 +233,7 @@ def get_comictagger_command(metadata, file_path):
     ]
 
 
-def process_cbz_files(directory_to_process, specific_file=None):
+def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = None) -> None:
     """
     Process CBZ files in a directory and update their metadata interactively.
     """
@@ -273,7 +274,7 @@ def process_cbz_files(directory_to_process, specific_file=None):
     print(f"{Fore.RED}Job completed.")
 
 
-def parse_arguments():
+def parse_arguments() -> argparse.Namespace:
     """
     Parse command-line arguments.
     """
