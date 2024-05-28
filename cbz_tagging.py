@@ -243,39 +243,36 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
     """
     Process CBZ files in a directory and update their metadata interactively.
     """
-    try:
-        if not Path(directory_to_process).is_dir():
-            print(f"Directory does not exist: {directory_to_process}")
-            return
-        cbz_files_to_process = sorted(
-            [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()],
-            key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf"))
+    if not Path(directory_to_process).is_dir():
+        print(f"Directory does not exist: {directory_to_process}")
+        return
+    cbz_files_to_process = sorted(
+        [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()],
+        key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf"))
+    )
+    for idx, file_to_process in enumerate(cbz_files_to_process):
+        if specific_file is not None and file_to_process.name != specific_file:
+            continue
+        file_path_to_process = file_to_process.resolve()
+        print(
+            f"{Fore.RED}Working on file "
+            f"{Fore.RED}{idx + 1}/{len(cbz_files_to_process)}: {file_to_process.name}"
         )
-        for idx, file_to_process in enumerate(cbz_files_to_process):
-            if specific_file is not None and file_to_process.name != specific_file:
-                continue
-            file_path_to_process = file_to_process.resolve()
-            print(
-                f"{Fore.RED}Working on file "
-                f"{Fore.RED}{idx + 1}/{len(cbz_files_to_process)}: {file_to_process.name}"
-            )
-            choice = input(f"{Fore.RED}Do you want to skip to the next file? (y/n) ")
-            if choice.lower() == "y":
-                continue
-            if metadata := get_metadata_input():
-                command = get_comictagger_command(metadata, str(file_path_to_process))
-                try:
-                    subprocess.run(command, check=True)
-                    print(f"{Fore.RED}Tagging completed for file:", file_to_process.name)
-                    print_tagged_file_metadata(file_path_to_process)
-                except subprocess.CalledProcessError as e:
-                    logger.error("Error while tagging file: %s", file_to_process.name)
-                    logger.error("Error message: %s", str(e))
-            else:
-                logger.warning("Skipping file %s due to missing metadata.", file_to_process.name)
-        print(f"{Fore.RED}Job completed.")
-    except KeyboardInterrupt:
-        print(f"{Fore.RED}\nExiting.")
+        choice = input(f"{Fore.RED}Do you want to skip to the next file? (y/n) ")
+        if choice.lower() == "y":
+            continue
+        if metadata := get_metadata_input():
+            command = get_comictagger_command(metadata, str(file_path_to_process))
+            try:
+                subprocess.run(command, check=True)
+                print(f"{Fore.RED}Tagging completed for file:", file_to_process.name)
+                print_tagged_file_metadata(file_path_to_process)
+            except subprocess.CalledProcessError as e:
+                logger.error("Error while tagging file: %s", file_to_process.name)
+                logger.error("Error message: %s", str(e))
+        else:
+            logger.warning("Skipping file %s due to missing metadata.", file_to_process.name)
+    print(f"{Fore.RED}Job completed.")
 
 
 def print_tagged_file_metadata(file_path: Path):
