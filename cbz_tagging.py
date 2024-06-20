@@ -42,12 +42,18 @@ def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
         ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
     directory_path = Path(directory)
-    dir_list = [item.name for item in directory_path.iterdir() if item.is_dir()]
-    file_list = [str(item) for item in directory_path.glob("*.cbz") if item.is_file()]
+    dir_list = [
+        item.name for item in directory_path.iterdir() if item.is_dir()
+    ]
+    file_list = [
+        str(item) for item in directory_path.glob("*.cbz") if item.is_file()
+    ]
     return dir_list, file_list
 
 
-def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Optional[str], Optional[str]]:
+def choose_dir_or_file(
+    directories: List[str], files: List[str]
+) -> Tuple[Optional[str], Optional[str]]:
     """
     Allow the user to interactively choose a directory or CBZ file.
     Returns:
@@ -66,8 +72,8 @@ def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Option
         for i, file in enumerate(files, 1):
             print(f"{Fore.RED}{i + len(directories)}. {Fore.BLUE}{file}")
         choice = input(
-            f"{Fore.RED}Enter the number of the directory "
-            f"or file you want to work on, or type 'exit' to quit: "
+            f"{Fore.RED}Enter the number of the directory or file you want to "
+            f"work on, or type 'exit' to quit: "
         )
         if choice.lower() == 'exit':
             return None, None
@@ -79,7 +85,8 @@ def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Option
                 else:
                     return None, files[choice_num - len(directories) - 1]
             else:
-                print(f"{Fore.RED}Invalid choice. Please enter a valid number.")
+                print(f"{Fore.RED}Invalid choice. \
+                    Please enter a valid number.")
         except ValueError:
             print(f"{Fore.RED}Invalid input. Please enter a valid number.")
 
@@ -96,7 +103,8 @@ def get_directory_path(directory_path: str) -> str:
         ValueError: If the input directory path is an empty string.
         TypeError: If the input directory path is not a string.
         FileNotFoundError: If the specified directory does not exist.
-        PermissionError: If the user does not have permission to access the directory.
+        PermissionError: If the user does not have permission
+        to access the directory.
     """
     if not isinstance(directory_path, str):
         raise TypeError("Input directory must be a string.")
@@ -199,9 +207,8 @@ def get_metadata_input() -> Dict[str, str]:
             input_value = input(f"{Fore.RED}Enter the {field}: ")
             if input_value.isnumeric():
                 parsed_value = int(input_value)
-                if (
-                    VALIDATION_RANGES[field][0] <= parsed_value <= VALIDATION_RANGES[field][1]
-                ):
+                if (VALIDATION_RANGES[field][0] <= parsed_value <=
+                        VALIDATION_RANGES[field][1]):
                     metadata[field] = str(parsed_value)
                     break
             print(
@@ -216,14 +223,16 @@ def get_metadata_input() -> Dict[str, str]:
     return metadata
 
 
-def get_comictagger_command(metadata: Dict[str, str], file_path: str) -> List[str]:
+def get_comictagger_command(
+    metadata: Dict[str, str], file_path: str
+) -> List[str]:
     """
     Construct the ComicTagger command for updating metadata.
     Returns:
         list: A list representing the ComicTagger command.
     """
     # The comictagger command has the following format:
-    # comictagger -s -t cr --overwrite -m field1=value1,field2=value2,... file_path
+    # comictagger -s -t cr --overwrite -m field1=value1,field2=value2,file path
     # The -s flag means to write tags to the zip comment
     # The -t cr flag means to use the ComicRack tag format
     # The --overwrite flag means to overwrite existing tags
@@ -241,7 +250,9 @@ def get_comictagger_command(metadata: Dict[str, str], file_path: str) -> List[st
     ]
 
 
-def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = None) -> None:
+def process_cbz_files(
+    directory_to_process: str, specific_file: Optional[str] = None
+) -> None:
     """
     Process CBZ files in a directory and update their metadata interactively.
     """
@@ -249,8 +260,16 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
         print(f"Directory does not exist: {directory_to_process}")
         return
     cbz_files_to_process = sorted(
-        [file for file in Path(directory_to_process).glob("*.cbz") if file.is_file()],
-        key=lambda x: (int(extract_volume_number(x.name)) if extract_volume_number(x.name) else float("inf"))
+        [
+            file for file in Path(
+                directory_to_process
+            ).glob("*.cbz") if file.is_file()
+        ],
+        key=lambda x: (
+            int(
+                extract_volume_number(x.name)
+            ) if extract_volume_number(x.name) else float("inf")
+        )
     )
     for idx, file_to_process in enumerate(cbz_files_to_process):
         if specific_file is not None and file_to_process.name != specific_file:
@@ -258,22 +277,33 @@ def process_cbz_files(directory_to_process: str, specific_file: Optional[str] = 
         file_path_to_process = file_to_process.resolve()
         print(
             f"{Fore.RED}Working on file "
-            f"{Fore.RED}{idx + 1}/{len(cbz_files_to_process)}: {file_to_process.name}"
+            f"{Fore.RED}{idx + 1}/{
+                len(cbz_files_to_process)
+            }: {file_to_process.name}"
         )
-        choice = input(f"{Fore.RED}Do you want to skip to the next file? (y/n) ")
+        choice = input(
+            f"{Fore.RED}Do you want to skip to the next file? (y/n) "
+        )
         if choice.lower() == "y":
             continue
         if metadata := get_metadata_input():
-            command = get_comictagger_command(metadata, str(file_path_to_process))
+            command = get_comictagger_command(
+                metadata, str(file_path_to_process)
+            )
             try:
                 subprocess.run(command, check=True)
-                print(f"{Fore.RED}Tagging completed for file:", file_to_process.name)
+                print(
+                    f"{Fore.RED}Tagging completed \
+                        for file:", file_to_process.name
+                )
                 print_tagged_file_metadata(file_path_to_process)
             except subprocess.CalledProcessError as e:
-                logger.error("Error while tagging file: %s", file_to_process.name)
+                logger.error("Error while tagging \
+                    file: %s", file_to_process.name)
                 logger.error("Error message: %s", str(e))
         else:
-            logger.warning("Skipping file %s due to missing metadata.", file_to_process.name)
+            logger.warning("Skipping file %s \
+                due to missing metadata.", file_to_process.name)
     print(f"{Fore.RED}Job completed.")
 
 
@@ -285,7 +315,8 @@ def print_tagged_file_metadata(file_path: Path):
             check=True,
         )
     except subprocess.CalledProcessError as e:
-        logger.error("Error while printing updated metadata for file: %s", file_path.name)
+        logger.error("Error while printing \
+            updated metadata for file: %s", file_path.name)
         logger.error("Error message: %s", str(e))
 
 
@@ -297,11 +328,14 @@ def parse_arguments() -> argparse.Namespace:
         description="Tired of the default metadata source "
         "in comictagger? Do it yourself!"
     )
-    parser.add_argument("-d", "--directory", help="Specify the directory to process")
+    parser.add_argument(
+        "-d", "--directory", help="Specify the directory to process"
+    )
     cbz_args = parser.parse_args()
     directory = cbz_args.directory
     if directory and not os.path.exists(directory):
-        parser.error(f"{Fore.RED}The specified directory '{directory}' does not exist.")
+        parser.error(f"{Fore.RED}The specified \
+            directory '{directory}' does not exist.")
     return cbz_args
 
 
