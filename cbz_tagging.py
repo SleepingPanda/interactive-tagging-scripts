@@ -8,10 +8,10 @@ import os
 import re
 import subprocess
 import sys
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 from colorama import Fore, init
-from pathlib import Path
-from typing import List, Tuple, Optional, Dict
 
 init()
 logging.basicConfig(level=logging.INFO)
