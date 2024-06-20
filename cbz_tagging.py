@@ -72,12 +72,12 @@ def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Option
         if choice.lower() == 'exit':
             return None, None
         try:
-            choice = int(choice)
-            if 1 <= choice <= len(directories) + len(files):
-                if choice <= len(directories):
-                    return directories[choice - 1], None
+            choice_num = int(choice)
+            if 1 <= choice_num <= len(directories) + len(files):
+                if choice_num <= len(directories):
+                    return directories[choice_num - 1], None
                 else:
-                    return None, files[choice - len(directories) - 1]
+                    return None, files[choice_num - len(directories) - 1]
             else:
                 print(f"{Fore.RED}Invalid choice. Please enter a valid number.")
         except ValueError:
