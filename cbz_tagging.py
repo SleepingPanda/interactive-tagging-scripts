@@ -41,9 +41,9 @@ def list_dirs_and_files(directory: str = ".") -> Tuple[List[str], List[str]]:
         (['subdirectory1', 'subdirectory2'],
         ['/my_directory/file1.cbz', '/my_directory/file2.cbz'])
     """
-    directory = Path(directory)
-    dir_list = [item.name for item in directory.iterdir() if item.is_dir()]
-    file_list = [item.name for item in directory.glob("*.cbz") if item.is_file()]
+    directory_path = Path(directory)
+    dir_list = [item.name for item in directory_path.iterdir() if item.is_dir()]
+    file_list = [str(item) for item in directory_path.glob("*.cbz") if item.is_file()]
     return dir_list, file_list
 
 
@@ -60,25 +60,27 @@ def choose_dir_or_file(directories: List[str], files: List[str]) -> Tuple[Option
     """
     while True:
         print(f"{Fore.YELLOW}Directories:")
-        for i, selected_cbz_directory in enumerate(directories, 1):
-            print(f"{Fore.RED}{i}. {Fore.GREEN}{selected_cbz_directory}")
+        for i, directory in enumerate(directories, 1):
+            print(f"{Fore.RED}{i}. {Fore.GREEN}{directory}")
         print(f"{Fore.YELLOW}Files:")
-        for i, selected_cbz_file in enumerate(files, 1):
-            print(f"{Fore.RED}{i + len(directories)}. {Fore.BLUE}{selected_cbz_file}")
+        for i, file in enumerate(files, 1):
+            print(f"{Fore.RED}{i + len(directories)}. {Fore.BLUE}{file}")
         choice = input(
             f"{Fore.RED}Enter the number of the directory "
-            f"{Fore.RED}or file you want to work on, or type 'exit' to quit: "
+            f"or file you want to work on, or type 'exit' to quit: "
         )
+        if choice.lower() == 'exit':
+            return None, None
         try:
             choice = int(choice)
             if 1 <= choice <= len(directories) + len(files):
                 if choice <= len(directories):
                     return directories[choice - 1], None
-                return None, files[choice - len(directories) - 1]
-            print(f"{Fore.RED}Invalid choice. Please enter a valid number.")
+                else:
+                    return None, files[choice - len(directories) - 1]
+            else:
+                print(f"{Fore.RED}Invalid choice. Please enter a valid number.")
         except ValueError:
-            if choice.lower() == "exit":
-                return None, None
             print(f"{Fore.RED}Invalid input. Please enter a valid number.")
 
 
