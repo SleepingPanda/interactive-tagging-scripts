@@ -51,7 +51,11 @@ def process_dir(dir_path, book_data):
     if book_name in book_data:
         metadata = book_data[book_name]
         command = ["comictagger", "-R", "-s", "-t", "cr", "--overwrite", "-m"]
-        template = "manga={manga},black_and_white={black_and_white},language={language},genre={genre},maturity_rating={maturity_rating},publisher={publisher},imprint={imprint},series={series},series_group={series_group},web_link={web_link},{credit_str},characters={characters}"
+        template = "manga={manga},black_and_white={black_and_white}\
+            ,language={language},genre={genre},maturity_rating={maturity_rating}\
+            ,publisher={publisher},imprint={imprint},series={series}\
+            ,series_group={series_group},web_link={web_link},{credit_str}\
+            ,characters={characters}"
         metadata_str = template.format(
             manga=metadata.get("manga", ""),
             black_and_white=metadata.get("black_and_white", ""),
@@ -66,7 +70,9 @@ def process_dir(dir_path, book_data):
             credit_str=", ".join(
                 [
                     f"credit={credit_key}:{credit_value}"
-                    for credit_key, credit_value in metadata.get("credit", {}).items()
+                    for credit_key, credit_value in metadata.get(
+                        "credit", {}
+                    ).items()
                 ]
             ),
             characters="^,".join(metadata.get("characters", [])),
@@ -82,7 +88,8 @@ def process_dir(dir_path, book_data):
 
 def write_json_tag():
     manga_json_path = input(
-        f"{Fore.RED}Input path to manga.json (leave blank for default 'manga.json'): "
+        f"{Fore.RED}Input path to manga.json \
+            (leave blank for default 'manga.json'): "
     )
     if not manga_json_path:
         manga_json_path = "manga.json"
