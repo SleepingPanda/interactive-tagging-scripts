@@ -2,6 +2,7 @@
 
 import json
 import os
+import platform
 import subprocess
 
 from colorama import Fore, init
@@ -39,15 +40,17 @@ def choose_dir(directories):
 
 def process_dir(dir_path, book_data):
     book_name = os.path.basename(dir_path)
-    if book_name in book_data:
-        metadata = book_data[book_name]
-        command = ["comictagger", "-R", "-s", "-t", "cr", "--overwrite", "-m"]
-        template = "manga={manga},black_and_white={black_and_white},\
-            language={language},genre={genre},maturity_rating={maturity_rating},\
-            publisher={publisher},imprint={imprint},series={series},\
-            series_group={series_group},web_link={web_link},{credit_str},\
-            characters={characters}"
-        metadata_str = template.format(
+    metadata = book_data.get(book_name)
+    if not metadata:
+        print(f"{Fore.RED}No metadata found for '{book_name}' in manga.json.")
+        return
+    command = [
+        "comictagger", "-R", "-s", "-t", "cr", "--overwrite", "-m",
+        "manga={manga},black_and_white={black_and_white},"
+        "language={language},genre={genre},"
+        "maturity_rating={maturity_rating},publisher={publisher},"
+        "imprint={imprint},series={series},series_group={series_group},"
+        "web_link={web_link},{credit_str},characters={characters}".format(
             manga=metadata.get("manga", ""),
             black_and_white=metadata.get("black_and_white", ""),
             language=metadata.get("language", ""),
@@ -59,27 +62,23 @@ def process_dir(dir_path, book_data):
             series_group=metadata.get("series_group", ""),
             web_link=metadata.get("web_link", ""),
             credit_str=", ".join(
-                [
-                    f"credit={credit_key}:{credit_value}"
-                    for credit_key, credit_value in metadata.get(
-                        "credit", {}
-                    ).items()
-                ]
+                f"credit={k}:{v}" for k, v in metadata.get(
+                    "credit", {}
+                ).items()
             ),
             characters="^,".join(metadata.get("characters", [])),
+        ),
+        dir_path
+    ]
+    print(f"{Fore.RED}Updating metadata for directory: {book_name}")
+    print(" ".join(command))
+    subprocess.run(command, check=True)
+    if platform.system() != "Windows":
+        subprocess.run(
+            ["find", dir_path, "-type", "f", "-name", "*.cbz"
+                "-exec", "chmod", "644", "{}", "+"]
         )
-        command.append(metadata_str)
-        command.append(dir_path)
-        print(f"{Fore.RED}Updating metadata for directory: {book_name}")
-        print(" ".join(command))
-        subprocess.run(command, check=True)
-        subprocess.run([
-            "find", dir_path, "-type", "f", "-name",
-            "*.cbz", "-exec", "chmod", "644", "{}", "+"
-        ])
         subprocess.run(["chown", "-R", "1000:1000", dir_path])
-    else:
-        print(f"{Fore.RED}No metadata found for '{book_name}' in manga.json.")
 
 
 def write_json_tag():
@@ -90,7 +89,7 @@ def write_json_tag():
     if not manga_json_path:
         manga_json_path = "manga.json"
     with open(manga_json_path, "r", encoding="utf-8") as file:
-        book_data = json.load(file)["books"]
+        book_data = json.load(file)["Manga"]
     dir_path = input(
         f"{Fore.RED}Enter the directory path to process "
         f"{Fore.RED}(leave blank to list directories): "
