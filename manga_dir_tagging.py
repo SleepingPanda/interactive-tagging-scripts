@@ -23,19 +23,12 @@ def choose_dir(directories):
         print(f"{Fore.YELLOW}Directories:")
         for i, selected_dir in enumerate(directories, 1):
             print(f"{Fore.RED}{i}. {Fore.GREEN}{selected_dir}")
-        choice = input(
-            f"{Fore.RED}Enter the # of the directory "
-            "you want to work on or type 'exit' to quit: "
-        )
+        choice = input(f"{Fore.RED}Enter directory # or 'exit' to quit: ")
         if choice.lower() == "exit":
             return None
-        if choice.isdigit():
-            choice = int(choice)
-            if 1 <= choice <= len(directories):
-                return directories[choice - 1]
-            print(f"{Fore.RED}Invalid choice. Please enter a valid #.")
-        else:
-            print(f"{Fore.RED}Invalid input. Please enter a valid #.")
+        if choice.isdigit() and 1 <= int(choice) <= len(directories):
+            return directories[int(choice) - 1]
+        print(f"{Fore.RED}Invalid input. Please enter a valid #.")
 
 
 def process_dir(dir_path, book_data):
