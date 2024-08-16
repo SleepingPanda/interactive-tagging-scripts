@@ -10,9 +10,6 @@ init()
 
 
 def list_dirs(directory="."):
-    """
-    List directories in the specified directory.
-    """
     return [
         item
         for item in os.listdir(directory)
@@ -21,9 +18,6 @@ def list_dirs(directory="."):
 
 
 def choose_dir(directories):
-    """
-    Allow the user to interactively choose a directory or CBZ file.
-    """
     while True:
         print(f"{Fore.YELLOW}Directories:")
         for i, selected_dir in enumerate(directories, 1):
@@ -44,18 +38,15 @@ def choose_dir(directories):
 
 
 def process_dir(dir_path, book_data):
-    """
-    Process the directory of files and update their metadata.
-    """
     book_name = os.path.basename(dir_path)
     if book_name in book_data:
         metadata = book_data[book_name]
         command = ["comictagger", "-R", "-s", "-t", "cr", "--overwrite", "-m"]
-        template = "manga={manga},black_and_white={black_and_white}\
-            ,language={language},genre={genre},maturity_rating={maturity_rating}\
-            ,publisher={publisher},imprint={imprint},series={series}\
-            ,series_group={series_group},web_link={web_link},{credit_str}\
-            ,characters={characters}"
+        template = "manga={manga},black_and_white={black_and_white},\
+            language={language},genre={genre},maturity_rating={maturity_rating},\
+            publisher={publisher},imprint={imprint},series={series},\
+            series_group={series_group},web_link={web_link},{credit_str},\
+            characters={characters}"
         metadata_str = template.format(
             manga=metadata.get("manga", ""),
             black_and_white=metadata.get("black_and_white", ""),
@@ -82,6 +73,11 @@ def process_dir(dir_path, book_data):
         print(f"{Fore.RED}Updating metadata for directory: {book_name}")
         print(" ".join(command))
         subprocess.run(command, check=True)
+        subprocess.run([
+            "find", dir_path, "-type", "f", "-name",
+            "*.cbz", "-exec", "chmod", "644", "{}", "+"
+        ])
+        subprocess.run(["chown", "-R", "1000:1000", dir_path])
     else:
         print(f"{Fore.RED}No metadata found for '{book_name}' in manga.json.")
 
@@ -89,7 +85,7 @@ def process_dir(dir_path, book_data):
 def write_json_tag():
     manga_json_path = input(
         f"{Fore.RED}Input path to manga.json \
-            (leave blank for default 'manga.json'): "
+            (or press return to use the default 'manga.json' db): "
     )
     if not manga_json_path:
         manga_json_path = "manga.json"
