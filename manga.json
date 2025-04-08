@@ -1,7 +1,818 @@
 {
+    "Comics": {
+        "300 By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Historical & Period Drama",
+            "imprint": "Dark Horse Comics",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "M",
+            "publisher": "Dark Horse Comics",
+            "series": "300 By Frank Miller",
+            "series_group": "300",
+            "web_link": "https://digital.darkhorse.com/books/ab233cfd86d14b6fb237ef3ef3d8669e/300-hc",
+            "characters": [
+                "Leonidas I",
+                "Xerxes I",
+                "Ephialtes",
+                "Dilios",
+                "Stelios",
+                "Gorgo"
+            ],
+            "credit": {
+                "Colorist": "Lynn Varley",
+                "Cover": "Lynn Varley",
+                "Inker": "Lynn Varley",
+                "Penciller": "Lynn Varley",
+                "Writer": "Frank Miller"
+            }
+        },
+        "All-New Ultimates By Michel Fiffe": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "Ultimate Marvel NOW!",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "All-New Ultimates By Michel Fiffe",
+            "series_group": "All-New Ultimates",
+            "web_link": "https://marvel.com/comics/series/18524/all-new_ultimates_(2014_-_2015)",
+            "characters": [
+                "Jessica Drew",
+                "Miles Morales",
+                "Ty Johnson",
+                "Tandy Bowen",
+                "Kitty Pryde",
+                "Lana Baumgartner"
+            ],
+            "credit": {
+                "Writer": "Michel Fiffe",
+                "Colorist": [
+                    "Nolan Woodard",
+                    "Jordie Bellaire",
+                    "Esther Sanz"
+                ],
+                "Cover": [
+                    "David Marquez",
+                    "David Nakayama"
+                ],
+                "Inker": [
+                    "Amilcar Pinna",
+                    "Giannis Milonogiannis",
+                    "Terry Pallot",
+                    "Lorenzo Ruggiero",
+                    "Le Beau Underwood"
+                ],
+                "Penciller": [
+                    "Amilcar Pinna",
+                    "Giannis Milonogiannis"
+                ]
+            }
+        },
+        "All-New X-Men By Brian Michael Bendis & Dennis Hallum": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "Marvel NOW!",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "All-New X-Men By Brian Michael Bendis & Dennis Hallum",
+            "series_group": "All-New X-Men",
+            "web_link": "https://marvel.com/comics/series/16449/allnew_xmen_2012_2015",
+            "characters": [
+                "Charles Xavier",
+                "Scott Summers",
+                "Jean Grey",
+                "Logan",
+                "Hank McCoy",
+                "Ororo Munroe",
+                "Emma Frost",
+                "Kitty Pryde",
+                "Raven Darkhölme",
+                "Bobby Drake"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Nolan Woodard",
+                    "Rachelle Rosenberg",
+                    "Andres Mossa",
+                    "Morry Hollowell",
+                    "Frank D'Armata",
+                    "Michael Garland",
+                    "Marte Gracia",
+                    "Rain Beredo",
+                    "David Marquez",
+                    "James Campbell",
+                    "Israel Silva",
+                    "David Ocampo",
+                    "Justin Ponsor",
+                    "Jason Keith",
+                    "Marcelo Maiolo",
+                    "Mike Del Mundo",
+                    "Marco D'Alfonso",
+                    "Mahmud Asrar"
+                ],
+                "Cover": [
+                    "Mark Bagley",
+                    "Nolan Woodard",
+                    "Andrew Hennessy",
+                    "Adrian Syaf",
+                    "Jay Leisten",
+                    "Laura Martin",
+                    "Stuart Immonen",
+                    "Wade Von Grawbadger",
+                    "Marte Gracia",
+                    "Olivier Coipel",
+                    "Brandon Peterson",
+                    "Sara Pichelli",
+                    "Kris Anka",
+                    "Andrea Sorrentino",
+                    "Marcelo Maiolo",
+                    "Mahmud Asrar",
+                    "Alexander Lozano"
+                ],
+                "Inker": [
+                    "Andrew Hennessy",
+                    "Paco Diaz",
+                    "Wade Von Grawbadger"
+                ],
+                "Penciller": [
+                    "Mark Bagley",
+                    "Paco Diaz",
+                    "Stuart Immonen",
+                    "David Marquez"
+                ],
+                "Writer": [
+                    "Dennis Hallum",
+                    "Sina Grace",
+                    "Marc Guggenheim",
+                    "Greg Pak",
+                    "Cullen Bunn",
+                    "Brian Michael Bendis",
+                    "Chris Claremont",
+                    "Stan Lee",
+                    "Louise Simonson",
+                    "Len Wein",
+                    "Fabian Nicieza"
+                ]
+            }
+        },
+        "All-Star Batman and Robin, The Boy Wonder By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "DC Comics",
+            "series": "All-Star Batman and Robin, The Boy Wonder By Frank Miller",
+            "series_group": "Batman: The Dark Knight",
+            "web_link": "https://dcuniverseinfinite.com/comics/series/all-star-batman-and-robin-the-boy-wonder/8e0c65bb-7f38-43a2-8ee9-9e890e5576db",
+            "characters": [
+                "Bruce Wayne",
+                "Alfred Pennyworth",
+                "Anthony Zucco",
+                "Barbara Gordon",
+                "Barbara Kean",
+                "Dick Grayson",
+                "Hal Jordan",
+                "James Gordon",
+                "Vicki Vale",
+                "Clark Kent"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Scott Williams"
+                ],
+                "Cover": [
+                    "Jim Lee"
+                ],
+                "Inker": [
+                    "Jim Lee"
+                ],
+                "Penciller": [
+                    "Jim Lee"
+                ],
+                "Writer": [
+                    "Frank Miller"
+                ]
+            }
+        },
+        "Batman - The Dark Knight - Master Race - The Covers By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "DC Comics",
+            "series": "Batman: The Dark Knight: Master Race - The Covers By Frank Miller",
+            "series_group": "Batman: The Dark Knight",
+            "web_link": "https://dcuniverseinfinite.com/comics/series/dark-knight-iii-the-master-race-2015-2017/bc47fc80-f1e9-42a4-85e5-9a95e0d557c5",
+            "characters": [
+                "Bruce Wayne"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Alex Sinclair",
+                    "Brad Anderson"
+                ],
+                "Cover": [
+                    "Frank Miller"
+                ],
+                "Inker": [
+                    "Jim Lee",
+                    "Adam Hughes",
+                    "Bill Sienkiewicz",
+                    "Brian Bolland",
+                    "Brian Stelfreeze",
+                    "Darwyn Cooke",
+                    "Dave Johnson",
+                    "David Finch",
+                    "Eduardo Risso",
+                    "Francis Manapul",
+                    "Frank Miller",
+                    "Gabriele Dell'Otto",
+                    "Gary Frank",
+                    "Greg Capullo",
+                    "Ivan Reis",
+                    "Matt Wagner",
+                    "Neal Adams",
+                    "Paul Pope",
+                    "Rafael Albuquerque",
+                    "Sean Gordon Murphy",
+                    "Tim Sale",
+                    "Tony Harris"
+                ],
+                "Penciller": [
+                    "Jim Lee",
+                    "Adam Hughes",
+                    "Bill Sienkiewicz",
+                    "Brian Bolland",
+                    "Brian Stelfreeze",
+                    "Darwyn Cooke",
+                    "Dave Johnson",
+                    "David Finch",
+                    "Eduardo Risso",
+                    "Francis Manapul",
+                    "Frank Miller",
+                    "Gabriele Dell'Otto",
+                    "Gary Frank",
+                    "Greg Capullo",
+                    "Ivan Reis",
+                    "Matt Wagner",
+                    "Neal Adams",
+                    "Paul Pope",
+                    "Rafael Albuquerque",
+                    "Sean Gordon Murphy",
+                    "Tim Sale",
+                    "Tony Harris",
+                    "John Romita Jr.",
+                    "Klaus Janson",
+                    "Andy Kubert"
+                ],
+                "Writer": [
+                    "Frank Miller",
+                    "Brian Azzarello"
+                ]
+            }
+        },
+        "Batman - The Dark Knight - Master Race By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "DC Comics",
+            "series": "Batman: The Dark Knight: Master Race By Frank Miller",
+            "series_group": "Batman: The Dark Knight",
+            "web_link": "https://dcuniverseinfinite.com/comics/series/dark-knight-iii-the-master-race-2015-2017/bc47fc80-f1e9-42a4-85e5-9a95e0d557c5",
+            "characters": [
+                "Bruce Wayne",
+                "Diana of Themyscira",
+                "Barry Allen",
+                "Lara Kent",
+                "Hal Jordan",
+                "Ray Palmer",
+                "Ellen Yindel",
+                "Carrie Kelley",
+                "Clark Kent",
+                "Jonathan Kent"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Alex Sinclair",
+                    "Brad Anderson"
+                ],
+                "Cover": [
+                    "Frank Miller"
+                ],
+                "Inker": [
+                    "Andy Kubert",
+                    "Eduardo Risso",
+                    "Frank Miller",
+                    "John Romita Jr.",
+                    "Klaus Janson"
+                ],
+                "Penciller": [
+                    "Andy Kubert",
+                    "Eduardo Risso",
+                    "Frank Miller",
+                    "John Romita Jr.",
+                    "Klaus Janson"
+                ],
+                "Writer": [
+                    "Frank Miller",
+                    "Brian Azzarello"
+                ]
+            }
+        },
+        "Batman - The Dark Knight Returns By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "DC Comics",
+            "series": "Batman: The Dark Knight Returns By Frank Miller",
+            "series_group": "Batman: The Dark Knight",
+            "web_link": "https://dcuniverseinfinite.com/comics/series/batman-the-dark-knight-returns/5efcfa5d-3f41-4e45-9c9b-fe940a283346",
+            "characters": [
+                "Bruce Wayne",
+                "Alfred Pennyworth",
+                "Carrie Kelley",
+                "Selina Kyle",
+                "Joker",
+                "Ellen Yindel",
+                "Harvey Dent",
+                "James Gordon",
+                "Oliver Queen",
+                "Clark Kent"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Lynn Varley"
+                ],
+                "Cover": [
+                    "Frank Miller"
+                ],
+                "Inker": [
+                    "Klaus Janson"
+                ],
+                "Penciller": [
+                    "Frank Miller"
+                ],
+                "Writer": [
+                    "Frank Miller"
+                ]
+            }
+        },
+        "Miles Morales - Spider-Man By Brian Michael Bendis": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "Miles Morales: Spider-Man By Brian Michael Bendis",
+            "series_group": "Miles Morales: Spider-Man",
+            "web_link": "",
+            "characters": [
+                "Miles Morales",
+                "Rio Morales",
+                "Jefferson Davis",
+                "Aaron Davis",
+                "Ganke Lee",
+                "May Parker",
+                "Mary Jane Watson",
+                "Gwen Stacy",
+                "Jessica Drew"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Jason Keith",
+                    "Paul Mounts",
+                    "Justin Ponsor",
+                    "Rachelle Rosenberg",
+                    "Rico Renzi",
+                    "Brian Reber",
+                    "M Msassyk",
+                    "Laura Martin",
+                    "Marte Gracia"
+                ],
+                "Cover": [
+                    "Mark Bagley",
+                    "Nolan Woodard",
+                    "Andrew Hennessy",
+                    "Adrian Syaf",
+                    "Jay Leisten",
+                    "Laura Martin"
+                ],
+                "Inker": [
+                    "Mark Brooks",
+                    "Andrew Hennessy",
+                    "David Lafuente",
+                    "Pepe Larraz",
+                    "David Marquez",
+                    "David Messina",
+                    "Sara Pichelli",
+                    "Chris Samnee",
+                    "Robbi Rodriguez",
+                    "John Dell",
+                    "Szymon Kudranski",
+                    "Nico Leon",
+                    "Ramon K. Perez",
+                    "Jan Bazaldua",
+                    "Gaetano Carlucci",
+                    "Elisabetta D'AMICO"
+                ],
+                "Penciller": [
+                    "Mark Bagley",
+                    "Sara Pichelli",
+                    "David Marquez",
+                    "Mark Brooks",
+                    "David Lafuente",
+                    "Pepe Larraz",
+                    "David Messina",
+                    "Chris Samnee",
+                    "Gabriel Hernandez Walta",
+                    "Jan Bazaldua",
+                    "Szymon Kudranski",
+                    "Nico Leon",
+                    "Ramon K. Perez",
+                    "Robbi Rodriguez"
+                ],
+                "Writer": [
+                    "Brian Michael Bendis",
+                    "Jason Latour"
+                ]
+            }
+        },
+        "Miles Morales - Spider-Man By Cody Ziglar": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "Miles Morales: Spider-Man By Cody Ziglar",
+            "series_group": "Miles Morales: Spider-Man",
+            "web_link": "https://marvel.com/comics/series/35645/miles_morales_spiderman_2022_2023",
+            "characters": [
+                "Miles Morales",
+                "Rio Morales",
+                "Jefferson Morales",
+                "Tiana Toomes",
+                "Ganke Lee",
+                "Mercedes Knight",
+                "Billie Morales",
+                "Keisha Kwan",
+                "Kamala Khan"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Bryan Valenza"
+                ],
+                "Cover": [
+                    "Dike Ruan",
+                    "Federico Vicentini"
+                ],
+                "Inker": [
+                    "Federico Vicentini",
+                    "Federico Sabbatini",
+                    "Partha Pratim",
+                    "Juann Cabal",
+                    "Matt Horak",
+                    "David Marquez",
+                    "Sara Pichelli",
+                    "Luciano Vecchio",
+                    "Daniele DI Nicuolo",
+                    "Will Robson",
+                    "Julius Ohta",
+                    "Fran Galan",
+                    "Travel Foreman",
+                    "Jan Bazaldua",
+                    "Roge Antonio",
+                    "Paris Alleyne"
+                ],
+                "Penciller": [
+                    "Federico Vicentini",
+                    "Federica Mancin",
+                    "Federico Sabbatini",
+                    "Partha Pratim",
+                    "Daniele DI Nicuolo",
+                    "Travel Foreman",
+                    "Juann Cabal",
+                    "Matt Horak",
+                    "David Marquez",
+                    "Sara Pichelli",
+                    "Luciano Vecchio",
+                    "Paris Alleyne",
+                    "Roge Antonio",
+                    "Jan Bazaldua",
+                    "Fran Galan",
+                    "Julius Ohta",
+                    "Will Robson"
+                ],
+                "Writer": [
+                    "Cody Ziglar",
+                    "James Beard",
+                    "Cheryl Eaton",
+                    "Alex Paknadel",
+                    "David Pepose"
+                ]
+            }
+        },
+        "Miles Morales - Spider-Man By Saladin Ahmed": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "Miles Morales: Spider-Man By Saladin Ahmed",
+            "series_group": "Miles Morales: Spider-Man",
+            "web_link": "https://marvel.com/comics/series/25999/miles_morales_spiderman_2018_2022",
+            "characters": [
+                "Miles Morales",
+                "Rio Morales",
+                "Jefferson Davis",
+                "Ganke Lee",
+                "Barbara Rodriguez",
+                "Tiana Toomes",
+                "Lana Baumgartner",
+                "Billie Morales",
+                "Ceres Goldstein"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Erick Arciniega",
+                    "Jordie Bellaire",
+                    "David Curiel",
+                    "Edgar Delgado",
+                    "Nathan Fairbairn",
+                    "Romulo Fajardo Jr.",
+                    "Triona Farrell",
+                    "Michael Garland",
+                    "Marte Gracia",
+                    "Espen Grundetjern",
+                    "Mattia De Iulis",
+                    "Frank Martin",
+                    "Jay David Ramos",
+                    "Rachelle Rosenberg",
+                    "Dono Sanchez-Almara",
+                    "Israel Silva"
+                ],
+                "Cover": [
+                    "Mahmud Asrar",
+                    "Taurin Clarke",
+                    "Clayton Crain",
+                    "Marco D'ALFONSO",
+                    "Javier Garron",
+                    "Valerio Giangiordano",
+                    "Patrick Gleason",
+                    "Mike Hawthorne",
+                    "Kim Jacinto",
+                    "Ken Lashley",
+                    "Patrick Okeefe",
+                    "R Rahzzah",
+                    "Paul Renaud",
+                    "Valerio Schiti",
+                    "Declan Shalvey",
+                    "Ryan Stegman",
+                    "Brian Stelfreeze",
+                    "Ryan Ottley"
+                ],
+                "Inker": [
+                    "Craig Yeung",
+                    "Annie Wu",
+                    "Dexter Vines",
+                    "Federico Vicentini",
+                    "Luciano Vecchio",
+                    "Ryan Stegman",
+                    "Andrea Sorrentino",
+                    "R.B. Silva",
+                    "Damion Scott",
+                    "Vanesa Del Rey",
+                    "Cliff Rathburn",
+                    "Humberto Ramos",
+                    "Ryan Ottley",
+                    "Belen Ortega",
+                    "Victor Olazaba",
+                    "Jp Mayer",
+                    "Alitha E. Martinez",
+                    "Francesco Manna",
+                    "Kevin Libranda",
+                    "Jay Leisten",
+                    "Aaron Kuder",
+                    "Ruy Jose",
+                    "Kim Jacinto",
+                    "Mattia De Iulis",
+                    "Ray-Anthony Height",
+                    "Ig Guara",
+                    "Javier Garron",
+                    "Jorge Fornes",
+                    "Marcelo Ferreira",
+                    "Wayne Faucher",
+                    "Jim Cheung",
+                    "Carmen Carnero",
+                    "Ze Carlos",
+                    "Natacha Bustos",
+                    "Christopher Allen"
+                ],
+                "Penciller": [
+                    "Ron Ackins",
+                    "Christopher Allen",
+                    "Joe Bennett",
+                    "Natacha Bustos",
+                    "Ze Carlos",
+                    "Carmen Carnero",
+                    "Jim Cheung",
+                    "Marcelo Ferreira",
+                    "Jorge Fornes",
+                    "Javier Garron",
+                    "Ig Guara",
+                    "Ray-Anthony Height",
+                    "Mattia De Iulis",
+                    "Kim Jacinto",
+                    "Aaron Kuder",
+                    "Kevin Libranda",
+                    "Francesco Manna",
+                    "Alitha E. Martinez",
+                    "Belen Ortega",
+                    "Ryan Ottley",
+                    "Humberto Ramos",
+                    "Vanesa Del Rey",
+                    "Damion Scott",
+                    "R.B. Silva",
+                    "Cory Smith",
+                    "Andrea Sorrentino",
+                    "Ryan Stegman",
+                    "Luciano Vecchio",
+                    "Federico Vicentini",
+                    "Annie Wu"
+                ],
+                "Writer": [
+                    "Saladin Ahmed",
+                    "Jason Aaron",
+                    "Ed Brisson",
+                    "Donny Cates",
+                    "Al Ewing",
+                    "Eve Ewing",
+                    "Jonathan Hickman",
+                    "Tini Howard",
+                    "Jeff Loveness",
+                    "Greg Pak",
+                    "Matthew Rosenberg",
+                    "Dan Slott",
+                    "Nick Spencer",
+                    "Tom Taylor",
+                    "Chip Zdarsky",
+                    "Kelly Thompson"
+                ]
+            }
+        },
+        "Superior Spider-Man By Dan Slott & Christos N Gage": {
+            "black_and_white": "No",
+            "genre": "Superhero",
+            "imprint": "",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Marvel Comics",
+            "series": "Superior Spider-Man By Dan Slott & Christos N. Gage",
+            "series_group": "Superior Spider-Man",
+            "web_link": "https://marvel.com/comics/series/17554/superior_spiderman_2013_2014",
+            "characters": [
+                "Otto Octavius",
+                "Peter Parker",
+                "Mary Jane Watson",
+                "May Parker",
+                "John Jonah Jameson",
+                "Anna Maria Marconi"
+            ],
+            "credit": {
+                "Colorist": [
+                    "Antonio Fabela",
+                    "Edgar Delgado",
+                    "Javier Rodriguez",
+                    "Marcos Martín",
+                    "Veronica Gandini"
+                ],
+                "Cover": [
+                    "Edgar Delgado",
+                    "Danny Miki",
+                    "Joe Quesada",
+                    "Morry Hollowell"
+                ],
+                "Inker": [
+                    "Alvaro Lopezg",
+                    "Cam Smith",
+                    "Giuseppe Camuncoli",
+                    "John Dell",
+                    "John Livesay",
+                    "Marcos Martín",
+                    "Philippe Briones",
+                    "Richard Elson",
+                    "Ryan Stegman",
+                    "Sal Buscema",
+                    "Stephanie Buscema",
+                    "Terry Pallot",
+                    "Victor Olazaba",
+                    "Will Sliney"
+                ],
+                "Penciller": [
+                    "Humberto Ramos",
+                    "Giuseppe Camuncoli",
+                    "Javier Rodriguez",
+                    "Marcos Martín",
+                    "Philippe Briones",
+                    "Richard Elson",
+                    "Ryan Stegman",
+                    "Stephanie Buscema",
+                    "Will Sliney"
+                ],
+                "Writer": [
+                    "Dan Slott",
+                    "Christos N. Gage",
+                    "J.M. DeMatteis",
+                    "Jen Van Meter"
+                ]
+            }
+        },
+        "Xerxes - The Fall of the House of Darius and the Rise of Alexander By Frank Miller": {
+            "black_and_white": "No",
+            "genre": "Historical & Period Drama",
+            "imprint": "Dark Horse Comics",
+            "language": "en",
+            "manga": "No",
+            "maturity_rating": "M",
+            "publisher": "Dark Horse Comics",
+            "series": "Xerxes: The Fall of the House of Darius and the Rise of Alexander By Frank Miller",
+            "series_group": "300",
+            "web_link": "https://digital.darkhorse.com/books/712978cbc685406a998e9328bd8e6471/xerxes-the-fall-of-the-house-of-darius-and-the-rise-of-alexander",
+            "characters": [
+                "Darius I",
+                "Themistokles",
+                "Aeskylos",
+                "Miltiades",
+                "Xerxes I",
+                "Esther",
+                "Darius III",
+                "Alexander the Great",
+                "Bessus"
+            ],
+            "credit": {
+                "Colorist": "Alex Sinclair",
+                "Cover": "Frank Miller",
+                "Inker": "Alex Sinclair",
+                "Penciller": "Frank Miller",
+                "Writer": "Frank Miller"
+            }
+        }
+    },
     "Manga": {
+        "5 Centimeters per Second": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "5 Centimeters per Second",
+            "series_group": "5 Centimeters per Second",
+            "web_link": "https://kodansha.us/series/5-centimeters-per-second",
+            "characters": [
+                "Takaki Tōno",
+                "Akari Shinohara",
+                "Kanae Sumida"
+            ],
+            "credit": {
+                "Cover": "Yukiko Seike",
+                "Inker": "Yukiko Seike",
+                "Penciller": "Yukiko Seike",
+                "Writer": "Makoto Shinkai"
+            }
+        },
         "A Silent Voice": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "A Silent Voice",
+            "series_group": "A Silent Voice",
+            "web_link": "https://kodansha.us/series/a-silent-voice",
             "characters": [
                 "Shoya Ishida",
                 "Shoko Nishimiya",
@@ -19,19 +830,19 @@
                 "Inker": "Yoshitoki Oima",
                 "Penciller": "Yoshitoki Oima",
                 "Writer": "Yoshitoki Oima"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing LLC",
-            "series": "A Silent Voice",
-            "series_group": "A Silent Voice",
-            "web_link": "https://kodansha.us/series/a-silent-voice"
+            }
         },
         "Arakawa Under the Bridge": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Vertical Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Arakawa Under the Bridge",
+            "series_group": "Arakawa Under the Bridge",
+            "web_link": "https://kodansha.us/series/arakawa-under-the-bridge",
             "characters": [
                 "Kou Ichinomiya",
                 "Nino",
@@ -49,19 +860,19 @@
                 "Inker": "Hikaru Nakamura",
                 "Penciller": "Hikaru Nakamura",
                 "Writer": "Hikaru Nakamura"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Vertical Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing LLC",
-            "series": "Arakawa Under the Bridge",
-            "series_group": "Arakawa Under the Bridge",
-            "web_link": "https://kodansha.us/series/arakawa-under-the-bridge"
+            }
         },
         "Ascendance of a Bookworm (Manga) Part 1": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "Ascendance of a Bookworm (Manga) Part 1",
+            "series_group": "Ascendance of a Bookworm",
+            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
                 "Myne",
                 "Tuuli",
@@ -76,19 +887,19 @@
                 "Inker": "Suzuka",
                 "Penciller": "Suzuka",
                 "Writer": "Miya Kazuki"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Ascendance of a Bookworm (Manga) Part 2": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 1",
+            "series": "Ascendance of a Bookworm (Manga) Part 2",
             "series_group": "Ascendance of a Bookworm",
-            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga"
-        },
-        "Ascendance of a Bookworm (Manga) Part 2": {
-            "black_and_white": "Yes",
+            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
                 "Myne",
                 "Tuuli",
@@ -106,19 +917,19 @@
                 "Inker": "Suzuka",
                 "Penciller": "Suzuka",
                 "Writer": "Miya Kazuki"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Ascendance of a Bookworm (Manga) Part 3": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 2",
+            "series": "Ascendance of a Bookworm (Manga) Part 3",
             "series_group": "Ascendance of a Bookworm",
-            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga"
-        },
-        "Ascendance of a Bookworm (Manga) Part 3": {
-            "black_and_white": "Yes",
+            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
                 "Rozemyne",
                 "Ferdinand",
@@ -136,19 +947,49 @@
                 "Inker": "Ryo Namino",
                 "Penciller": "Ryo Namino",
                 "Writer": "Miya Kazuki"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Ascendance of a Bookworm (Manga) Part 4": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 3",
+            "series": "Ascendance of a Bookworm (Manga) Part 4",
             "series_group": "Ascendance of a Bookworm",
-            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga"
+            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
+            "characters": [
+                "Rozemyne",
+                "Cornelius",
+                "Angelica",
+                "Hartmut",
+                "Brunhilde",
+                "Philine",
+                "Lieseleta",
+                "Rihyarda",
+                "Ferdinand",
+                "Sylvester"
+            ],
+            "credit": {
+                "Cover": "Hikaru Katsuki",
+                "Inker": "Hikaru Katsuki",
+                "Penciller": "Hikaru Katsuki",
+                "Writer": "Miya Kazuki"
+            }
         },
         "Attack on Titan": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Attack on Titan",
+            "series_group": "Attack on Titan",
+            "web_link": "https://kodansha.us/series/attack-on-titan",
             "characters": [
                 "Eren Yeager",
                 "Mikasa Ackerman",
@@ -166,19 +1007,19 @@
                 "Inker": "Hajime Isayama",
                 "Penciller": "Hajime Isayama",
                 "Writer": "Hajime Isayama"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing LLC",
-            "series": "Attack on Titan",
-            "series_group": "Attack on Titan",
-            "web_link": "https://kodansha.us/series/attack-on-titan"
+            }
         },
         "BAKEMONOGATARI (manga)": {
             "black_and_white": "Yes",
+            "genre": "Supernatural & Horror",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "BAKEMONOGATARI (manga)",
+            "series_group": "BAKEMONOGATARI",
+            "web_link": "https://kodansha.us/series/bakemonogatari-manga",
             "characters": [
                 "Koyomi Araragi",
                 "Hitagi Senjōgahara",
@@ -196,19 +1037,19 @@
                 "Inker": "Oh! Great",
                 "Penciller": "Oh! Great",
                 "Writer": "NISIOISIN"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing LLC",
-            "series": "BAKEMONOGATARI (manga)",
-            "series_group": "BAKEMONOGATARI",
-            "web_link": "https://kodansha.us/series/bakemonogatari-manga"
+            }
         },
         "Bleach": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Bleach",
+            "series_group": "Bleach",
+            "web_link": "https://viz.com/bleach",
             "characters": [
                 "Ichigo Kurosaki",
                 "Rukia Kuchiki",
@@ -226,19 +1067,19 @@
                 "Inker": "Tite Kubo",
                 "Penciller": "Tite Kubo",
                 "Writer": "Tite Kubo"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Bleach",
-            "series_group": "Bleach",
-            "web_link": "https://viz.com/read/manga/bleach/all"
+            }
         },
         "Blood Blockade Battlefront": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Dark Horse Manga",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Dark Horse Comics",
+            "series": "Blood Blockade Battlefront",
+            "series_group": "Blood Blockade Battlefront",
+            "web_link": "https://digital.darkhorse.com/series/1280/blood-blockade-battlefront",
             "characters": [
                 "Leonardo Watch",
                 "Klaus Von Reinherz",
@@ -256,19 +1097,19 @@
                 "Inker": "Yasuhiro Nightow",
                 "Penciller": "Yasuhiro Nightow",
                 "Writer": "Yasuhiro Nightow"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Dark Horse Manga",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Dark Horse Comics",
-            "series": "Blood Blockade Battlefront",
-            "series_group": "Blood Blockade Battlefront",
-            "web_link": "https://digital.darkhorse.com/series/1280/blood-blockade-battlefront"
+            }
         },
         "Blood on the Tracks": {
             "black_and_white": "Yes",
+            "genre": "Psychological & Philosophical",
+            "imprint": "Vertical Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Blood on the Tracks",
+            "series_group": "Blood on the Tracks",
+            "web_link": "https://kodansha.us/series/blood-on-the-tracks",
             "characters": [
                 "Seiichi Osabe",
                 "Seiko Osabe",
@@ -281,19 +1122,19 @@
                 "Inker": "Shuzo Oshimi",
                 "Penciller": "Shuzo Oshimi",
                 "Writer": "Shuzo Oshimi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Vertical Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Blood on the Tracks",
-            "series_group": "Blood on the Tracks",
-            "web_link": "https://kodansha.us/series/blood-on-the-tracks"
+            }
         },
         "Boogiepop Doesn't Laugh (Manga)": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Boogiepop Doesn't Laugh (Manga)",
+            "series_group": "Boogiepop and Others",
+            "web_link": "https://sevenseasentertainment.com/series/boogiepop",
             "characters": [
                 "Boogiepop",
                 "Touka Miyashita",
@@ -311,19 +1152,19 @@
                 "Inker": "Kouji Ogata",
                 "Penciller": "Kouji Ogata",
                 "Writer": "Kouhei Kadono"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Boogiepop Doesn't Laugh (Manga)",
-            "series_group": "Boogiepop and Others",
-            "web_link": "https://sevenseasentertainment.com/series/boogiepop"
+            }
         },
         "Boy's Abyss": {
             "black_and_white": "Yes",
+            "genre": "Psychological & Philosophical",
+            "imprint": "VIZ Signature",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "VIZ",
+            "series": "Boy's Abyss",
+            "series_group": "Boy's Abyss",
+            "web_link": "https://viz.com/boy-s-abyss",
             "characters": [
                 "Reiji Kurose",
                 "Nagi Aoe",
@@ -338,19 +1179,19 @@
                 "Inker": "Ryo Minenami",
                 "Penciller": "Ryo Minenami",
                 "Writer": "Ryo Minenami"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "VIZ Signature",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "VIZ Media LLC",
-            "series": "Boy's Abyss",
-            "series_group": "Boy's Abyss",
-            "web_link": "https://viz.com/read/manga/boy-s-abyss/all"
+            }
         },
         "Burn the Witch": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Burn the Witch",
+            "series_group": "Burn the Witch",
+            "web_link": "https://viz.com/burn-the-witch",
             "characters": [
                 "Ninny Spangcole",
                 "Noel Niihashi",
@@ -367,19 +1208,19 @@
                 "Inker": "Tite Kubo",
                 "Penciller": "Tite Kubo",
                 "Writer": "Tite Kubo"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Burn the Witch",
-            "series_group": "Burn the Witch",
-            "web_link": "https://viz.com/read/manga/burn-the-witch/all"
+            }
         },
         "Chained Soldier": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Yen Press",
+            "series": "Chained Soldier",
+            "series_group": "Chained Soldier",
+            "web_link": "https://yenpress.com/series/chained-soldier",
             "characters": [
                 "Yuuki Wakura",
                 "Kyouka Uzen",
@@ -395,19 +1236,19 @@
                 "Inker": "Yohei Takemura",
                 "Penciller": "Yohei Takemura",
                 "Writer": "Takahiro"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Yen Press LLC",
-            "series": "Chained Soldier",
-            "series_group": "Chained Soldier",
-            "web_link": "https://yenpress.com/series/chained-soldier"
+            }
         },
         "Chainsaw Man": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "VIZ",
+            "series": "Chainsaw Man",
+            "series_group": "Chainsaw Man",
+            "web_link": "https://viz.com/chainsaw-man",
             "characters": [
                 "Denji",
                 "Pochita",
@@ -420,19 +1261,19 @@
                 "Inker": "Tatsuki Fujimoto",
                 "Penciller": "Tatsuki Fujimoto",
                 "Writer": "Tatsuki Fujimoto"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "VIZ Media LLC",
-            "series": "Chainsaw Man",
-            "series_group": "Chainsaw Man",
-            "web_link": "https://viz.com/read/manga/chainsaw-man/all"
+            }
         },
         "Death March to the Parallel World Rhapsody (manga)": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Death March to the Parallel World Rhapsody (manga)",
+            "series_group": "Death March to the Parallel World Rhapsody",
+            "web_link": "https://yenpress.com/series/death-march-to-the-parallel-world-rhapsody-manga",
             "characters": [
                 "Satou",
                 "Liza",
@@ -448,19 +1289,19 @@
                 "Inker": "Ayamegumu",
                 "Penciller": "Ayamegumu",
                 "Writer": "Hiro Ainana"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Delicious in Dungeon": {
+            "black_and_white": "Yes",
+            "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Death March to the Parallel World Rhapsody (manga)",
-            "series_group": "Death March to the Parallel World Rhapsody",
-            "web_link": "https://yenpress.com/series/death-march-to-the-parallel-world-rhapsody-manga"
-        },
-        "Delicious in Dungeon": {
-            "black_and_white": "Yes",
+            "publisher": "Yen Press",
+            "series": "Delicious in Dungeon",
+            "series_group": "Delicious in Dungeon",
+            "web_link": "https://yenpress.com/series/delicious-in-dungeon",
             "characters": [
                 "Laios Touden",
                 "Marcille Donato",
@@ -478,19 +1319,19 @@
                 "Inker": "Ryoko Kui",
                 "Penciller": "Ryoko Kui",
                 "Writer": "Ryoko Kui"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Delicious in Dungeon",
-            "series_group": "Delicious in Dungeon",
-            "web_link": "https://yenpress.com/series/delicious-in-dungeon"
+            }
         },
         "Demon Slayer - Kimetsu no Yaiba": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Demon Slayer: Kimetsu no Yaiba",
+            "series_group": "Demon Slayer: Kimetsu no Yaiba",
+            "web_link": "https://viz.com/demon-slayer-kimetsu-no-yaiba",
             "characters": [
                 "Tanjiro Kamado",
                 "Nezuko Kamado",
@@ -508,19 +1349,19 @@
                 "Inker": "Koyoharu Gotouge",
                 "Penciller": "Koyoharu Gotouge",
                 "Writer": "Koyoharu Gotouge"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Dr. STONE": {
+            "black_and_white": "Yes",
+            "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Demon Slayer: Kimetsu no Yaiba",
-            "series_group": "Demon Slayer: Kimetsu no Yaiba",
-            "web_link": "https://viz.com/read/manga/demon-slayer-kimetsu-no-yaiba/all"
-        },
-        "Dr. STONE": {
-            "black_and_white": "Yes",
+            "publisher": "VIZ",
+            "series": "Dr. STONE",
+            "series_group": "Dr. STONE",
+            "web_link": "https://viz.com/dr-stone",
             "characters": [
                 "Senku Ishigami",
                 "Taiju Oki",
@@ -536,19 +1377,19 @@
                 "Inker": "Boichi",
                 "Penciller": "Boichi",
                 "Writer": "Riichiro Inagaki"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Dr. STONE",
-            "series_group": "Dr. STONE",
-            "web_link": "https://viz.com/read/manga/dr-stone/all"
+            }
         },
         "Erased": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Erased",
+            "series_group": "Erased",
+            "web_link": "https://yenpress.com/series/erased",
             "characters": [
                 "Satoru Fujinuma",
                 "Kayo Hinazuki",
@@ -566,19 +1407,19 @@
                 "Inker": "Kei Sanbe",
                 "Penciller": "Kei Sanbe",
                 "Writer": "Kei Sanbe"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Erased",
-            "series_group": "Erased",
-            "web_link": "https://yenpress.com/series/erased"
+            }
         },
         "Farming Life in Another World": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "One Peace Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "One Peace Books",
+            "series": "Farming Life in Another World",
+            "series_group": "Farming Life in Another World",
+            "web_link": "https://onepeacebooks.com/jt/FarmingLife.html",
             "characters": [
                 "Hiraku Machio",
                 "Rurushi Ru",
@@ -596,19 +1437,19 @@
                 "Inker": "Yasuyuki Tsurugi",
                 "Penciller": "Yasuyuki Tsurugi",
                 "Writer": "Kinosuke Naito"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "One Peace Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "One Peace Books",
-            "series": "Farming Life in Another World",
-            "series_group": "Farming Life in Another World",
-            "web_link": "https://onepeacebooks.com/jt/FarmingLife.html"
+            }
         },
         "Fate-Grand Order -Epic of Remnant- Pseudo-Singularity III": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Fate/Grand Order -Epic of Remnant- Pseudo-Singularity III",
+            "series_group": "Fate",
+            "web_link": "https://kodansha.us/series/fate-grand-order-epic-of-remnant-pseudo-singularity-iii",
             "characters": [
                 "Miyamoto Musashi",
                 "Senji Muramasa",
@@ -626,19 +1467,19 @@
                 "Inker": "Rei Wataru",
                 "Penciller": "Rei Wataru",
                 "Writer": "Type-Moon"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Fate-Grand Order -mortalis-stella": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Fate/Grand Order -Epic of Remnant- Pseudo-Singularity III",
+            "publisher": "Kodansha",
+            "series": "Fate/Grand Order -mortalis:stella",
             "series_group": "Fate",
-            "web_link": "https://kodansha.us/series/fate-grand-order-epic-of-remnant-pseudo-singularity-iii"
-        },
-        "Fate-Grand Order -mortalis-stella": {
-            "black_and_white": "Yes",
+            "web_link": "https://kodansha.us/series/fate-grand-order-mortalisstella",
             "characters": [
                 "Ritsuka",
                 "Mash Kirielight",
@@ -650,19 +1491,19 @@
                 "Inker": "Shiramine",
                 "Penciller": "Shiramine",
                 "Writer": "Type-Moon"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Fate/Grand Order -mortalis:stella",
-            "series_group": "Fate",
-            "web_link": "https://kodansha.us/series/fate-grand-order-mortalisstella"
+            }
         },
         "Fire Force": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Fire Force",
+            "series_group": "Fire Force",
+            "web_link": "https://kodansha.us/series/fire-force",
             "characters": [
                 "Shinra Kusakabe",
                 "Akitaru Ōbi",
@@ -680,19 +1521,19 @@
                 "Inker": "Atsushi Ohkubo",
                 "Penciller": "Atsushi Ohkubo",
                 "Writer": "Atsushi Ohkubo"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Fire Force",
-            "series_group": "Fire Force",
-            "web_link": "https://kodansha.us/series/fire-force"
+            }
         },
         "Fly Me to the Moon": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Shonen Sunday",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Fly Me to the Moon",
+            "series_group": "Fly Me to the Moon",
+            "web_link": "https://viz.com/fly-me-to-the-moon",
             "characters": [
                 "Nasa Yuzaki",
                 "Tsukasa Yuzaki",
@@ -707,19 +1548,19 @@
                 "Inker": "Kenjiro Hata",
                 "Penciller": "Kenjiro Hata",
                 "Writer": "Kenjiro Hata"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Shonen Sunday",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Fly Me to the Moon",
-            "series_group": "Fly Me to the Moon",
-            "web_link": "https://viz.com/read/manga/fly-me-to-the-moon/all"
+            }
         },
         "Flying Witch": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Everyone",
+            "publisher": "Kodansha",
+            "series": "Flying Witch",
+            "series_group": "Flying Witch",
+            "web_link": "https://kodansha.us/series/flying-witch",
             "characters": [
                 "Makoto Kowata",
                 "Chito",
@@ -737,19 +1578,19 @@
                 "Inker": "Chihiro Ishizuka",
                 "Penciller": "Chihiro Ishizuka",
                 "Writer": "Chihiro Ishizuka"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Everyone",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Flying Witch",
-            "series_group": "Flying Witch",
-            "web_link": "https://kodansha.us/series/flying-witch"
+            }
         },
         "Frieren - Beyond Journey's End": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Shonen Sunday",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Frieren: Beyond Journey's End",
+            "series_group": "Frieren: Beyond Journey's End",
+            "web_link": "https://viz.com/frieren-beyond-journeys-end",
             "characters": [
                 "Frieren",
                 "Fern",
@@ -766,19 +1607,19 @@
                 "Inker": "Tsukasa Abe",
                 "Penciller": "Tsukasa Abe",
                 "Writer": "Kanehito Yamada"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Shonen Sunday",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Frieren: Beyond Journey's End",
-            "series_group": "Frieren: Beyond Journey's End",
-            "web_link": "https://viz.com/read/manga/frieren-beyond-journey-s-end/all"
+            }
         },
         "From the New World": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "From the New World",
+            "series_group": "From the New World",
+            "web_link": "https://kodansha.us/series/from-the-new-world",
             "characters": [
                 "Saki Watanabe",
                 "Satoru Asahina",
@@ -791,19 +1632,49 @@
                 "Inker": "Toru Oikawa",
                 "Penciller": "Toru Oikawa",
                 "Writer": "Yusuke Kishi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
+            }
+        },
+        "Gantz": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Dark Horse Manga",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "From the New World",
-            "series_group": "From the New World",
-            "web_link": "https://kodansha.us/series/from-the-new-world"
+            "publisher": "Dark Horse Comics",
+            "series": "Gantz",
+            "series_group": "Gantz",
+            "web_link": "https://digital.darkhorse.com/series/1553/gantz",
+            "characters": [
+                "Kei Kurono",
+                "Masaru Kato",
+                "Tae Kojima",
+                "Shion Izumi",
+                "Joichiro Nishi",
+                "Kei Kishimoto",
+                "Yoshikazu Suzuki",
+                "Hiroto Sakurai",
+                "Kenzo Sakata",
+                "Reika Shimohira"
+            ],
+            "credit": {
+                "Cover": "Hiroya Oku",
+                "Inker": "Hiroya Oku",
+                "Penciller": "Hiroya Oku",
+                "Writer": "Hiroya Oku"
+            }
         },
         "GATE - Where the JSDF Fought": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Alpha Manga",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "AlphaPolis",
+            "series": "GATE: Where the JSDF Fought",
+            "series_group": "GATE",
+            "web_link": "https://www.alpha-manga.com/manga/138000030",
             "characters": [
                 "Yōji Itami",
                 "Piña Co Lada",
@@ -817,19 +1688,19 @@
                 "Inker": "Daisuke Izuka",
                 "Penciller": "Daisuke Izuka",
                 "Writer": "Takumi Yanai"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Alpha Manga",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "AlphaPolis",
-            "series": "GATE: Where the JSDF Fought",
-            "series_group": "GATE",
-            "web_link": "https://alpha-manga.com/manga/138000030"
+            }
         },
         "GIGANT": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "GIGANT",
+            "series_group": "GIGANT",
+            "web_link": "https://sevenseasentertainment.com/series/gigant",
             "characters": [
                 "Chiho Johansson",
                 "Rei Yokoyamada",
@@ -845,19 +1716,19 @@
                 "Inker": "Hiroya Oku",
                 "Penciller": "Hiroya Oku",
                 "Writer": "Hiroya Oku"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "GIGANT",
-            "series_group": "GIGANT",
-            "web_link": "https://sevenseasentertainment.com/series/gigant"
+            }
         },
         "Gleipnir": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Gleipnir",
+            "series_group": "Gleipnir",
+            "web_link": "https://kodansha.us/series/gleipnir",
             "characters": [
                 "Shuichi Kagaya",
                 "Claire Aoki",
@@ -875,19 +1746,19 @@
                 "Inker": "Sun Takeda",
                 "Penciller": "Sun Takeda",
                 "Writer": "Sun Takeda"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Gleipnir",
-            "series_group": "Gleipnir",
-            "web_link": "https://kodansha.us/series/gleipnir"
+            }
         },
         "Goblin Slayer (manga)": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Yen Press",
+            "series": "Goblin Slayer (manga)",
+            "series_group": "Goblin Slayer",
+            "web_link": "https://yenpress.com/series/goblin-slayer-manga",
             "characters": [
                 "Goblin Slayer",
                 "Priestess",
@@ -905,19 +1776,19 @@
                 "Inker": "Kousuke Kurose",
                 "Penciller": "Kousuke Kurose",
                 "Writer": "Kumo Kagyu"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Yen Press LLC",
-            "series": "Goblin Slayer (manga)",
-            "series_group": "Goblin Slayer",
-            "web_link": "https://yenpress.com/series/goblin-slayer-manga"
+            }
         },
         "Golden Kamuy": {
             "black_and_white": "Yes",
+            "genre": "Historical & Period Drama",
+            "imprint": "VIZ Signature",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "VIZ",
+            "series": "Golden Kamuy",
+            "series_group": "Golden Kamuy",
+            "web_link": "https://viz.com/golden-kamuy",
             "characters": [
                 "Saichi Sugimoto",
                 "Asirpa",
@@ -935,19 +1806,19 @@
                 "Inker": "Satoru Noda",
                 "Penciller": "Satoru Noda",
                 "Writer": "Satoru Noda"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "VIZ Signature",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "VIZ Media LLC",
-            "series": "Golden Kamuy",
-            "series_group": "Golden Kamuy",
-            "web_link": "https://viz.com/read/manga/golden-kamuy/all"
+            }
         },
         "Grand Blue Dreaming": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Grand Blue Dreaming",
+            "series_group": "Grand Blue Dreaming",
+            "web_link": "https://kodansha.us/series/grand-blue-dreaming",
             "characters": [
                 "Iori Kitahara",
                 "Chisa Kotegawa",
@@ -965,19 +1836,19 @@
                 "Inker": "Kimitake Yoshioka",
                 "Penciller": "Kimitake Yoshioka",
                 "Writer": "Kenji Inoue"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Grand Blue Dreaming",
-            "series_group": "Grand Blue Dreaming",
-            "web_link": "https://kodansha.us/series/grand-blue-dreaming"
+            }
         },
         "Higehiro - After Being Rejected, I Shaved and Took in a High School Runaway": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "One Peace Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "One Peace Books",
+            "series": "Higehiro - After Being Rejected^, I Shaved and Took in a High School Runaway",
+            "series_group": "Higehiro",
+            "web_link": "https://onepeacebooks.com/jt/Higehiro.html",
             "characters": [
                 "Yoshida",
                 "Sayu"
@@ -987,19 +1858,19 @@
                 "Inker": "Imaru Adachi",
                 "Penciller": "Imaru Adachi",
                 "Writer": "Shimesaba"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Hinamatsuri": {
+            "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
             "imprint": "One Peace Books",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
-            "series": "Higehiro - After Being Rejected^, I Shaved and Took in a High School Runaway",
-            "series_group": "Higehiro",
-            "web_link": "https://onepeacebooks.com/jt/Higehiro.html"
-        },
-        "Hinamatsuri": {
-            "black_and_white": "Yes",
+            "series": "Hinamatsuri",
+            "series_group": "Hinamatsuri",
+            "web_link": "https://onepeacebooks.com/jt/Hinamatsuri.html",
             "characters": [
                 "Hina",
                 "Nitta",
@@ -1010,19 +1881,19 @@
                 "Inker": "Masao Ohtake",
                 "Penciller": "Masao Ohtake",
                 "Writer": "Masao Ohtake"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "One Peace Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "One Peace Books",
-            "series": "Hinamatsuri",
-            "series_group": "Hinamatsuri",
-            "web_link": "https://onepeacebooks.com/jt/Hinamatsuri.html"
+            }
         },
         "Horimiya": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Horimiya",
+            "series_group": "Horimiya",
+            "web_link": "https://yenpress.com/series/horimiya",
             "characters": [
                 "Kyouko Hori",
                 "Izumi Miyamura",
@@ -1040,19 +1911,19 @@
                 "Inker": "Daisuke Hagiwara",
                 "Penciller": "Daisuke Hagiwara",
                 "Writer": "HERO"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)": {
+            "black_and_white": "Yes",
+            "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Horimiya",
-            "series_group": "Horimiya",
-            "web_link": "https://yenpress.com/series/horimiya"
-        },
-        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)": {
-            "black_and_white": "Yes",
+            "publisher": "Yen Press",
+            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too (manga)",
+            "series_group": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too",
+            "web_link": "https://yenpress.com/series/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-the-real-world-too-manga",
             "characters": [
                 "Yūya Tenjō",
                 "Kaori Hōjō",
@@ -1070,19 +1941,19 @@
                 "Inker": "Kazuomi Minatogawa",
                 "Penciller": "Kazuomi Minatogawa",
                 "Writer": "Miku"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too (manga)",
-            "series_group": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too",
-            "web_link": "https://yenpress.com/series/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-the-real-world-too-manga"
+            }
         },
         "In-Spectre": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "In/Spectre",
+            "series_group": "In/Spectre",
+            "web_link": "https://kodansha.us/series/in-spectre",
             "characters": [
                 "Kotoko Iwanaga",
                 "Kurō Sakuragawa",
@@ -1099,19 +1970,19 @@
                 "Inker": "Chashiba Katase",
                 "Penciller": "Chashiba Katase",
                 "Writer": "Kyo Shirodaira"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "In/Spectre",
-            "series_group": "In/Spectre",
-            "web_link": "https://kodansha.us/series/in-spectre"
+            }
         },
         "Jujutsu Kaisen": {
             "black_and_white": "Yes",
+            "genre": "Supernatural & Horror",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Jujutsu Kaisen",
+            "series_group": "Jujutsu Kaisen",
+            "web_link": "https://viz.com/jujutsu-kaisen",
             "characters": [
                 "Yuji Itadori",
                 "Megumi Fushiguro",
@@ -1129,19 +2000,19 @@
                 "Inker": "Gege Akutami",
                 "Penciller": "Gege Akutami",
                 "Writer": "Gege Akutami"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Kaguya-sama - Love Is War": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
             "imprint": "SHONEN JUMP",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Jujutsu Kaisen",
-            "series_group": "Jujutsu Kaisen",
-            "web_link": "https://viz.com/read/manga/jujutsu-kaisen/all"
-        },
-        "Kaguya-sama - Love Is War": {
-            "black_and_white": "Yes",
+            "publisher": "VIZ",
+            "series": "Kaguya-sama: Love Is War",
+            "series_group": "Kaguya-sama: Love Is War",
+            "web_link": "https://viz.com/kaguya-sama-love-is-war",
             "characters": [
                 "Kaguya Shinomiya",
                 "Miyuki Shirogane",
@@ -1155,19 +2026,19 @@
                 "Inker": "Aka Akasaka",
                 "Penciller": "Aka Akasaka",
                 "Writer": "Aka Akasaka"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Kaguya-sama: Love Is War",
-            "series_group": "Kaguya-sama: Love Is War",
-            "web_link": "https://viz.com/read/manga/kaguya-sama-love-is-war/all"
+            }
         },
         "Kakushigoto - My Dad's Secret Ambition": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Kakushigoto: My Dad's Secret Ambition",
+            "series_group": "Kakushigoto: My Dad's Secret Ambition",
+            "web_link": "https://kodansha.us/series/kakushigoto-my-dads-secret-ambition",
             "characters": [
                 "Kakushi Gotō",
                 "Hime Gotō",
@@ -1184,19 +2055,19 @@
                 "Inker": "Kouji Kumeta",
                 "Penciller": "Kouji Kumeta",
                 "Writer": "Kouji Kumeta"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Kakushigoto: My Dad's Secret Ambition",
-            "series_group": "Kakushigoto: My Dad's Secret Ambition",
-            "web_link": "https://kodansha.us/series/kakushigoto-my-dads-secret-ambition"
+            }
         },
         "Komi Can't Communicate": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Shonen Sunday",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Komi Can't Communicate",
+            "series_group": "Komi Can't Communicate",
+            "web_link": "https://viz.com/komi-can-t-communicate",
             "characters": [
                 "Shōko Komi",
                 "Hitohito Tadano",
@@ -1214,19 +2085,19 @@
                 "Inker": "Tomohito Oda",
                 "Penciller": "Tomohito Oda",
                 "Writer": "Tomohito Oda"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Shonen Sunday",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Komi Can't Communicate",
-            "series_group": "Komi Can't Communicate",
-            "web_link": "https://viz.com/read/manga/komi-can-t-communicate/all"
+            }
         },
         "Land of the Lustrous": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Land of the Lustrous",
+            "series_group": "Land of the Lustrous",
+            "web_link": "https://kodansha.us/series/land-of-the-lustrous",
             "characters": [
                 "Phosphophyllite",
                 "Cinnabar",
@@ -1244,19 +2115,49 @@
                 "Inker": "Haruko Ichikawa",
                 "Penciller": "Haruko Ichikawa",
                 "Writer": "Haruko Ichikawa"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
+            }
+        },
+        "Lycoris Recoil (manga)": {
+            "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Land of the Lustrous",
-            "series_group": "Land of the Lustrous",
-            "web_link": "https://kodansha.us/series/land-of-the-lustrous"
+            "publisher": "Yen Press",
+            "series": "Lycoris Recoil (manga)",
+            "series_group": "Lycoris Recoil",
+            "web_link": "https://yenpress.com/series/lycoris-recoil-manga",
+            "characters": [
+                "Chisato Nishikigi",
+                "Takina Inoue",
+                "Kurumi",
+                "Mika",
+                "Mizuki Nakahara",
+                "Fuki Harukawa",
+                "Sakura Otome",
+                "Kusunoki",
+                "Shinji Yoshimatsu",
+                "Majima"
+            ],
+            "credit": {
+                "Cover": "Yasunori Bizen",
+                "Inker": "Yasunori Bizen",
+                "Penciller": "Yasunori Bizen",
+                "Writer": "Spider Lily"
+            }
         },
         "My Dress-Up Darling": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Square Enix Manga & Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "SQUARE ENIX INC",
+            "series": "My Dress-Up Darling",
+            "series_group": "My Dress-Up Darling",
+            "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-dress-up-darling",
             "characters": [
                 "Wakana Gojo",
                 "Marin Kitagawa",
@@ -1268,19 +2169,19 @@
                 "Inker": "Shinichi Fukuda",
                 "Penciller": "Shinichi Fukuda",
                 "Writer": "Shinichi Fukuda"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Square Enix Manga & Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "SQUARE ENIX INC",
-            "series": "My Dress-Up Darling",
-            "series_group": "My Dress-Up Darling",
-            "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-dress-up-darling"
+            }
         },
         "My Happy Marriage": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Square Enix Manga & Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "SQUARE ENIX INC",
+            "series": "My Happy Marriage",
+            "series_group": "My Happy Marriage",
+            "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-happy-marriage",
             "characters": [
                 "Miyo Saimori",
                 "Kiyoka Kudou",
@@ -1297,19 +2198,19 @@
                 "Inker": "Rito Kohsaka",
                 "Penciller": "Rito Kohsaka",
                 "Writer": "Akumi Agitogi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Square Enix Manga & Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "SQUARE ENIX INC",
-            "series": "My Happy Marriage",
-            "series_group": "My Happy Marriage",
-            "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-happy-marriage"
+            }
         },
         "Nisekoi - False Love": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "Nisekoi: False Love",
+            "series_group": "Nisekoi: False Love",
+            "web_link": "https://viz.com/nisekoi-false-love",
             "characters": [
                 "Raku Ichijo",
                 "Chitoge Kirisaki",
@@ -1327,19 +2228,41 @@
                 "Inker": "Naoshi Komi",
                 "Penciller": "Naoshi Komi",
                 "Writer": "Naoshi Komi"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Now That We Draw": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Now That We Draw",
+            "series_group": "Now That We Draw",
+            "web_link": "https://sevenseasentertainment.com/series/now-that-we-draw/",
+            "characters": [
+                "Uehara Yuuki",
+                "Miyamoto Niina"
+            ],
+            "credit": {
+                "Cover": "Yuwji Kaba",
+                "Inker": "Yuwji Kaba",
+                "Penciller": "Yuwji Kaba",
+                "Writer": "Kyu Takahata"
+            }
+        },
+        "One-Punch Man": {
+            "black_and_white": "Yes",
+            "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "Nisekoi: False Love",
-            "series_group": "Nisekoi: False Love",
-            "web_link": "https://viz.com/read/manga/nisekoi-false-love/all"
-        },
-        "One-Punch Man": {
-            "black_and_white": "Yes",
+            "publisher": "VIZ",
+            "series": "One-Punch Man",
+            "series_group": "One-Punch Man",
+            "web_link": "https://viz.com/one-punch-man",
             "characters": [
                 "Saitama",
                 "Genos",
@@ -1357,19 +2280,49 @@
                 "Inker": "Yusuke Murata",
                 "Penciller": "Yusuke Murata",
                 "Writer": "ONE"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
+            }
+        },
+        "Orb - On the Movements of the Earth": {
+            "black_and_white": "Yes",
+            "genre": "Historical & Period Drama",
+            "imprint": "Seven Seas Entertainment",
             "language": "en",
             "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "One-Punch Man",
-            "series_group": "One-Punch Man",
-            "web_link": "https://viz.com/read/manga/one-punch-man/all"
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Orb: On the Movements of the Earth",
+            "series_group": "Orb: On the Movements of the Earth",
+            "web_link": "https://sevenseasentertainment.com/series/orb-on-the-movements-of-the-earth-omnibus/",
+            "characters": [
+                "Rafal",
+                "Nowak",
+                "Oczy",
+                "Badeni",
+                "Jolenta",
+                "Draka",
+                "Schmidt",
+                "Dhruv",
+                "Albert Brudzewski",
+                "Gras"
+            ],
+            "credit": {
+                "Cover": "Uoto",
+                "Inker": "Uoto",
+                "Penciller": "Uoto",
+                "Writer": "Uoto"
+            }
         },
         "Oshi No Ko": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "[Oshi No Ko]",
+            "series_group": "[Oshi No Ko]",
+            "web_link": "https://yenpress.com/series/oshi-no-ko",
             "characters": [
                 "Aquamarine Hoshino",
                 "Ruby Hoshino",
@@ -1387,19 +2340,19 @@
                 "Inker": "Mengo Yokoyari",
                 "Penciller": "Mengo Yokoyari",
                 "Writer": "Aka Akasaka"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "[Oshi No Ko]",
-            "series_group": "[Oshi No Ko]",
-            "web_link": "https://yenpress.com/series/oshi-no-ko"
+            }
         },
         "Overlord (manga)": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Yen Press",
+            "series": "Overlord (manga)",
+            "series_group": "Overlord",
+            "web_link": "https://yenpress.com/series/overlord-manga",
             "characters": [
                 "Ainz Ooal Gown",
                 "Albedo",
@@ -1417,19 +2370,19 @@
                 "Inker": "Hugin Miyama",
                 "Penciller": "Hugin Miyama",
                 "Writer": "Kugane Maruyama"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Yen Press LLC",
-            "series": "Overlord (manga)",
-            "series_group": "Overlord",
-            "web_link": "https://yenpress.com/series/overlord-manga"
+            }
         },
         "Parallel Paradise": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Ghost Ship",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Parallel Paradise",
+            "series_group": "Parallel Paradise",
+            "web_link": "https://sevenseasentertainment.com/series/parallel-paradise/",
             "characters": [
                 "Youta Tada",
                 "Lumi",
@@ -1447,19 +2400,19 @@
                 "Inker": "Lynn Okamoto",
                 "Penciller": "Lynn Okamoto",
                 "Writer": "Lynn Okamoto"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Ghost Ship",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Parallel Paradise",
-            "series_group": "Parallel Paradise",
-            "web_link": "https://sevenseasentertainment.com/series/parallel-paradise/"
+            }
         },
         "Parallel World Pharmacy": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "One Peace Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "One Peace Books",
+            "series": "Parallel World Pharmacy",
+            "series_group": "Parallel World Pharmacy",
+            "web_link": "https://onepeacebooks.com/jt/Pharmacy.html",
             "characters": [
                 "Farma de Médicis",
                 "Eléonore Bonnefoi",
@@ -1477,19 +2430,19 @@
                 "Inker": "Sei Takano",
                 "Penciller": "Sei Takano",
                 "Writer": "Liz Takayama"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "One Peace Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "One Peace Books",
-            "series": "Parallel World Pharmacy",
-            "series_group": "Parallel World Pharmacy",
-            "web_link": "https://onepeacebooks.com/jt/Pharmacy.html"
+            }
         },
         "Parasyte Full Color Collection": {
             "black_and_white": "Yes",
+            "genre": "Supernatural & Horror",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Parasyte Full Color Collection",
+            "series_group": "Parasyte",
+            "web_link": "https://kodansha.us/series/parasyte-full-color-collection",
             "characters": [
                 "Shinichi Izumi",
                 "Migi",
@@ -1507,19 +2460,19 @@
                 "Inker": "Hitoshi Iwaaki",
                 "Penciller": "Hitoshi Iwaaki",
                 "Writer": "Hitoshi Iwaaki"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Parasyte Full Color Collection",
-            "series_group": "Parasyte",
-            "web_link": "https://kodansha.us/series/parasyte-full-color-collection"
+            }
         },
         "Please Put Them On, Takamine-san": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Yen Press",
+            "series": "Please Put Them On^, Takamine-san",
+            "series_group": "Please Put Them On^, Takamine-san",
+            "web_link": "https://yenpress.com/series/please-put-them-on-takamine-san",
             "characters": [
                 "Takane Takamine",
                 "Koushi Shirota",
@@ -1530,19 +2483,19 @@
                 "Inker": "Yuichi Hiiragi",
                 "Penciller": "Yuichi Hiiragi",
                 "Writer": "Yuichi Hiiragi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Yen Press LLC",
-            "series": "Please Put Them On^, Takamine-san",
-            "series_group": "Please Put Them On^, Takamine-san",
-            "web_link": "https://yenpress.com/series/please-put-them-on-takamine-san"
+            }
         },
         "Rent-A-Girlfriend": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Rent-A-Girlfriend",
+            "series_group": "Rent-A-Girlfriend",
+            "web_link": "https://kodansha.us/series/rent-a-girlfriend",
             "characters": [
                 "Kazuya Kinoshita",
                 "Chizuru Mizuhara",
@@ -1555,19 +2508,19 @@
                 "Inker": "Reiji Miyajima",
                 "Penciller": "Reiji Miyajima",
                 "Writer": "Reiji Miyajima"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Shikimori's Not Just a Cutie": {
+            "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
             "imprint": "Kodansha Comics",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Rent-A-Girlfriend",
-            "series_group": "Rent-A-Girlfriend",
-            "web_link": "https://kodansha.us/series/rent-a-girlfriend"
-        },
-        "Shikimori's Not Just a Cutie": {
-            "black_and_white": "Yes",
+            "publisher": "Kodansha",
+            "series": "Shikimori's Not Just a Cutie",
+            "series_group": "Shikimori's Not Just a Cutie",
+            "web_link": "https://kodansha.us/series/shikimoris-not-just-a-cutie",
             "characters": [
                 "Yuuki Izumi",
                 "Miyako Shikimori",
@@ -1585,19 +2538,19 @@
                 "Inker": "Keigo Maki",
                 "Penciller": "Keigo Maki",
                 "Writer": "Keigo Maki"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Shikimori's Not Just a Cutie",
-            "series_group": "Shikimori's Not Just a Cutie",
-            "web_link": "https://kodansha.us/series/shikimoris-not-just-a-cutie"
+            }
         },
         "Skeleton Knight in Another World (Manga)": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Skeleton Knight in Another World (Manga)",
+            "series_group": "Skeleton Knight in Another World",
+            "web_link": "https://sevenseasentertainment.com/series/skeleton-knight-in-another-world-manga/",
             "characters": [
                 "Arc",
                 "Ariane Glenys Maple",
@@ -1615,19 +2568,19 @@
                 "Inker": "Akira Sawano",
                 "Penciller": "Akira Sawano",
                 "Writer": "Ennki Hakari"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Skeleton Knight in Another World (Manga)",
-            "series_group": "Skeleton Knight in Another World",
-            "web_link": "https://sevenseasentertainment.com/series/skeleton-knight-in-another-world-manga/"
+            }
         },
         "SPRIGGAN - Deluxe Edition": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "SPRIGGAN: Deluxe Edition",
+            "series_group": "SPRIGGAN",
+            "web_link": "https://sevenseasentertainment.com/series/spriggan-deluxe-edition/",
             "characters": [
                 "Yu Ominae",
                 "Jean Jacquemonde",
@@ -1645,19 +2598,19 @@
                 "Inker": "Ryōji Minagawa",
                 "Penciller": "Ryōji Minagawa",
                 "Writer": "Hiroshi Takashige"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "SPRIGGAN: Deluxe Edition",
-            "series_group": "SPRIGGAN",
-            "web_link": "https://sevenseasentertainment.com/series/spriggan-deluxe-edition/"
+            }
         },
         "Summertime Rendering": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "UDON Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "UDON Entertainment",
+            "series": "Summertime Rendering",
+            "series_group": "Summertime Rendering",
+            "web_link": "https://store.udonentertainment.com/collections/manga/products/summertime-rendering-complete-manga-collection",
             "characters": [
                 "Shinpei Ajiro",
                 "Ushio Kofune",
@@ -1675,19 +2628,45 @@
                 "Inker": "Yasuki Tanaka",
                 "Penciller": "Yasuki Tanaka",
                 "Writer": "Yasuki Tanaka"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "UDON Entertainment",
+            }
+        },
+        "Suzume": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Kodansha Comics",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "UDON Entertainment",
-            "series": "Summertime Rendering",
-            "series_group": "Summertime Rendering",
-            "web_link": "https://store.udonentertainment.com/collections/manga/products/summertime-rendering-complete-manga-collection"
+            "publisher": "Kodansha",
+            "series": "Suzume",
+            "series_group": "Suzume",
+            "web_link": "https://kodansha.us/series/suzume",
+            "characters": [
+                "Suzume Iwato",
+                "Souta Munakata",
+                "Tamaki Iwato",
+                "Tomoya Serizawa",
+                "Hitsujirou Munakata",
+                "Daijin"
+            ],
+            "credit": {
+                "Cover": "Denki Amashima",
+                "Inker": "Denki Amashima",
+                "Penciller": "Denki Amashima",
+                "Writer": "Makoto Shinkai"
+            }
         },
         "Sweet Reincarnation": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "Sweet Reincarnation",
+            "series_group": "Sweet Reincarnation",
+            "web_link": "https://j-novel.club/series/sweet-reincarnation",
             "characters": [
                 "Pastry Mill Morteln",
                 "Marcarullo Doroba",
@@ -1705,19 +2684,19 @@
                 "Inker": "Iida Seriko",
                 "Penciller": "Iida Seriko",
                 "Writer": "Tomizawa Midori"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "J-Novel Club",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "J-Novel Club",
-            "series": "Sweet Reincarnation",
-            "series_group": "Sweet Reincarnation",
-            "web_link": "https://j-novel.club/series/sweet-reincarnation"
+            }
         },
         "The Eminence in Shadow (manga)": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "The Eminence in Shadow (manga)",
+            "series_group": "The Eminence in Shadow",
+            "web_link": "https://yenpress.com/series/the-eminence-in-shadow-manga",
             "characters": [
                 "Cid Kagenou",
                 "Alpha",
@@ -1735,19 +2714,19 @@
                 "Inker": "Anri Sakano",
                 "Penciller": "Anri Sakano",
                 "Writer": "Daisuke Aizawa"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "The Eminence in Shadow (manga)",
-            "series_group": "The Eminence in Shadow",
-            "web_link": "https://yenpress.com/series/the-eminence-in-shadow-manga"
+            }
         },
         "The Faraway Paladin (Manga)": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "The Faraway Paladin (Manga)",
+            "series_group": "The Faraway Paladin",
+            "web_link": "https://j-novel.club/series/the-faraway-paladin-manga",
             "characters": [
                 "William G. Maryblood",
                 "Blood",
@@ -1766,19 +2745,41 @@
                 "Inker": "Mutsumi Okubashi",
                 "Penciller": "Mutsumi Okubashi",
                 "Writer": "Kanata Yanagino"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "J-Novel Club",
+            }
+        },
+        "The Garden of Words": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "Teen",
-            "publisher": "J-Novel Club",
-            "series": "The Faraway Paladin (Manga)",
-            "series_group": "The Faraway Paladin",
-            "web_link": "https://j-novel.club/series/the-faraway-paladin-manga"
+            "publisher": "Kodansha",
+            "series": "The Garden of Words",
+            "series_group": "The Garden of Words",
+            "web_link": "https://kodansha.us/series/the-garden-of-words",
+            "characters": [
+                "Takao Akizuki",
+                "Yukari Yukino"
+            ],
+            "credit": {
+                "Cover": "Midori Motohashi",
+                "Inker": "Midori Motohashi",
+                "Penciller": "Midori Motohashi",
+                "Writer": "Makoto Shinkai"
+            }
         },
         "The Girl Who Leapt Through Time": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "VIZ Select",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "VIZ",
+            "series": "The Girl Who Leapt Through Time",
+            "series_group": "The Girl Who Leapt Through Time",
+            "web_link": "https://viz.com/girl-who-leapt-through-time",
             "characters": [
                 "Makoto Konno",
                 "Chiaki Mamiya",
@@ -1794,19 +2795,19 @@
                 "Inker": "Yasutaka Tsusui",
                 "Penciller": "Yasutaka Tsusui",
                 "Writer": "Ranmaru Kotone"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "VIZ Select",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "VIZ Media LLC",
-            "series": "The Girl Who Leapt Through Time",
-            "series_group": "The Girl Who Leapt Through Time",
-            "web_link": "https://viz.com/read/manga/girl-who-leapt-through-time/all"
+            }
         },
         "The Idaten Deities Know Only Peace": {
             "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "The Idaten Deities Know Only Peace",
+            "series_group": "The Idaten Deities Know Only Peace",
+            "web_link": "https://sevenseasentertainment.com/series/the-idaten-deities-know-only-peace/",
             "characters": [
                 "Hayato",
                 "Ysley",
@@ -1824,19 +2825,19 @@
                 "Inker": "coolkyousinnjya",
                 "Penciller": "coolkyousinnjya",
                 "Writer": "Amahara"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "The Idaten Deities Know Only Peace",
-            "series_group": "The Idaten Deities Know Only Peace",
-            "web_link": "https://sevenseasentertainment.com/series/the-idaten-deities-know-only-peace/"
+            }
         },
         "The Promised Neverland": {
             "black_and_white": "Yes",
+            "genre": "Mystery & Thriller",
+            "imprint": "SHONEN JUMP",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "VIZ",
+            "series": "The Promised Neverland",
+            "series_group": "The Promised Neverland",
+            "web_link": "https://viz.com/the-promised-neverland",
             "characters": [
                 "Emma",
                 "Ray",
@@ -1854,19 +2855,19 @@
                 "Inker": "Posuka Demizu",
                 "Penciller": "Posuka Demizu",
                 "Writer": "Kaiu Shirai"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "VIZ Media LLC",
-            "series": "The Promised Neverland",
-            "series_group": "The Promised Neverland",
-            "web_link": "https://viz.com/read/manga/promised-neverland/all"
+            }
         },
         "The Rising of the Shield Hero - The Manga Companion": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "One Peace Books",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "One Peace Books",
+            "series": "The Rising of the Shield Hero: The Manga Companion",
+            "series_group": "The Rising of the Shield Hero",
+            "web_link": "https://onepeacebooks.com/jt/ShieldHeroManga.html",
             "characters": [
                 "Naofumi Iwatani",
                 "Raphtalia",
@@ -1884,19 +2885,19 @@
                 "Inker": "Aiya Kyu",
                 "Penciller": "Aiya Kyu",
                 "Writer": "Aneko Yusagi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "One Peace Books",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "One Peace Books",
-            "series": "The Rising of the Shield Hero: The Manga Companion",
-            "series_group": "The Rising of the Shield Hero",
-            "web_link": "https://onepeacebooks.com/jt/ShieldHeroManga.html"
+            }
         },
         "The Sacred Blacksmith": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "The Sacred Blacksmith",
+            "series_group": "The Sacred Blacksmith",
+            "web_link": "https://sevenseasentertainment.com/series/the-sacred-blacksmith/",
             "characters": [
                 "Cecily Campbell",
                 "Luke Ainsworth",
@@ -1914,19 +2915,19 @@
                 "Inker": "Kōtarō Yamada",
                 "Penciller": "Kōtarō Yamada",
                 "Writer": "Isao Miura"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
+            }
+        },
+        "The Witches of Adamas": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Ghost Ship",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
-            "series": "The Sacred Blacksmith",
-            "series_group": "The Sacred Blacksmith",
-            "web_link": "https://sevenseasentertainment.com/series/the-sacred-blacksmith/"
-        },
-        "The Witches of Adamas": {
-            "black_and_white": "Yes",
+            "series": "The Witches of Adamas",
+            "series_group": "The Witches of Adamas",
+            "web_link": "https://sevenseasentertainment.com/series/the-witches-of-adamas/",
             "characters": [
                 "Satou Yukinari",
                 "Nekomori Ayane",
@@ -1938,19 +2939,19 @@
                 "Inker": "Yu Imai",
                 "Penciller": "Yu Imai",
                 "Writer": "Yu Imai"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Ghost Ship",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "The Witches of Adamas",
-            "series_group": "The Witches of Adamas",
-            "web_link": "https://sevenseasentertainment.com/series/the-witches-of-adamas/"
+            }
         },
         "The Wolf Never Sleeps": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "The Wolf Never Sleeps",
+            "series_group": "The Wolf Never Sleeps",
+            "web_link": "https://yenpress.com/series/the-wolf-never-sleeps",
             "characters": [
                 "Lecan",
                 "Sheila",
@@ -1961,19 +2962,19 @@
                 "Inker": "Gonbe Shinkawa",
                 "Penciller": "Gonbe Shinkawa",
                 "Writer": "Shienbishop"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "The Wolf Never Sleeps",
-            "series_group": "The Wolf Never Sleeps",
-            "web_link": "https://yenpress.com/series/the-wolf-never-sleeps"
+            }
         },
         "This Art Club Has a Problem!": {
             "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "This Art Club Has a Problem!",
+            "series_group": "This Art Club Has a Problem!",
+            "web_link": "https://j-novel.club/series/this-art-club-has-a-problem",
             "characters": [
                 "Mizuki Usami",
                 "Subaru Uchimaki",
@@ -1987,19 +2988,19 @@
                 "Inker": "Imigimuru",
                 "Penciller": "Imigimuru",
                 "Writer": "Imigimuru"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "J-Novel Club",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "J-Novel Club",
-            "series": "This Art Club Has a Problem!",
-            "series_group": "This Art Club Has a Problem!",
-            "web_link": "https://j-novel.club/series/this-art-club-has-a-problem"
+            }
         },
         "Time Stop Hero": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Seven Seas Entertainment",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Seven Seas Entertainment",
+            "series": "Time Stop Hero",
+            "series_group": "Time Stop Hero",
+            "web_link": "https://sevenseasentertainment.com/series/time-stop-hero/",
             "characters": [
                 "Kuzuno Sekai",
                 "Niña",
@@ -2017,19 +3018,19 @@
                 "Inker": "Yasunori Mitsunaga",
                 "Penciller": "Yasunori Mitsunaga",
                 "Writer": "Yasunori Mitsunaga"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Time Stop Hero",
-            "series_group": "Time Stop Hero",
-            "web_link": "https://sevenseasentertainment.com/series/time-stop-hero/"
+            }
         },
         "Uncle from Another World": {
             "black_and_white": "Yes",
+            "genre": "Action & Adventure",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Uncle from Another World",
+            "series_group": "Uncle from Another World",
+            "web_link": "https://yenpress.com/series/uncle-from-another-world",
             "characters": [
                 "Yōsuke Shibazaki",
                 "Takafumi Takaoka",
@@ -2046,19 +3047,19 @@
                 "Inker": "Hotondoshindeiru",
                 "Penciller": "Hotondoshindeiru",
                 "Writer": "Hotondoshindeiru"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Uncle from Another World",
-            "series_group": "Uncle from Another World",
-            "web_link": "https://yenpress.com/series/uncle-from-another-world"
+            }
         },
         "Vinland Saga": {
             "black_and_white": "Yes",
+            "genre": "Historical & Period Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Vinland Saga",
+            "series_group": "Vinland Saga",
+            "web_link": "https://kodansha.us/series/vinland-saga",
             "characters": [
                 "Thorfinn",
                 "Askeladd",
@@ -2076,19 +3077,41 @@
                 "Inker": "Makoto Yukimura",
                 "Penciller": "Makoto Yukimura",
                 "Writer": "Makoto Yukimura"
-            },
-            "genre": "Comics & Graphic Novels",
+            }
+        },
+        "Voices of a Distant Star": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "Voices of a Distant Star",
+            "series_group": "Voices of a Distant Star",
+            "web_link": "https://kodansha.us/series/voices-of-a-distant-star",
+            "characters": [
+                "Mikako Nagamine",
+                "Noboru Terao"
+            ],
+            "credit": {
+                "Cover": "Mizu Sahara",
+                "Inker": "Mizu Sahara",
+                "Penciller": "Mizu Sahara",
+                "Writer": "Makoto Shinkai"
+            }
+        },
+        "Welcome Back, Alice": {
+            "black_and_white": "Yes",
+            "genre": "Psychological & Philosophical",
             "imprint": "Kodansha Comics",
             "language": "en",
             "manga": "Yes",
             "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Vinland Saga",
-            "series_group": "Vinland Saga",
-            "web_link": "https://kodansha.us/series/vinland-saga"
-        },
-        "Welcome Back, Alice": {
-            "black_and_white": "Yes",
+            "publisher": "Kodansha",
+            "series": "Welcome Back^, Alice",
+            "series_group": "Welcome Back^, Alice",
+            "web_link": "https://kodansha.us/series/welcome-back-alice",
             "characters": [
                 "Yohei Kamehara",
                 "Yui Mitani",
@@ -2099,19 +3122,19 @@
                 "Inker": "Shuzo Oshimi",
                 "Penciller": "Shuzo Oshimi",
                 "Writer": "Shuzo Oshimi"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Welcome Back^, Alice",
-            "series_group": "Welcome Back^, Alice",
-            "web_link": "https://kodansha.us/series/welcome-back-alice"
+            }
         },
         "Wolf Children - Ame & Yuki": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Wolf Children: Ame & Yuki",
+            "series_group": "Wolf Children",
+            "web_link": "https://yenpress.com/series/wolf-children-ame-yuki",
             "characters": [
                 "Hana",
                 "Ookami",
@@ -2126,19 +3149,19 @@
                 "Inker": "Yuu",
                 "Penciller": "Yuu",
                 "Writer": "Mamoru Hosoda"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": "Yes",
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press LLC",
-            "series": "Wolf Children: Ame & Yuki",
-            "series_group": "Wolf Children",
-            "web_link": "https://yenpress.com/series/wolf-children-ame-yuki"
+            }
         },
         "Your Lie in April": {
             "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "M",
+            "publisher": "Kodansha",
+            "series": "Your Lie in April",
+            "series_group": "Your Lie in April",
+            "web_link": "https://kodansha.us/series/your-lie-in-april",
             "characters": [
                 "Kōsei Arima",
                 "Kaori Miyazono",
@@ -2156,72 +3179,39 @@
                 "Inker": "Naoshi Arakawa",
                 "Penciller": "Naoshi Arakawa",
                 "Writer": "Naoshi Arakawa"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Kodansha Comics",
+            }
+        },
+        "your name. (manga)": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Yen Press",
             "language": "en",
             "manga": "Yes",
-            "maturity_rating": "M",
-            "publisher": "Kodansha USA Publishing",
-            "series": "Your Lie in April",
-            "series_group": "Your Lie in April",
-            "web_link": "https://kodansha.us/series/your-lie-in-april"
-        }
-    },
-    "Comics": {
-        "300": {
-            "black_and_white": "No",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "your name. (manga)",
+            "series_group": "your name.",
+            "web_link": "https://yenpress.com/series/your-name-manga",
             "characters": [
-                "Leonidas I",
-                "Xerxes I",
-                "Ephialtes",
-                "Dilios",
-                "Stelios"
+                "Taki Tachibana",
+                "Mitsuha Miyamizu",
+                "Katsuhiko Teshigawara",
+                "Sayaka Natori",
+                "Tsukasa Fujii",
+                "Shinta Takagi",
+                "Miki Okudera",
+                "Hitoha Miyamizu",
+                "Yotsuha Miyamizu",
+                "Toshiki Miyamizu",
+                "Futaba Miyamizu",
+                "Yukari Yukino"
             ],
             "credit": {
-                "Cover": "Frank Miller",
-                "Inker": "Lynn Varley",
-                "Penciller": "Frank Miller",
-                "Writer": "Frank Miller"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Dark Horse Comics",
-            "language": "en",
-            "manga": "No",
-            "maturity_rating": "M",
-            "publisher": "Dark Horse Comics",
-            "series": "300",
-            "series_group": "300",
-            "web_link": "https://digital.darkhorse.com/books/ab233cfd86d14b6fb237ef3ef3d8669e/300-hc"
-        },
-        "Xerxes - The Fall of the House of Darius and the Rise of Alexander": {
-            "black_and_white": "No",
-            "characters": [
-                "Darius I",
-                "Themistokles",
-                "Aeskylos",
-                "Miltiades",
-                "Xerxes",
-                "Esther",
-                "Darius III",
-                "Alexander the Great",
-                "Bessus"
-            ],
-            "credit": {
-                "Cover": "Frank Miller",
-                "Inker": "Alex Sinclair",
-                "Penciller": "Frank Miller",
-                "Writer": "Frank Miller"
-            },
-            "genre": "Comics & Graphic Novels",
-            "imprint": "Dark Horse Comics",
-            "language": "en",
-            "manga": "No",
-            "maturity_rating": "M",
-            "publisher": "Dark Horse Comics",
-            "series": "Xerxes: The Fall of the House of Darius and the Rise of Alexander",
-            "series_group": "300",
-            "web_link": "https://digital.darkhorse.com/books/712978cbc685406a998e9328bd8e6471/xerxes-the-fall-of-the-house-of-darius-and-the-rise-of-alexander"
+                "Cover": "Ranmaru Kotone",
+                "Inker": "Ranmaru Kotone",
+                "Penciller": "Ranmaru Kotone",
+                "Writer": "Makoto Shinkai"
+            }
         }
     }
 }
