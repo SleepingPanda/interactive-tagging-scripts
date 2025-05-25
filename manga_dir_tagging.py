@@ -9,6 +9,9 @@ from colorama import Fore, init
 
 init(autoreset=True)
 
+RECENT_DAYS = 7
+DEFAULT_METADATA_FILE = "manga.json"
+
 
 def list_dirs(directory="."):
     """Return a sorted list of subdirectories in the specified directory."""
@@ -36,17 +39,17 @@ def choose_dir(directories):
         print(f"{Fore.RED}Invalid choice. Please enter a number from the list.")
 
 
-def get_recent_cbz_files(directory, days=7):
-    """Return list of .cbz files modified in the last `days` days."""
-    threshold = time.time() - (days * 86400)
-    recent_files = []
-    for root, _, files in os.walk(directory):
-        for f in files:
-            if f.endswith(".cbz"):
-                full_path = os.path.join(root, f)
+def get_cbz_files(directory, recent_only=False, days=RECENT_DAYS):
+    """Get .cbz files in a directory, optionally filtering by modification time."""
+    files = []
+    threshold = time.time() - days * 86400 if recent_only else 0
+    for root, _, filenames in os.walk(directory):
+        for name in filenames:
+            if name.endswith(".cbz"):
+                full_path = os.path.join(root, name)
                 if os.path.getmtime(full_path) >= threshold:
-                    recent_files.append(full_path)
-    return recent_files
+                    files.append(full_path)
+    return files
 
 
 def format_metadata(metadata):
@@ -88,7 +91,7 @@ def update_permissions(directory):
 
 
 def process_dir(directory, book_data, recent_only=False):
-    """Tag CBZ files in a directory using metadata from book_data."""
+    """Tag files in the directory using comictagger."""
     book_name = os.path.basename(directory)
     metadata = book_data.get(book_name)
 
@@ -96,29 +99,25 @@ def process_dir(directory, book_data, recent_only=False):
         print(f"{Fore.RED}No metadata found for '{book_name}' in manga.json.")
         return
 
-    if recent_only:
-        cbz_files = get_recent_cbz_files(directory)
-        if not cbz_files:
-            print(f"{Fore.YELLOW}No recent .cbz files found in {directory}. Skipping.")
-            return
-    else:
-        # Pass the directory so comictagger will find all CBZ files inside
-        cbz_files = [directory]
+    cbz_files = get_cbz_files(directory, recent_only=recent_only)
+    if not cbz_files:
+        print(f"{Fore.YELLOW}No .cbz files to process in {directory}.")
+        return
 
-    print(f"{Fore.YELLOW}Updating metadata for: {book_name}")
-    tag_command = [
+    command = [
         "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
         "-m", format_metadata(metadata),
     ] + cbz_files
 
-    print(f"{Fore.CYAN}Command: {' '.join(tag_command)}")
+    print(f"{Fore.YELLOW}Tagging: {book_name}")
+    print(f"{Fore.CYAN}{' '.join(command)}")
 
     try:
-        subprocess.run(tag_command, check=True)
+        subprocess.run(command, check=True)
         for path in cbz_files:
             update_permissions(path)
     except subprocess.CalledProcessError as e:
-        print(f"{Fore.RED}Failed to tag: {e}")
+        print(f"{Fore.RED}Tagging failed: {e}")
 
 
 def load_metadata(path):
@@ -136,10 +135,10 @@ def load_metadata(path):
 
 
 def main():
-    json_path = input(f"{Fore.RED}Path to manga.json (press enter for 'manga.json'): ").strip() or "manga.json"
-    book_data = load_metadata(json_path)
+    metadata_path = input(f"{Fore.RED}Path to manga.json (enter for default): ").strip() or DEFAULT_METADATA_FILE
+    book_data = load_metadata(metadata_path)
 
-    base_dir = input(f"{Fore.RED}Directory to process (press enter for current): ").strip() or "."
+    base_dir = input(f"{Fore.RED}Directory to process (enter for current): ").strip() or "."
     if not os.path.exists(base_dir):
         print(f"{Fore.RED}The directory '{base_dir}' does not exist.")
         return
@@ -154,14 +153,14 @@ def main():
             process_dir(os.path.join(base_dir, subdir), book_data)
         print(f"{Fore.GREEN}Finished processing all directories.")
     else:
-        while subdirs:
+        while True:
             selected = choose_dir(subdirs)
             if selected is None:
                 break
             recent_only = input(f"{Fore.RED}Process only recent files in '{selected}'? (y/n): ").strip().lower().startswith("y")
             process_dir(os.path.join(base_dir, selected), book_data, recent_only=recent_only)
 
-        print(f"{Fore.GREEN}No more directories left to process.")
+        print(f"{Fore.GREEN}Finished manual processing.")
 
 
 if __name__ == "__main__":
