@@ -870,7 +870,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 1",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 1 If there aren't any books, I'll just have make some!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -897,7 +897,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 2",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 2 I'll even join the temple to read books!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -927,7 +927,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 3",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 3 Let's spread books though the duchy!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -957,7 +957,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm (Manga) Part 4",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 4 I want to save the Royal Academy's library!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -1037,6 +1037,34 @@
                 "Inker": "Oh! Great",
                 "Penciller": "Oh! Great",
                 "Writer": "NISIOISIN"
+            }
+        },
+        "Barakamon": {
+            "black_and_white": "Yes",
+            "genre": "Comedy & Slice of Life",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "Barakamon",
+            "series_group": "Barakamon",
+            "web_link": "https://yenpress.com/series/barakamon",
+            "characters": [
+                "Seishu Handa",
+                "Naru Kotoishi",
+                "Miwa Yamamura",
+                "Tamako Arai",
+                "Hiroshi Kido",
+                "Hina Kubota",
+                "Kentaro Ohama",
+                "Akihiko Ara"
+            ],
+            "credit": {
+                "Cover": "Satsuki Yoshino",
+                "Inker": "Satsuki Yoshino",
+                "Penciller": "Satsuki Yoshino",
+                "Writer": "Satsuki Yoshino"
             }
         },
         "Bleach": {
