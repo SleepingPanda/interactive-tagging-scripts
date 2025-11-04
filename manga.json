@@ -870,7 +870,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 1 If there aren't any books, I'll just have make some!",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ If there aren't any books, I'll just have to make some!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -897,7 +897,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 2 I'll even join the temple to read books!",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ I'll even join the temple to read books!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -927,7 +927,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 3 Let's spread books though the duchy!",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Let's spread books through the duchy!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -957,7 +957,7 @@
             "manga": "Yes",
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Part 4 I want to save the Royal Academy's library!",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ I want to save the Royal Academy's library!",
             "series_group": "Ascendance of a Bookworm",
             "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
             "characters": [
@@ -2775,6 +2775,36 @@
                 "Writer": "Kanata Yanagino"
             }
         },
+        "The Fragrant Flower Blooms With Dignity": {
+            "black_and_white": "Yes",
+            "genre": "Romance & Drama",
+            "imprint": "Kodansha Comics",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "Kodansha",
+            "series": "The Fragrant Flower Blooms With Dignity",
+            "series_group": "The Fragrant Flower Blooms With Dignity",
+            "web_link": "https://kodansha.us/series/the-fragrant-flower-blooms-with-dignity",
+            "characters": [
+                "Rintaro Tsumugi",
+                "Kaoruko Waguri",
+                "Shohei Usami",
+                "Saku Natsusawa",
+                "Ayato Yorita",
+                "Subaru Hoshina",
+                "Madoka Yuzuhara",
+                "Kyoko Tsumugi",
+                "Keiichiro Tsumugi",
+                "Sotaro Tsumugi"
+            ],
+            "credit": {
+                "Cover": "Saka Mikami",
+                "Inker": "Saka Mikami",
+                "Penciller": "Saka Mikami",
+                "Writer": "Saka Mikami"
+            }
+        },
         "The Garden of Words": {
             "black_and_white": "Yes",
             "genre": "Romance & Drama",
@@ -2943,6 +2973,36 @@
                 "Inker": "Kōtarō Yamada",
                 "Penciller": "Kōtarō Yamada",
                 "Writer": "Isao Miura"
+            }
+        },
+        "The Water Magician (Manga)": {
+            "black_and_white": "Yes",
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": "Yes",
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "The Water Magician",
+            "series_group": "The Water Magician",
+            "web_link": "https://j-novel.club/series/the-water-magician-manga",
+            "characters": [
+                "Ryō",
+                "Abel",
+                "Sera",
+                "Nils",
+                "Eto",
+                "Amon",
+                "Lihya",
+                "Rin",
+                "Hugh McGrath",
+                "Nina"
+            ],
+            "credit": {
+                "Cover": "BOKUTENGO",
+                "Inker": "BOKUTENGO",
+                "Penciller": "BOKUTENGO",
+                "Writer": "Tadashi Kubō"
             }
         },
         "The Witches of Adamas": {

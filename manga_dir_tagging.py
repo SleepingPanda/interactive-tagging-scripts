@@ -31,16 +31,16 @@ def choose_dir(directories):
         print(f"{Fore.YELLOW}Available Directories:")
         for i, d in enumerate(directories, 1):
             print(f"{Fore.RED}{i}. {Fore.GREEN}{d}")
-        choice = input(f"{Fore.RED}Choose a directory # or type 'exit' to quit: ")
-        if choice.lower() == "exit":
+        choice = input(f"{Fore.RED}Choose a directory # or 'q' to quit: ")
+        if choice.lower() == "q":
             return None
         if choice.isdigit() and 1 <= int(choice) <= len(directories):
             return directories[int(choice) - 1]
-        print(f"{Fore.RED}Invalid choice. Please enter a number from the list.")
+        print(f"{Fore.RED}Invalid choice. Please try a # from the list.")
 
 
 def get_cbz_files(directory, recent_only=False, days=RECENT_DAYS):
-    """Get .cbz files in a directory, optionally filtering by modification time."""
+    """Get .cbz files in a directory"""
     files = []
     threshold = time.time() - days * 86400 if recent_only else 0
     for root, _, filenames in os.walk(directory):
@@ -52,25 +52,34 @@ def get_cbz_files(directory, recent_only=False, days=RECENT_DAYS):
     return files
 
 
+def escape_value(value):
+    """Escape commas and equal signs in metadata values."""
+    if isinstance(value, str):
+        return value.replace(",", "^,").replace("=", "^=")
+    return value
+
+
 def format_metadata(metadata):
     """Convert a metadata dict to a ComicTagger command metadata string."""
     credit = metadata.get("credit", {})
     characters = metadata.get("characters", [])
 
-    credit_str = ", ".join(f"credit={role}:{name}" for role, name in credit.items())
+    credit_str = ", ".join(
+        f"credit={role}:{name}" for role, name in credit.items()
+    )
     characters_str = "^,".join(characters)
 
     return (
-        f"manga={metadata.get('manga', '')},"
+        f"manga={escape_value(metadata.get('manga', ''))},"
         f"black_and_white={metadata.get('black_and_white', '')},"
         f"language={metadata.get('language', '')},"
-        f"genre={metadata.get('genre', '')},"
+        f"genre={escape_value(metadata.get('genre', ''))},"
         f"maturity_rating={metadata.get('maturity_rating', '')},"
-        f"publisher={metadata.get('publisher', '')},"
-        f"imprint={metadata.get('imprint', '')},"
-        f"series={metadata.get('series', '')},"
-        f"series_group={metadata.get('series_group', '')},"
-        f"web_link={metadata.get('web_link', '')},"
+        f"publisher={escape_value(metadata.get('publisher', ''))},"
+        f"imprint={escape_value(metadata.get('imprint', ''))},"
+        f"series={escape_value(metadata.get('series', ''))},"
+        f"series_group={escape_value(metadata.get('series_group', ''))},"
+        f"web_link={escape_value(metadata.get('web_link', ''))},"
         f"{credit_str},characters={characters_str}"
     )
 
@@ -82,7 +91,10 @@ def update_permissions(directory):
 
     try:
         subprocess.run(
-            ["find", directory, "-type", "f", "-name", "*.cbz", "-exec", "chmod", "644", "{}", "+"],
+            [
+                "find", directory, "-type", "f", "-name",
+                "*.cbz", "-exec", "chmod", "644", "{}", "+"
+            ],
             check=True
         )
         subprocess.run(["chown", "-R", "1000:1001", directory], check=True)
@@ -135,10 +147,14 @@ def load_metadata(path):
 
 
 def main():
-    metadata_path = input(f"{Fore.RED}Path to manga.json (enter for default): ").strip() or DEFAULT_METADATA_FILE
+    metadata_path = input(
+        f"{Fore.RED}Path to manga.json (enter for default): "
+    ).strip() or DEFAULT_METADATA_FILE
     book_data = load_metadata(metadata_path)
 
-    base_dir = input(f"{Fore.RED}Directory to process (enter for current): ").strip() or "."
+    base_dir = input(
+        f"{Fore.RED}Directory to process (enter for current): "
+    ).strip() or "."
     if not os.path.exists(base_dir):
         print(f"{Fore.RED}The directory '{base_dir}' does not exist.")
         return
@@ -148,7 +164,9 @@ def main():
         print(f"{Fore.RED}No subdirectories found in '{base_dir}'.")
         return
 
-    if input(f"{Fore.RED}Process all subdirectories? (y/n): ").lower().startswith("y"):
+    if input(
+        f"{Fore.RED}Process all subdirectories? (y/n): "
+    ).lower().startswith("y"):
         for subdir in subdirs:
             process_dir(os.path.join(base_dir, subdir), book_data)
         print(f"{Fore.GREEN}Finished processing all directories.")
@@ -157,8 +175,14 @@ def main():
             selected = choose_dir(subdirs)
             if selected is None:
                 break
-            recent_only = input(f"{Fore.RED}Process only recent files in '{selected}'? (y/n): ").strip().lower().startswith("y")
-            process_dir(os.path.join(base_dir, selected), book_data, recent_only=recent_only)
+            recent_only = input(
+                f"{Fore.RED}Process only recent files in '{selected}'? (y/n): "
+            ).strip().lower().startswith("y")
+            process_dir(
+                os.path.join(
+                    base_dir, selected
+                ), book_data, recent_only=recent_only
+            )
 
         print(f"{Fore.GREEN}Finished manual processing.")
 
