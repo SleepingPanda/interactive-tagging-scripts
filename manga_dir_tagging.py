@@ -1,9 +1,14 @@
+#!/usr/bin/env python3
+import argparse
 import json
+import logging
 import os
 import platform
 import subprocess
 import sys
 import time
+from pathlib import Path
+from typing import Dict, List, Any, Optional
 
 from colorama import Fore, init
 
@@ -13,62 +18,56 @@ RECENT_DAYS = 7
 DEFAULT_METADATA_FILE = "manga.json"
 
 
-def list_dirs(directory="."):
-    """Return a sorted list of subdirectories in the specified directory."""
-    try:
-        return sorted(
-            d for d in os.listdir(directory)
-            if os.path.isdir(os.path.join(directory, d))
-        )
-    except FileNotFoundError:
-        print(f"{Fore.RED}Directory '{directory}' not found.")
+def setup_logging(verbose: bool) -> None:
+    """Configure logging output."""
+    logging.basicConfig(
+        level=logging.DEBUG if verbose else logging.INFO,
+        format=f"{Fore.CYAN}[%(levelname)s]{Fore.RESET} %(message)s",
+    )
+
+
+def list_dirs(directory: Path) -> List[Path]:
+    """Return a sorted list of subdirectories."""
+    if not directory.exists():
+        logging.error(f"Directory '{directory}' does not exist.")
         return []
+    return sorted([d for d in directory.iterdir() if d.is_dir()])
 
 
-def choose_dir(directories):
-    """Prompt the user to choose a directory from a list."""
+def choose_dir(directories: List[Path]) -> Optional[Path]:
+    """Prompt the user to select a subdirectory interactively."""
     while True:
         print(f"{Fore.YELLOW}Available Directories:")
-        for i, d in enumerate(directories, 1):
-            print(f"{Fore.RED}{i}. {Fore.GREEN}{d}")
-        choice = input(f"{Fore.RED}Choose a directory # or 'q' to quit: ")
+        for i, d in enumerate(directories, start=1):
+            print(f"{Fore.RED}{i}. {Fore.GREEN}{d.name}")
+        choice = input(f"{Fore.RED}Choose a directory # or 'q' to quit: ").strip()
         if choice.lower() == "q":
             return None
         if choice.isdigit() and 1 <= int(choice) <= len(directories):
             return directories[int(choice) - 1]
-        print(f"{Fore.RED}Invalid choice. Please try a # from the list.")
+        print(f"{Fore.RED}Invalid choice. Please try again.")
 
 
-def get_cbz_files(directory, recent_only=False, days=RECENT_DAYS):
-    """Get .cbz files in a directory"""
-    files = []
+def get_cbz_files(directory: Path, recent_only: bool = False, days: int = RECENT_DAYS) -> List[Path]:
+    """Return list of .cbz files within a directory."""
     threshold = time.time() - days * 86400 if recent_only else 0
-    for root, _, filenames in os.walk(directory):
-        for name in filenames:
-            if name.endswith(".cbz"):
-                full_path = os.path.join(root, name)
-                if os.path.getmtime(full_path) >= threshold:
-                    files.append(full_path)
-    return files
+    return [
+        f for f in directory.rglob("*.cbz")
+        if not recent_only or f.stat().st_mtime >= threshold
+    ]
 
 
-def escape_value(value):
+def escape_value(value: Any) -> str:
     """Escape commas and equal signs in metadata values."""
-    if isinstance(value, str):
-        return value.replace(",", "^,").replace("=", "^=")
-    return value
+    return str(value).replace(",", "^,"). replace("=", "^=")
 
 
-def format_metadata(metadata):
-    """Convert a metadata dict to a ComicTagger command metadata string."""
+def format_metadata(metadata: Dict[str, Any]) -> str:
+    """Format metadata dictionary into ComicTagger CLI string."""
     credit = metadata.get("credit", {})
     characters = metadata.get("characters", [])
-
-    credit_str = ", ".join(
-        f"credit={role}:{name}" for role, name in credit.items()
-    )
+    credit_str = ", ".join(f"credit={role}:{name}" for role, name in credit.items())
     characters_str = "^,".join(characters)
-
     return (
         f"manga={escape_value(metadata.get('manga', ''))},"
         f"black_and_white={metadata.get('black_and_white', '')},"
@@ -84,11 +83,10 @@ def format_metadata(metadata):
     )
 
 
-def update_permissions(directory):
-    """Update file permissions and ownership for CBZ files (Unix only)."""
+def update_permissions(directory: Path) -> None:
+    """Update Unix file permissions for CBZ files."""
     if platform.system() == "Windows":
         return
-
     try:
         subprocess.run(
             [
@@ -97,94 +95,91 @@ def update_permissions(directory):
             ],
             check=True
         )
-        subprocess.run(["chown", "-R", "1000:1001", directory], check=True)
+        subprocess.run(["chown", "-R", "1000:1000", str(directory)], check=True)
     except subprocess.CalledProcessError as e:
-        print(f"{Fore.RED}Permission update failed: {e}")
+        logging.warning(f"Permission update failed for '{directory}': {e}")
 
 
-def process_dir(directory, book_data, recent_only=False):
-    """Tag files in the directory using comictagger."""
-    book_name = os.path.basename(directory)
-    metadata = book_data.get(book_name)
-
-    if not metadata:
-        print(f"{Fore.RED}No metadata found for '{book_name}' in manga.json.")
-        return
-
-    cbz_files = get_cbz_files(directory, recent_only=recent_only)
+def tag_cbz_files(cbz_files: List[Path], metadata: Dict[str, Any]) -> None:
+    """Run ComicTagger command for a list of files."""
     if not cbz_files:
-        print(f"{Fore.YELLOW}No .cbz files to process in {directory}.")
+        logging.info("No .cbz files found to tag.")
         return
-
     command = [
         "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
         "-m", format_metadata(metadata),
-    ] + cbz_files
-
-    print(f"{Fore.YELLOW}Tagging: {book_name}")
-    print(f"{Fore.CYAN}{' '.join(command)}")
-
+    ] + [str(f) for f in cbz_files]
+    logging.info(f"Running ComicTagger for {len(cbz_files)} files.")
     try:
         subprocess.run(command, check=True)
-        for path in cbz_files:
-            update_permissions(path)
     except subprocess.CalledProcessError as e:
-        print(f"{Fore.RED}Tagging failed: {e}")
+        logging.error(f"ComicTagger failed: {e}")
 
 
-def load_metadata(path):
-    """Load metadata from the given JSON file."""
-    if not os.path.exists(path):
-        print(f"{Fore.RED}Metadata file '{path}' not found.")
+def load_metadata(path: Path) -> Dict[str, Dict[str, Any]]:
+    """Load metadata from JSON file."""
+    if not path.exists():
+        logging.error(f"Metadata file '{path}' not found.")
         sys.exit(1)
-
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        with path.open("r", encoding="utf-8") as f:
             return json.load(f).get("Manga", {})
     except (json.JSONDecodeError, KeyError) as e:
-        print(f"{Fore.RED}Error loading metadata: {e}")
+        logging.error(f"Error reading metadata: {e}")
         sys.exit(1)
 
 
-def main():
-    metadata_path = input(
-        f"{Fore.RED}Path to manga.json (enter for default): "
-    ).strip() or DEFAULT_METADATA_FILE
-    book_data = load_metadata(metadata_path)
-
-    base_dir = input(
-        f"{Fore.RED}Directory to process (enter for current): "
-    ).strip() or "."
-    if not os.path.exists(base_dir):
-        print(f"{Fore.RED}The directory '{base_dir}' does not exist.")
+def process_directory(directory: Path, book_data: Dict[str, Any], recent_only: bool = False) -> None:
+    """Process one directory."""
+    book_name = directory.name
+    metadata = book_data.get(book_name)
+    if not metadata:
+        logging.warning(f"No metadata for '{book_name}'. Skipping.")
         return
+    cbz_files = get_cbz_files(directory, recent_only=recent_only)
+    if not cbz_files:
+        logging.info(f"No .cbz files found in '{directory}'.")
+        return
+    tag_cbz_files(cbz_files, metadata)
+    update_permissions(directory)
+    logging.info(f"Finished tagging '{book_name}'.")
 
-    subdirs = list_dirs(base_dir)
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Batch tag manga CBZ files using ComicTagger metadata."
+    )
+    parser.add_argument("-m", "--metadata", type=Path, default=Path(DEFAULT_METADATA_FILE),
+                        help="Path to metadata JSON (default: manga.json)")
+    parser.add_argument("-d", "--directory", type=Path, default=Path("."),
+                        help="Directory to process (default: current)")
+    parser.add_argument("-r", "--recent", action="store_true",
+                        help=f"Process only CBZ files modified in the last {RECENT_DAYS} days.")
+    parser.add_argument("-a", "--all", action="store_true",
+                        help="Process all subdirectories automatically.")
+    parser.add_argument("--no-perms", action="store_true",
+                        help="Skip updating file ownership/permissions.")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="Enable verbose output.")
+    args = parser.parse_args()
+    setup_logging(args.verbose)
+    book_data = load_metadata(args.metadata)
+    subdirs = list_dirs(args.directory)
     if not subdirs:
-        print(f"{Fore.RED}No subdirectories found in '{base_dir}'.")
-        return
-
-    if input(
-        f"{Fore.RED}Process all subdirectories? (y/n): "
-    ).lower().startswith("y"):
+        logging.error(f"No subdirectories found in '{args.directory}'.")
+        sys.exit(1)
+    if args.all:
         for subdir in subdirs:
-            process_dir(os.path.join(base_dir, subdir), book_data)
-        print(f"{Fore.GREEN}Finished processing all directories.")
+            process_directory(subdir, book_data, recent_only=args.recent)
+        logging.info("Finished processing all directories.")
     else:
         while True:
             selected = choose_dir(subdirs)
-            if selected is None:
+            if not selected:
                 break
-            recent_only = input(
-                f"{Fore.RED}Process only recent files in '{selected}'? (y/n): "
-            ).strip().lower().startswith("y")
-            process_dir(
-                os.path.join(
-                    base_dir, selected
-                ), book_data, recent_only=recent_only
-            )
-
-        print(f"{Fore.GREEN}Finished manual processing.")
+            recent = input(f"{Fore.RED}Process only recent files in '{selected.name}'? (y/n): ").lower().startswith("y")
+            process_directory(selected, book_data, recent_only=recent)
+        logging.info("Finished manual processing.")
 
 
 if __name__ == "__main__":
