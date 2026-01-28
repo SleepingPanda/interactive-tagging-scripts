@@ -59,7 +59,7 @@ def get_cbz_files(directory: Path, recent_only: bool = False, days: int = RECENT
 
 def escape_value(value: Any) -> str:
     """Escape commas and equal signs in metadata values."""
-    return str(value).replace(",", "^,"). replace("=", "^=")
+    return str(value).replace(",", "^,").replace("=", "^=")
 
 
 def format_metadata(metadata: Dict[str, Any]) -> str:
@@ -95,7 +95,7 @@ def update_permissions(directory: Path) -> None:
             ],
             check=True
         )
-        subprocess.run(["chown", "-R", "1000:1000", str(directory)], check=True)
+        subprocess.run(["chown", "-R", "1000:1001", str(directory)], check=True)
     except subprocess.CalledProcessError as e:
         logging.warning(f"Permission update failed for '{directory}': {e}")
 
