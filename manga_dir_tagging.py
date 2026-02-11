@@ -14,7 +14,7 @@ from colorama import Fore, init
 
 init(autoreset=True)
 
-RECENT_DAYS = 7
+RECENT_DAYS = 14
 DEFAULT_METADATA_FILE = "manga.json"
 
 
@@ -70,6 +70,7 @@ def format_metadata(metadata: Dict[str, Any]) -> str:
     characters_str = "^,".join(characters)
     return (
         f"manga={escape_value(metadata.get('manga', ''))},"
+        f"issue=-100000,"
         f"black_and_white={metadata.get('black_and_white', '')},"
         f"language={metadata.get('language', '')},"
         f"genre={escape_value(metadata.get('genre', ''))},"
