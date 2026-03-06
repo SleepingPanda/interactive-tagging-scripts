@@ -75,23 +75,40 @@ def extract_volume(filename: str) -> Optional[int]:
     return None
 
 
-def format_metadata(metadata: Dict[str, Any], volume: Optional[int] = None) -> str:
+def extract_year(filename: str) -> Optional[int]:
+    """Extract a 4-digit year from parentheses in a CBZ filename.
+
+    Matches patterns like '(2023)'.
+    Returns None if no year is found.
+    """
+    match = re.search(r"\((\d{4})\)", filename)
+    if match:
+        return int(match.group(1))
+    logging.warning(f"Could not extract year from '{filename}'.")
+    return None
+
+
+def format_metadata(metadata: Dict[str, Any], volume: Optional[int] = None, year: Optional[int] = None) -> str:
     """Format metadata dictionary into ComicTagger CLI string.
 
     Args:
         metadata: Series-level metadata dict.
         volume:   Volume number extracted from the CBZ filename. When provided,
                   it is written to the ``volume`` field in the tag.
+        year:     Publication year extracted from the CBZ filename. When provided,
+                  it is written to the ``year`` field in the tag.
     """
     credit = metadata.get("credit", {})
     characters = metadata.get("characters", [])
     credit_str = ", ".join(f"credit={role}:{name}" for role, name in credit.items())
     characters_str = "^,".join(characters)
     volume_str = f"volume={volume}," if volume is not None else ""
+    year_str = f"year={year}," if year is not None else ""
     return (
         f"manga={metadata.get('manga', '')},"
         f"issue=-100000,"
         f"{volume_str}"
+        f"{year_str}"
         f"black_and_white={metadata.get('black_and_white', '')},"
         f"language={metadata.get('language', '')},"
         f"genre={escape_value(metadata.get('genre', ''))},"
@@ -130,12 +147,13 @@ def tag_cbz_files(cbz_files: List[Path], metadata: Dict[str, Any]) -> None:
     logging.info(f"Running ComicTagger for {len(cbz_files)} files.")
     for cbz_file in cbz_files:
         volume = extract_volume(cbz_file.name)
+        year = extract_year(cbz_file.name)
         command = [
             "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
-            "-m", format_metadata(metadata, volume=volume),
+            "-m", format_metadata(metadata, volume=volume, year=year),
             str(cbz_file),
         ]
-        logging.debug(f"Tagging '{cbz_file.name}' (volume={volume}).")
+        logging.debug(f"Tagging '{cbz_file.name}' (volume={volume}, year={year}).")
         try:
             subprocess.run(command, check=True)
         except subprocess.CalledProcessError as e:
