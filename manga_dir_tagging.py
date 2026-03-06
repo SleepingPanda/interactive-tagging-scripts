@@ -104,11 +104,13 @@ def format_metadata(metadata: Dict[str, Any], volume: Optional[int] = None, year
     characters_str = "^,".join(characters)
     volume_str = f"volume={volume}," if volume is not None else ""
     year_str = f"year={year}," if year is not None else ""
+    title_str = f"title=Volume {volume}," if volume is not None else ""
     return (
         f"manga={metadata.get('manga', '')},"
         f"issue=-100000,"
         f"{volume_str}"
         f"{year_str}"
+        f"{title_str}"
         f"black_and_white={metadata.get('black_and_white', '')},"
         f"language={metadata.get('language', '')},"
         f"genre={escape_value(metadata.get('genre', ''))},"
