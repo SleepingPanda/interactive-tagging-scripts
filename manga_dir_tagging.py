@@ -2,8 +2,8 @@
 import argparse
 import json
 import logging
-import os
 import platform
+import re
 import subprocess
 import sys
 import time
@@ -62,15 +62,36 @@ def escape_value(value: Any) -> str:
     return str(value).replace(",", "^,").replace("=", "^=")
 
 
-def format_metadata(metadata: Dict[str, Any]) -> str:
-    """Format metadata dictionary into ComicTagger CLI string."""
+def extract_volume(filename: str) -> Optional[int]:
+    """Extract volume number as an integer from a CBZ filename.
+
+    Matches patterns like 'v01', 'v1', 'Vol.2', 'Vol 03', etc.
+    Returns None if no volume number is found.
+    """
+    match = re.search(r"[Vv](?:ol\.?\s*)?(\d+)", filename)
+    if match:
+        return int(match.group(1))
+    logging.warning(f"Could not extract volume number from '{filename}'.")
+    return None
+
+
+def format_metadata(metadata: Dict[str, Any], volume: Optional[int] = None) -> str:
+    """Format metadata dictionary into ComicTagger CLI string.
+
+    Args:
+        metadata: Series-level metadata dict.
+        volume:   Volume number extracted from the CBZ filename. When provided,
+                  it is written to the ``volume`` field in the tag.
+    """
     credit = metadata.get("credit", {})
     characters = metadata.get("characters", [])
     credit_str = ", ".join(f"credit={role}:{name}" for role, name in credit.items())
     characters_str = "^,".join(characters)
+    volume_str = f"volume={volume}," if volume is not None else ""
     return (
-        f"manga={escape_value(metadata.get('manga', ''))},"
+        f"manga={metadata.get('manga', '')},"
         f"issue=-100000,"
+        f"{volume_str}"
         f"black_and_white={metadata.get('black_and_white', '')},"
         f"language={metadata.get('language', '')},"
         f"genre={escape_value(metadata.get('genre', ''))},"
@@ -102,19 +123,23 @@ def update_permissions(directory: Path) -> None:
 
 
 def tag_cbz_files(cbz_files: List[Path], metadata: Dict[str, Any]) -> None:
-    """Run ComicTagger command for a list of files."""
+    """Run ComicTagger command for each file, injecting its volume number."""
     if not cbz_files:
         logging.info("No .cbz files found to tag.")
         return
-    command = [
-        "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
-        "-m", format_metadata(metadata),
-    ] + [str(f) for f in cbz_files]
     logging.info(f"Running ComicTagger for {len(cbz_files)} files.")
-    try:
-        subprocess.run(command, check=True)
-    except subprocess.CalledProcessError as e:
-        logging.error(f"ComicTagger failed: {e}")
+    for cbz_file in cbz_files:
+        volume = extract_volume(cbz_file.name)
+        command = [
+            "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
+            "-m", format_metadata(metadata, volume=volume),
+            str(cbz_file),
+        ]
+        logging.debug(f"Tagging '{cbz_file.name}' (volume={volume}).")
+        try:
+            subprocess.run(command, check=True)
+        except subprocess.CalledProcessError as e:
+            logging.error(f"ComicTagger failed for '{cbz_file.name}': {e}")
 
 
 def load_metadata(path: Path) -> Dict[str, Dict[str, Any]]:
