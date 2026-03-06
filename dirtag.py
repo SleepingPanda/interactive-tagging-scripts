@@ -151,7 +151,7 @@ def tag_cbz_files(cbz_files: List[Path], metadata: Dict[str, Any]) -> None:
         volume = extract_volume(cbz_file.name)
         year = extract_year(cbz_file.name)
         command = [
-            "comictagger", "-R", "-s", "-t", "cr", "--overwrite",
+            "comictagger", "-R", "-s", "-t", "cr", "--overwrite", "--nosummary",
             "-m", format_metadata(metadata, volume=volume, year=year),
             str(cbz_file),
         ]
