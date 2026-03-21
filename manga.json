@@ -1,11 +1,11 @@
 {
     "Manga": {
         "5 Centimeters per Second": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "5 Centimeters per Second",
@@ -24,11 +24,11 @@
             }
         },
         "A Silent Voice": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "A Silent Voice",
@@ -54,11 +54,11 @@
             }
         },
         "Arakawa Under the Bridge": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Vertical Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Arakawa Under the Bridge",
@@ -84,11 +84,11 @@
             }
         },
         "Ascendance of a Bookworm (Manga) Part 1": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ If there aren't any books, I'll just have to make some!",
@@ -111,11 +111,11 @@
             }
         },
         "Ascendance of a Bookworm (Manga) Part 2": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ I'll even join the temple to read books!",
@@ -141,11 +141,11 @@
             }
         },
         "Ascendance of a Bookworm (Manga) Part 3": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ Let's spread books through the duchy!",
@@ -171,11 +171,11 @@
             }
         },
         "Ascendance of a Bookworm (Manga) Part 4": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~ I want to save the Royal Academy's library!",
@@ -201,11 +201,11 @@
             }
         },
         "Attack on Titan": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Attack on Titan",
@@ -231,11 +231,11 @@
             }
         },
         "BAKEMONOGATARI (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "BAKEMONOGATARI (manga)",
@@ -261,11 +261,11 @@
             }
         },
         "Barakamon": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Barakamon",
@@ -289,11 +289,11 @@
             }
         },
         "Bleach": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Bleach",
@@ -319,11 +319,11 @@
             }
         },
         "Blood Blockade Battlefront": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Dark Horse Manga",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Dark Horse Comics",
             "series": "Blood Blockade Battlefront",
@@ -349,11 +349,11 @@
             }
         },
         "Blood on the Tracks": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Psychological & Philosophical",
             "imprint": "Vertical Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Blood on the Tracks",
@@ -374,11 +374,11 @@
             }
         },
         "Boogiepop Doesn't Laugh (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "Boogiepop Doesn't Laugh (Manga)",
@@ -404,11 +404,11 @@
             }
         },
         "Boy's Abyss": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Psychological & Philosophical",
             "imprint": "VIZ Signature",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "VIZ",
             "series": "Boy's Abyss",
@@ -431,11 +431,11 @@
             }
         },
         "Burn the Witch": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Burn the Witch",
@@ -460,11 +460,11 @@
             }
         },
         "Chained Soldier": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Yen Press",
             "series": "Chained Soldier",
@@ -488,11 +488,11 @@
             }
         },
         "Chainsaw Man": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "VIZ",
             "series": "Chainsaw Man",
@@ -513,11 +513,11 @@
             }
         },
         "Death March to the Parallel World Rhapsody (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Death March to the Parallel World Rhapsody (manga)",
@@ -541,11 +541,11 @@
             }
         },
         "Delicious in Dungeon": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Delicious in Dungeon",
@@ -571,11 +571,11 @@
             }
         },
         "Demon Slayer - Kimetsu no Yaiba": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Demon Slayer: Kimetsu no Yaiba",
@@ -601,11 +601,11 @@
             }
         },
         "Dr. STONE": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Dr. STONE",
@@ -629,11 +629,11 @@
             }
         },
         "Easygoing Territory Defense by the Optimistic Lord - Production Magic Turns a Nameless Village into the Strongest Fortified City (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
             "series": "Easygoing Territory Defense by the Optimistic Lord: Production Magic Turns a Nameless Village into the Strongest Fortified City",
@@ -657,11 +657,11 @@
             }
         },
         "Erased": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Erased",
@@ -687,11 +687,11 @@
             }
         },
         "Farming Life in Another World": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "One Peace Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
             "series": "Farming Life in Another World",
@@ -717,11 +717,11 @@
             }
         },
         "Fate-Grand Order -Epic of Remnant- Pseudo-Singularity III": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Fate/Grand Order -Epic of Remnant- Pseudo-Singularity III",
@@ -747,11 +747,11 @@
             }
         },
         "Fate-Grand Order -mortalis-stella": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Fate/Grand Order -mortalis:stella",
@@ -771,11 +771,11 @@
             }
         },
         "Fire Force": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Fire Force",
@@ -801,11 +801,11 @@
             }
         },
         "Fly Me to the Moon": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Shonen Sunday",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Fly Me to the Moon",
@@ -828,11 +828,11 @@
             }
         },
         "Flying Witch": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Everyone",
             "publisher": "Kodansha",
             "series": "Flying Witch",
@@ -858,11 +858,11 @@
             }
         },
         "Frieren - Beyond Journey's End": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Shonen Sunday",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Frieren: Beyond Journey's End",
@@ -887,11 +887,11 @@
             }
         },
         "From the New World": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "From the New World",
@@ -912,11 +912,11 @@
             }
         },
         "Gantz": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Dark Horse Manga",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Dark Horse Comics",
             "series": "Gantz",
@@ -942,11 +942,11 @@
             }
         },
         "GATE - Where the JSDF Fought": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Alpha Manga",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "AlphaPolis",
             "series": "GATE: Where the JSDF Fought",
@@ -968,11 +968,11 @@
             }
         },
         "GIGANT": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "GIGANT",
@@ -996,11 +996,11 @@
             }
         },
         "Gleipnir": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Gleipnir",
@@ -1026,11 +1026,11 @@
             }
         },
         "Goblin Slayer (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Yen Press",
             "series": "Goblin Slayer (manga)",
@@ -1056,11 +1056,11 @@
             }
         },
         "Golden Kamuy": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Historical & Period Drama",
             "imprint": "VIZ Signature",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "VIZ",
             "series": "Golden Kamuy",
@@ -1086,11 +1086,11 @@
             }
         },
         "Grand Blue Dreaming": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Grand Blue Dreaming",
@@ -1116,11 +1116,11 @@
             }
         },
         "Hell Mode (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Hell Mode",
@@ -1146,11 +1146,11 @@
             }
         },
         "Hell's Paradise - Jigokuraku": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "VIZ Signature",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Hell's Paradise: Jigokuraku",
@@ -1176,11 +1176,11 @@
             }
         },
         "Higehiro - After Being Rejected, I Shaved and Took in a High School Runaway": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "One Peace Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
             "series": "Higehiro - After Being Rejected^, I Shaved and Took in a High School Runaway",
@@ -1198,11 +1198,11 @@
             }
         },
         "Hinamatsuri": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "One Peace Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
             "series": "Hinamatsuri",
@@ -1221,11 +1221,11 @@
             }
         },
         "Horimiya": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Horimiya",
@@ -1251,11 +1251,11 @@
             }
         },
         "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too (manga)",
@@ -1281,11 +1281,11 @@
             }
         },
         "In-Spectre": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "In/Spectre",
@@ -1310,11 +1310,11 @@
             }
         },
         "Jujutsu Kaisen": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Jujutsu Kaisen",
@@ -1340,11 +1340,11 @@
             }
         },
         "Kaguya-sama - Love Is War": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Kaguya-sama: Love Is War",
@@ -1366,11 +1366,11 @@
             }
         },
         "Kaina of the Great Snow Sea": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Kaina of the Great Snow Sea",
@@ -1394,11 +1394,11 @@
             }
         },
         "Kakushigoto - My Dad's Secret Ambition": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Kakushigoto: My Dad's Secret Ambition",
@@ -1423,11 +1423,11 @@
             }
         },
         "Komi Can't Communicate": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Shonen Sunday",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Komi Can't Communicate",
@@ -1453,11 +1453,11 @@
             }
         },
         "Land of the Lustrous": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Land of the Lustrous",
@@ -1483,11 +1483,11 @@
             }
         },
         "Lycoris Recoil (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Lycoris Recoil (manga)",
@@ -1513,11 +1513,11 @@
             }
         },
         "My Dress-Up Darling": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Square Enix Manga & Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "SQUARE ENIX INC",
             "series": "My Dress-Up Darling",
@@ -1537,11 +1537,11 @@
             }
         },
         "My Happy Marriage": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Square Enix Manga & Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "SQUARE ENIX INC",
             "series": "My Happy Marriage",
@@ -1566,11 +1566,11 @@
             }
         },
         "Nisekoi - False Love": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "Nisekoi: False Love",
@@ -1596,11 +1596,11 @@
             }
         },
         "Now That We Draw": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
             "series": "Now That We Draw",
@@ -1618,11 +1618,11 @@
             }
         },
         "One-Punch Man": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "One-Punch Man",
@@ -1648,11 +1648,11 @@
             }
         },
         "Orb - On the Movements of the Earth": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Historical & Period Drama",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "Orb: On the Movements of the Earth",
@@ -1678,11 +1678,11 @@
             }
         },
         "Oshi No Ko": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "[Oshi No Ko]",
@@ -1708,11 +1708,11 @@
             }
         },
         "Overlord (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Yen Press",
             "series": "Overlord (manga)",
@@ -1738,11 +1738,11 @@
             }
         },
         "Parallel Paradise": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Ghost Ship",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "Parallel Paradise",
@@ -1768,11 +1768,11 @@
             }
         },
         "Parallel World Pharmacy": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "One Peace Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
             "series": "Parallel World Pharmacy",
@@ -1798,11 +1798,11 @@
             }
         },
         "Parasyte Full Color Collection": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Parasyte Full Color Collection",
@@ -1828,11 +1828,11 @@
             }
         },
         "Please Put Them On, Takamine-san": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Yen Press",
             "series": "Please Put Them On^, Takamine-san",
@@ -1851,11 +1851,11 @@
             }
         },
         "Rent-A-Girlfriend": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Rent-A-Girlfriend",
@@ -1876,11 +1876,11 @@
             }
         },
         "Shikimori's Not Just a Cutie": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Shikimori's Not Just a Cutie",
@@ -1906,11 +1906,11 @@
             }
         },
         "Skeleton Knight in Another World (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
             "series": "Skeleton Knight in Another World (Manga)",
@@ -1936,11 +1936,11 @@
             }
         },
         "SPRIGGAN - Deluxe Edition": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "SPRIGGAN: Deluxe Edition",
@@ -1966,11 +1966,11 @@
             }
         },
         "Summertime Rendering": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "UDON Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "UDON Entertainment",
             "series": "Summertime Rendering",
@@ -1996,11 +1996,11 @@
             }
         },
         "Suzume": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Suzume",
@@ -2022,11 +2022,11 @@
             }
         },
         "Sweet Reincarnation": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "Sweet Reincarnation",
@@ -2052,11 +2052,11 @@
             }
         },
         "The Eminence in Shadow (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "The Eminence in Shadow (manga)",
@@ -2082,11 +2082,11 @@
             }
         },
         "The Faraway Paladin (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "The Faraway Paladin (Manga)",
@@ -2113,11 +2113,11 @@
             }
         },
         "The Fragrant Flower Blooms With Dignity": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "The Fragrant Flower Blooms With Dignity",
@@ -2143,11 +2143,11 @@
             }
         },
         "The Garden of Words": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "The Garden of Words",
@@ -2165,11 +2165,11 @@
             }
         },
         "The Girl Who Leapt Through Time": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "VIZ Select",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "VIZ",
             "series": "The Girl Who Leapt Through Time",
@@ -2193,11 +2193,11 @@
             }
         },
         "The Idaten Deities Know Only Peace": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "The Idaten Deities Know Only Peace",
@@ -2223,11 +2223,11 @@
             }
         },
         "The Promised Neverland": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "SHONEN JUMP",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "VIZ",
             "series": "The Promised Neverland",
@@ -2253,11 +2253,11 @@
             }
         },
         "The Rising of the Shield Hero - The Manga Companion": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "One Peace Books",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
             "series": "The Rising of the Shield Hero: The Manga Companion",
@@ -2283,11 +2283,11 @@
             }
         },
         "The Sacred Blacksmith": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "The Sacred Blacksmith",
@@ -2313,11 +2313,11 @@
             }
         },
         "The Water Magician (Manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "The Water Magician",
@@ -2343,11 +2343,11 @@
             }
         },
         "The Witches of Adamas": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Ghost Ship",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "The Witches of Adamas",
@@ -2367,11 +2367,11 @@
             }
         },
         "The Wolf Never Sleeps": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "The Wolf Never Sleeps",
@@ -2390,11 +2390,11 @@
             }
         },
         "This Art Club Has a Problem!": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "J-Novel Club",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
             "series": "This Art Club Has a Problem!",
@@ -2416,11 +2416,11 @@
             }
         },
         "Time Stop Hero": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
             "series": "Time Stop Hero",
@@ -2446,11 +2446,11 @@
             }
         },
         "Uncle from Another World": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Uncle from Another World",
@@ -2475,11 +2475,11 @@
             }
         },
         "Vinland Saga": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Historical & Period Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Vinland Saga",
@@ -2505,11 +2505,11 @@
             }
         },
         "Voices of a Distant Star": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
             "series": "Voices of a Distant Star",
@@ -2527,11 +2527,11 @@
             }
         },
         "Welcome Back, Alice": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Psychological & Philosophical",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Welcome Back^, Alice",
@@ -2550,11 +2550,11 @@
             }
         },
         "Wolf Children - Ame & Yuki": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "Wolf Children: Ame & Yuki",
@@ -2577,11 +2577,11 @@
             }
         },
         "Your Lie in April": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Kodansha Comics",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
             "series": "Your Lie in April",
@@ -2607,11 +2607,11 @@
             }
         },
         "your name. (manga)": {
-            "black_and_white": "Yes",
+            "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Yen Press",
             "language": "en",
-            "manga": "Yes",
+            "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
             "series": "your name. (manga)",
