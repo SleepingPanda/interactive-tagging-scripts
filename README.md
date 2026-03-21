@@ -1,60 +1,70 @@
 # Interactive Tagging Scripts
-## Overview
 
-Interactive Tagging Scripts are a collection of Python scripts designed to facilitate the interactive tagging of metadata for CBZ (Comic Book ZIP) files using the ComicTagger tool. They provides a user-friendly interface for processing directories containing CBZ files, allowing users to update metadata fields interactively.
+A Python script for batch-tagging metadata into CBZ (Comic Book ZIP) files using [ComicTagger](https://github.com/comictagger/comictagger).
 
-## Features
-- **Directory and File Listing:**
+## Scripts
 
-  The scripts can list directories and CBZ files in a specified directory, providing users with an overview of available options.
-- **Interactive Selection:**
+### `dirtag.py`
+Batch-tags entire series directories using a `manga.json` metadata file. Supports both interactive and fully automatic modes.
 
-  Users can interactively choose directories of files or individual CBZ files to work on, making the tagging process more flexible.
-- **Metadata Input:**
+## Requirements
 
-  The scripts prompts users to input metadata fields for each CBZ file or use a predefined json file to automatically tag entire directories.
-- **Metadata Cleaning:**
+- Python 3.8+
+- ComicTagger installed and on your `PATH`
 
-  Metadata inputs are cleaned to ensure proper formatting and replaces certain characters, making them compatible with ComicTagger.
-- **Volume Number Extraction:**
-
-  The scripts can extract volume numbers from filenames automatically, providing additional information for the tagging process.
-- **Error Handling:**
-
-  The scripts incorporates error handling for invalid user inputs and provides clear error messages.
-- **User-Friendly Interface:**
-
-  The scripts utilize the Colorama library for colored console output, enhancing the user experience.
+```
+pip install -r requirements.txt
+```
 
 ## Usage
-1. **Clone the Repository:**
-    ```
-    git clone https://github.com/SleepingPanda/interactive-tagging-scripts.git
-    cd interactive-tagging-scripts
-    ```
-2. **Install Dependencies:**
-    ```
-    pip install -r requirements.txt
-    ```
-3. **Run the Scripts:**
-  - To process a specific directory:
-    ```
-    python cbz_tagging.py -d /path/to/your/directory
-    ```
-  - To process the current working directory or select a directory interactively:
-    ```
-    python cbz_tagging.py
-    ```
-  - To automatically tag an entire dir of files:
-    ```
-    python manga_dir_tagging.py
-    ```
-5. **Follow On-Screen Instructions:**
-   
-   The scripts will prompt you to choose from directories or individual CBZ files and interactively input metadata.
 
-## Contribution
-Contributions are welcome! Feel free to fork the repository, make improvements, and submit a pull request.
+### `dirtag.py`
+
+```
+python dirtag.py                          # interactive mode — pick directories from a list
+python dirtag.py -a                       # tag all subdirectories automatically
+python dirtag.py -a -r                    # tag only recently modified files (last 14 days)
+python dirtag.py -m my_metadata.json      # use a custom metadata file
+python dirtag.py -d /path/to/manga        # specify root directory
+python dirtag.py --no-perms               # skip file permission/ownership update
+python dirtag.py -v                       # verbose output
+```
+
+## Metadata file (`manga.json`)
+
+`dirtag.py` reads series metadata from a JSON file. The top-level key must be `"Manga"`, with each entry keyed by the **exact directory name** of the series.
+
+```json
+{
+    "Manga": {
+        "My Series Name": {
+            "manga": true,
+            "black_and_white": true,
+            "language": "en",
+            "genre": "Action & Adventure",
+            "maturity_rating": "Teen",
+            "publisher": "Publisher Name",
+            "imprint": "Imprint Name",
+            "series": "My Series Name",
+            "series_group": "My Series Name",
+            "web_link": "https://example.com/series/my-series",
+            "characters": ["Character One", "Character Two"],
+            "credit": {
+                "Writer": "Author Name",
+                "Penciller": "Artist Name",
+                "Inker": "Artist Name",
+                "Cover": "Artist Name"
+            }
+        }
+    }
+}
+```
+
+Volume numbers and publication years are extracted automatically from filenames. Supported patterns:
+
+- Volume: `v1`, `v01`, `Vol.2`, `Vol 03`
+- Year: `(2023)`
 
 ## License
-These scripts are licensed under the GPLv3 License.
+
+GPLv3. See [LICENSE](LICENSE).

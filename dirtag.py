@@ -17,7 +17,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, TypedDict
 
 from colorama import Fore, init
 
@@ -36,6 +36,28 @@ DEFAULT_METADATA_FILE: str = "manga.json"
 
 #: ComicTagger uses -100 000 as a sentinel that means "not a numbered issue".
 COMICTAGGER_VOLUME_SENTINEL: int = -100_000
+
+FILE_OWNER: str = "1000:1001"
+FILE_MODE: str = "644"
+
+
+# ---------------------------------------------------------------------------
+# Types
+# ---------------------------------------------------------------------------
+
+class SeriesMetadata(TypedDict, total=False):
+    manga: bool
+    black_and_white: bool
+    language: str
+    genre: str
+    maturity_rating: str
+    publisher: str
+    imprint: str
+    series: str
+    series_group: str
+    web_link: str
+    characters: List[str]
+    credit: Dict[str, str]
 
 
 # ---------------------------------------------------------------------------
@@ -136,7 +158,7 @@ def extract_publication_year(filename: str) -> Optional[int]:
 # Metadata formatting
 # ---------------------------------------------------------------------------
 
-def _escape_metadata_value(value: Any) -> str:
+def _escape(value: Any) -> str:
     """Escape characters that ComicTagger treats as delimiters.
 
     ComicTagger uses ``,`` as a field separator and ``=`` as a key/value
@@ -152,8 +174,13 @@ def _escape_metadata_value(value: Any) -> str:
     return str(value).replace(",", "^,").replace("=", "^=")
 
 
+def _bool_field(value: bool) -> str:
+    """Serialise a boolean to the 'Yes'/'No' string ComicTagger expects."""
+    return "Yes" if value else "No"
+
+
 def build_comictagger_metadata_string(
-    metadata: Dict[str, Any],
+    metadata: SeriesMetadata,
     volume: Optional[int] = None,
     year: Optional[int] = None,
 ) -> str:
@@ -171,46 +198,45 @@ def build_comictagger_metadata_string(
     Returns:
         A comma-delimited ``key=value`` string ready to pass to ``comictagger -m``.
     """
-    # --- Credits (role → person mappings) ---
-    credit_pairs = metadata.get("credit", {})
-    credit_fields = ",".join(
-        f"credit={role}:{name}" for role, name in credit_pairs.items()
-    )
+    fields: List[str] = []
 
-    # Characters are joined by an escaped comma so ComicTagger treats them as
-    # a single multi-value field rather than separate fields.
+    # --- Static series-level fields ---
+    fields.append(f"manga={_bool_field(metadata.get('manga', False))}")
+    fields.append(f"issue={COMICTAGGER_VOLUME_SENTINEL}")
+    fields.append(f"black_and_white={_bool_field(metadata.get('black_and_white', False))}")
+    fields.append(f"language={metadata.get('language', '')}")
+    fields.append(f"genre={_escape(metadata.get('genre', ''))}")
+    fields.append(f"maturity_rating={metadata.get('maturity_rating', '')}")
+    fields.append(f"publisher={_escape(metadata.get('publisher', ''))}")
+    fields.append(f"imprint={_escape(metadata.get('imprint', ''))}")
+    fields.append(f"series={_escape(metadata.get('series', ''))}")
+    fields.append(f"series_group={_escape(metadata.get('series_group', ''))}")
+    fields.append(f"web_link={_escape(metadata.get('web_link', ''))}")
+
+    # --- Volume-specific fields (omitted when unknown) ---
+    if volume is not None:
+        fields.append(f"volume={volume}")
+        fields.append(f"title=Volume {volume}")
+    if year is not None:
+        fields.append(f"year={year}")
+
+    # --- Credits ---
+    for role, person in metadata.get("credit", {}).items():
+        fields.append(f"credit={role}:{person}")
+
+    # --- Characters (multi-value: joined with escaped comma) ---
     characters = metadata.get("characters", [])
-    characters_value = "^,".join(characters)
+    if characters:
+        fields.append(f"characters={'^,'.join(characters)}")
 
-    # --- Volume-specific fields (omitted when volume is unknown) ---
-    volume_field = f"volume={volume}," if volume is not None else ""
-    year_field = f"year={year}," if year is not None else ""
-    title_field = f"title=Volume {volume}," if volume is not None else ""
-
-    return (
-        f"manga={'Yes' if metadata.get('manga', False) else 'No'},"
-        f"issue={COMICTAGGER_VOLUME_SENTINEL},"
-        f"{volume_field}"
-        f"{year_field}"
-        f"{title_field}"
-        f"black_and_white={'Yes' if metadata.get('black_and_white', False) else 'No'},"
-        f"language={metadata.get('language', '')},"
-        f"genre={_escape_metadata_value(metadata.get('genre', ''))},"
-        f"maturity_rating={metadata.get('maturity_rating', '')},"
-        f"publisher={_escape_metadata_value(metadata.get('publisher', ''))},"
-        f"imprint={_escape_metadata_value(metadata.get('imprint', ''))},"
-        f"series={_escape_metadata_value(metadata.get('series', ''))},"
-        f"series_group={_escape_metadata_value(metadata.get('series_group', ''))},"
-        f"web_link={_escape_metadata_value(metadata.get('web_link', ''))},"
-        f"{credit_fields},characters={characters_value}"
-    )
+    return ",".join(fields)
 
 
 # ---------------------------------------------------------------------------
 # Tagging
 # ---------------------------------------------------------------------------
 
-def tag_cbz_files(cbz_files: List[Path], metadata: Dict[str, Any]) -> None:
+def tag_cbz_files(cbz_files: List[Path], metadata: SeriesMetadata) -> None:
     """Run ComicTagger on every file in *cbz_files*, injecting per-file metadata.
 
     Volume number and publication year are extracted from each filename so the
@@ -271,10 +297,10 @@ def update_file_permissions(directory: Path) -> None:
     try:
         subprocess.run(
             ["find", str(directory), "-type", "f", "-name", "*.cbz",
-             "-exec", "chmod", "644", "{}", "+"],
+             "-exec", "chmod", FILE_MODE, "{}", "+"],
             check=True,
         )
-        subprocess.run(["chown", "-R", "1000:1001", str(directory)], check=True)
+        subprocess.run(["chown", "-R", FILE_OWNER, str(directory)], check=True)
     except subprocess.CalledProcessError as exc:
         logging.warning(f"Permission update failed for '{directory}': {exc}")
 
@@ -283,7 +309,7 @@ def update_file_permissions(directory: Path) -> None:
 # Metadata loading
 # ---------------------------------------------------------------------------
 
-def load_book_metadata(path: Path) -> Dict[str, Dict[str, Any]]:
+def load_book_metadata(path: Path) -> Dict[str, SeriesMetadata]:
     """Read the JSON metadata file and return the ``Manga`` section.
 
     The expected top-level structure is::
@@ -310,10 +336,17 @@ def load_book_metadata(path: Path) -> Dict[str, Dict[str, Any]]:
 
     try:
         with path.open("r", encoding="utf-8") as file_handle:
-            return json.load(file_handle).get("Manga", {})
-    except (json.JSONDecodeError, KeyError) as exc:
-        logging.error(f"Error reading metadata from '{path}': {exc}")
+            data = json.load(file_handle)
+    except json.JSONDecodeError as exc:
+        logging.error(f"Failed to parse '{path}': {exc}")
         sys.exit(1)
+
+    manga_section = data.get("Manga")
+    if not isinstance(manga_section, dict):
+        logging.error(f"'{path}' is missing a top-level 'Manga' object.")
+        sys.exit(1)
+
+    return manga_section
 
 
 # ---------------------------------------------------------------------------
@@ -322,7 +355,7 @@ def load_book_metadata(path: Path) -> Dict[str, Dict[str, Any]]:
 
 def process_directory(
     directory: Path,
-    book_data: Dict[str, Dict[str, Any]],
+    book_data: Dict[str, SeriesMetadata],
     recent_only: bool = False,
     update_permissions: bool = True,
 ) -> None:
@@ -341,7 +374,7 @@ def process_directory(
     series_name = directory.name
     metadata = book_data.get(series_name)
 
-    if not metadata:
+    if metadata is None:
         logging.warning(f"No metadata entry for '{series_name}'. Skipping.")
         return
 
@@ -361,6 +394,10 @@ def process_directory(
 # ---------------------------------------------------------------------------
 # Interactive mode
 # ---------------------------------------------------------------------------
+
+def prompt_yes_no(question: str) -> bool:
+    return input(f"{Fore.RED}{question} (y/n): ").strip().lower().startswith("y")
+
 
 def prompt_directory_choice(directories: List[Path]) -> Optional[Path]:
     """Interactively ask the user to pick one directory from a numbered list.
@@ -389,7 +426,7 @@ def prompt_directory_choice(directories: List[Path]) -> Optional[Path]:
 
 def run_interactive_mode(
     subdirs: List[Path],
-    book_data: Dict[str, Dict[str, Any]],
+    book_data: Dict[str, SeriesMetadata],
     update_permissions: bool,
 ) -> None:
     """Let the user repeatedly pick directories to tag until they quit.
@@ -404,12 +441,7 @@ def run_interactive_mode(
         if selected is None:
             break
 
-        recent = (
-            input(f"{Fore.RED}Process only recent files in '{selected.name}'? (y/n): ")
-            .strip()
-            .lower()
-            .startswith("y")
-        )
+        recent = prompt_yes_no(f"Process only recent files in '{selected.name}'?")
         process_directory(selected, book_data, recent_only=recent, update_permissions=update_permissions)
 
     logging.info("Finished manual processing.")
