@@ -37,7 +37,7 @@ DEFAULT_METADATA_FILE: str = "manga.json"
 #: ComicTagger uses -100 000 as a sentinel that means "not a numbered issue".
 COMICTAGGER_VOLUME_SENTINEL: int = -100_000
 
-FILE_OWNER: str = "1000:1001"
+FILE_OWNER: str = "1000:1000"
 FILE_MODE: str = "644"
 
 
