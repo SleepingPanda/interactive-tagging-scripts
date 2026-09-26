@@ -200,36 +200,6 @@
                 "Writer": "Miya Kazuki"
             }
         },
-        "Attack on Titan": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Kodansha",
-            "series": "Attack on Titan",
-            "series_group": "Attack on Titan",
-            "web_link": "https://kodansha.us/series/attack-on-titan",
-            "characters": [
-                "Eren Yeager",
-                "Mikasa Ackerman",
-                "Armin Arlert",
-                "Reiner Braun",
-                "Jean Kirstein",
-                "Marco Bott",
-                "Connie Springer",
-                "Sasha Blouse",
-                "Krista Lenz",
-                "Ymir"
-            ],
-            "credit": {
-                "Cover": "Hajime Isayama",
-                "Inker": "Hajime Isayama",
-                "Penciller": "Hajime Isayama",
-                "Writer": "Hajime Isayama"
-            }
-        },
         "BAKEMONOGATARI (manga)": {
             "black_and_white": true,
             "genre": "Supernatural & Horror",
@@ -260,64 +230,6 @@
                 "Writer": "NISIOISIN"
             }
         },
-        "Barakamon": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press",
-            "series": "Barakamon",
-            "series_group": "Barakamon",
-            "web_link": "https://yenpress.com/series/barakamon",
-            "characters": [
-                "Seishu Handa",
-                "Naru Kotoishi",
-                "Miwa Yamamura",
-                "Tamako Arai",
-                "Hiroshi Kido",
-                "Hina Kubota",
-                "Kentaro Ohama",
-                "Akihiko Ara"
-            ],
-            "credit": {
-                "Cover": "Satsuki Yoshino",
-                "Inker": "Satsuki Yoshino",
-                "Penciller": "Satsuki Yoshino",
-                "Writer": "Satsuki Yoshino"
-            }
-        },
-        "Bleach": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Bleach",
-            "series_group": "Bleach",
-            "web_link": "https://viz.com/bleach",
-            "characters": [
-                "Ichigo Kurosaki",
-                "Rukia Kuchiki",
-                "Orihime Inoue",
-                "Renji Abarai",
-                "Uryū Ishida",
-                "Yasutora Sado",
-                "Sōsuke Aizen",
-                "Jin Kariya",
-                "Gō Koga",
-                "Cain"
-            ],
-            "credit": {
-                "Cover": "Tite Kubo",
-                "Inker": "Tite Kubo",
-                "Penciller": "Tite Kubo",
-                "Writer": "Tite Kubo"
-            }
-        },
         "Blood Blockade Battlefront": {
             "black_and_white": true,
             "genre": "Action & Adventure",
@@ -346,145 +258,6 @@
                 "Inker": "Yasuhiro Nightow",
                 "Penciller": "Yasuhiro Nightow",
                 "Writer": "Yasuhiro Nightow"
-            }
-        },
-        "Blood on the Tracks": {
-            "black_and_white": true,
-            "genre": "Psychological & Philosophical",
-            "imprint": "Vertical Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Kodansha",
-            "series": "Blood on the Tracks",
-            "series_group": "Blood on the Tracks",
-            "web_link": "https://kodansha.us/series/blood-on-the-tracks",
-            "characters": [
-                "Seiichi Osabe",
-                "Seiko Osabe",
-                "Yuko Fukiishi",
-                "Ichirō Osabe",
-                "Shigeru Osabe"
-            ],
-            "credit": {
-                "Cover": "Shuzo Oshimi",
-                "Inker": "Shuzo Oshimi",
-                "Penciller": "Shuzo Oshimi",
-                "Writer": "Shuzo Oshimi"
-            }
-        },
-        "Boogiepop Doesn't Laugh (Manga)": {
-            "black_and_white": true,
-            "genre": "Mystery & Thriller",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Boogiepop Doesn't Laugh (Manga)",
-            "series_group": "Boogiepop and Others",
-            "web_link": "https://sevenseasentertainment.com/series/boogiepop",
-            "characters": [
-                "Boogiepop",
-                "Touka Miyashita",
-                "Nagi Kirima",
-                "Kazuko Suema",
-                "Echoes",
-                "Naoko Kamikishiro",
-                "Akio Kimura",
-                "Kyouko Kinoshita",
-                "Seiichi Kirima",
-                "Akiko Kusatsu"
-            ],
-            "credit": {
-                "Cover": "Kouji Ogata",
-                "Inker": "Kouji Ogata",
-                "Penciller": "Kouji Ogata",
-                "Writer": "Kouhei Kadono"
-            }
-        },
-        "Boy's Abyss": {
-            "black_and_white": true,
-            "genre": "Psychological & Philosophical",
-            "imprint": "VIZ Signature",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "VIZ",
-            "series": "Boy's Abyss",
-            "series_group": "Boy's Abyss",
-            "web_link": "https://viz.com/boy-s-abyss",
-            "characters": [
-                "Reiji Kurose",
-                "Nagi Aoe",
-                "Sakuko Akiyama",
-                "Yuri Shibasawa",
-                "Gen Minegishi",
-                "Yuko Kurose",
-                "Kosaku Esemori"
-            ],
-            "credit": {
-                "Cover": "Ryo Minenami",
-                "Inker": "Ryo Minenami",
-                "Penciller": "Ryo Minenami",
-                "Writer": "Ryo Minenami"
-            }
-        },
-        "Burn the Witch": {
-            "black_and_white": true,
-            "genre": "Sci-Fi & Fantasy",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Burn the Witch",
-            "series_group": "Burn the Witch",
-            "web_link": "https://viz.com/burn-the-witch",
-            "characters": [
-                "Ninny Spangcole",
-                "Noel Niihashi",
-                "Macy Baljure",
-                "Balgo Parks",
-                "Bruno Bangnyfe",
-                "Billy Banx Jr.",
-                "Wolfgang Slashhaut",
-                "Sullivan Squire",
-                "Roy B. Dipper"
-            ],
-            "credit": {
-                "Cover": "Tite Kubo",
-                "Inker": "Tite Kubo",
-                "Penciller": "Tite Kubo",
-                "Writer": "Tite Kubo"
-            }
-        },
-        "Chained Soldier": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Yen Press",
-            "series": "Chained Soldier",
-            "series_group": "Chained Soldier",
-            "web_link": "https://yenpress.com/series/chained-soldier",
-            "characters": [
-                "Yuuki Wakura",
-                "Kyouka Uzen",
-                "Himari Azuma",
-                "Shushu Suruga",
-                "Nei Ōkawamura",
-                "Tenka Izumo",
-                "Yachiho Azuma",
-                "Sahara Wakasa"
-            ],
-            "credit": {
-                "Cover": "Yohei Takemura",
-                "Inker": "Yohei Takemura",
-                "Penciller": "Yohei Takemura",
-                "Writer": "Takahiro"
             }
         },
         "Chainsaw Man": {
@@ -570,64 +343,6 @@
                 "Writer": "Ryoko Kui"
             }
         },
-        "Demon Slayer - Kimetsu no Yaiba": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Demon Slayer: Kimetsu no Yaiba",
-            "series_group": "Demon Slayer: Kimetsu no Yaiba",
-            "web_link": "https://viz.com/demon-slayer-kimetsu-no-yaiba",
-            "characters": [
-                "Tanjiro Kamado",
-                "Nezuko Kamado",
-                "Zenitsu Agatsuma",
-                "Inosuke Hashibira",
-                "Kanao Tsuyuri",
-                "Genya Shinazugawa",
-                "Kagaya Ubuyashiki",
-                "Muichiro Tokito",
-                "Mitsuri Kanroji",
-                "Muzan Kibutsuji"
-            ],
-            "credit": {
-                "Cover": "Koyoharu Gotouge",
-                "Inker": "Koyoharu Gotouge",
-                "Penciller": "Koyoharu Gotouge",
-                "Writer": "Koyoharu Gotouge"
-            }
-        },
-        "Dr. STONE": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Dr. STONE",
-            "series_group": "Dr. STONE",
-            "web_link": "https://viz.com/dr-stone",
-            "characters": [
-                "Senku Ishigami",
-                "Taiju Oki",
-                "Yuzuriha Ogawa",
-                "Tsukasa Shishio",
-                "Gen Asagiri",
-                "Chrome",
-                "Kohaku",
-                "Suika"
-            ],
-            "credit": {
-                "Cover": "Boichi",
-                "Inker": "Boichi",
-                "Penciller": "Boichi",
-                "Writer": "Riichiro Inagaki"
-            }
-        },
         "Easygoing Territory Defense by the Optimistic Lord - Production Magic Turns a Nameless Village into the Strongest Fortified City (Manga)": {
             "black_and_white": true,
             "genre": "Comedy & Slice of Life",
@@ -654,36 +369,6 @@
                 "Inker": "Maro Aoiro",
                 "Penciller": "Maro Aoiro",
                 "Writer": "Sou Akaike"
-            }
-        },
-        "Erased": {
-            "black_and_white": true,
-            "genre": "Mystery & Thriller",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press",
-            "series": "Erased",
-            "series_group": "Erased",
-            "web_link": "https://yenpress.com/series/erased",
-            "characters": [
-                "Satoru Fujinuma",
-                "Kayo Hinazuki",
-                "Airi Katagiri",
-                "Sachiko Fujinuma",
-                "Jun Shiratori",
-                "Kenya Kobayashi",
-                "Gaku Yashiro",
-                "Hiromi Sugita",
-                "Osamu",
-                "Kazu"
-            ],
-            "credit": {
-                "Cover": "Kei Sanbe",
-                "Inker": "Kei Sanbe",
-                "Penciller": "Kei Sanbe",
-                "Writer": "Kei Sanbe"
             }
         },
         "Farming Life in Another World": {
@@ -770,63 +455,6 @@
                 "Writer": "Type-Moon"
             }
         },
-        "Fire Force": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha",
-            "series": "Fire Force",
-            "series_group": "Fire Force",
-            "web_link": "https://kodansha.us/series/fire-force",
-            "characters": [
-                "Shinra Kusakabe",
-                "Akitaru Ōbi",
-                "Takehisa Hinawa",
-                "Maki Oze",
-                "Iris",
-                "Arthur Boyle",
-                "Tamaki Kotatsu",
-                "Viktor Licht",
-                "Vulcan Joseph",
-                "Lisa Isaribe"
-            ],
-            "credit": {
-                "Cover": "Atsushi Ohkubo",
-                "Inker": "Atsushi Ohkubo",
-                "Penciller": "Atsushi Ohkubo",
-                "Writer": "Atsushi Ohkubo"
-            }
-        },
-        "Fly Me to the Moon": {
-            "black_and_white": true,
-            "genre": "Romance & Drama",
-            "imprint": "Shonen Sunday",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Fly Me to the Moon",
-            "series_group": "Fly Me to the Moon",
-            "web_link": "https://viz.com/fly-me-to-the-moon",
-            "characters": [
-                "Nasa Yuzaki",
-                "Tsukasa Yuzaki",
-                "Kaname Arisugawa",
-                "Aya Arisugawa",
-                "Chitose Kaginoji",
-                "Charlotte",
-                "Aurora"
-            ],
-            "credit": {
-                "Cover": "Kenjiro Hata",
-                "Inker": "Kenjiro Hata",
-                "Penciller": "Kenjiro Hata",
-                "Writer": "Kenjiro Hata"
-            }
-        },
         "Flying Witch": {
             "black_and_white": true,
             "genre": "Comedy & Slice of Life",
@@ -911,36 +539,6 @@
                 "Writer": "Yusuke Kishi"
             }
         },
-        "Gantz": {
-            "black_and_white": true,
-            "genre": "Sci-Fi & Fantasy",
-            "imprint": "Dark Horse Manga",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Dark Horse Comics",
-            "series": "Gantz",
-            "series_group": "Gantz",
-            "web_link": "https://digital.darkhorse.com/series/1553/gantz",
-            "characters": [
-                "Kei Kurono",
-                "Masaru Kato",
-                "Tae Kojima",
-                "Shion Izumi",
-                "Joichiro Nishi",
-                "Kei Kishimoto",
-                "Yoshikazu Suzuki",
-                "Hiroto Sakurai",
-                "Kenzo Sakata",
-                "Reika Shimohira"
-            ],
-            "credit": {
-                "Cover": "Hiroya Oku",
-                "Inker": "Hiroya Oku",
-                "Penciller": "Hiroya Oku",
-                "Writer": "Hiroya Oku"
-            }
-        },
         "GATE - Where the JSDF Fought": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
@@ -965,34 +563,6 @@
                 "Inker": "Daisuke Izuka",
                 "Penciller": "Daisuke Izuka",
                 "Writer": "Takumi Yanai"
-            }
-        },
-        "GIGANT": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "GIGANT",
-            "series_group": "GIGANT",
-            "web_link": "https://sevenseasentertainment.com/series/gigant",
-            "characters": [
-                "Chiho Johansson",
-                "Rei Yokoyamada",
-                "Momonogi",
-                "Hiroshi Nakajima",
-                "Nagashima",
-                "Heffner",
-                "Ryuji",
-                "Shiozawa"
-            ],
-            "credit": {
-                "Cover": "Hiroya Oku",
-                "Inker": "Hiroya Oku",
-                "Penciller": "Hiroya Oku",
-                "Writer": "Hiroya Oku"
             }
         },
         "Gleipnir": {
@@ -1023,96 +593,6 @@
                 "Inker": "Sun Takeda",
                 "Penciller": "Sun Takeda",
                 "Writer": "Sun Takeda"
-            }
-        },
-        "Goblin Slayer (manga)": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Yen Press",
-            "series": "Goblin Slayer (manga)",
-            "series_group": "Goblin Slayer",
-            "web_link": "https://yenpress.com/series/goblin-slayer-manga",
-            "characters": [
-                "Goblin Slayer",
-                "Priestess",
-                "Cow Girl",
-                "Guild Girl",
-                "High Elf Archer",
-                "Dwarf Shaman",
-                "Lizard Priest",
-                "Witch",
-                "Spearman",
-                "Sword Maiden"
-            ],
-            "credit": {
-                "Cover": "Kousuke Kurose",
-                "Inker": "Kousuke Kurose",
-                "Penciller": "Kousuke Kurose",
-                "Writer": "Kumo Kagyu"
-            }
-        },
-        "Golden Kamuy": {
-            "black_and_white": true,
-            "genre": "Historical & Period Drama",
-            "imprint": "VIZ Signature",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "VIZ",
-            "series": "Golden Kamuy",
-            "series_group": "Golden Kamuy",
-            "web_link": "https://viz.com/golden-kamuy",
-            "characters": [
-                "Saichi Sugimoto",
-                "Asirpa",
-                "Yoshitake Shiraishi",
-                "Kiroranke",
-                "Genjirō Tanigaki",
-                "Inkarmat",
-                "Cikapasi",
-                "Ryū",
-                "Toshizō Hijikata",
-                "Shinpachi Nagakura"
-            ],
-            "credit": {
-                "Cover": "Satoru Noda",
-                "Inker": "Satoru Noda",
-                "Penciller": "Satoru Noda",
-                "Writer": "Satoru Noda"
-            }
-        },
-        "Grand Blue Dreaming": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha",
-            "series": "Grand Blue Dreaming",
-            "series_group": "Grand Blue Dreaming",
-            "web_link": "https://kodansha.us/series/grand-blue-dreaming",
-            "characters": [
-                "Iori Kitahara",
-                "Chisa Kotegawa",
-                "Toshio Kotegawa",
-                "Nanaka Kotegawa",
-                "Kōhei Imamura",
-                "Shinji Tokita",
-                "Ryūjirō Kotobuki",
-                "Azusa Hamaoka",
-                "Aina Yoshiwara",
-                "Captain Kudō"
-            ],
-            "credit": {
-                "Cover": "Kimitake Yoshioka",
-                "Inker": "Kimitake Yoshioka",
-                "Penciller": "Kimitake Yoshioka",
-                "Writer": "Kenji Inoue"
             }
         },
         "Hell Mode (Manga)": {
@@ -1195,59 +675,6 @@
                 "Inker": "Imaru Adachi",
                 "Penciller": "Imaru Adachi",
                 "Writer": "Shimesaba"
-            }
-        },
-        "Hinamatsuri": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "One Peace Books",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "One Peace Books",
-            "series": "Hinamatsuri",
-            "series_group": "Hinamatsuri",
-            "web_link": "https://onepeacebooks.com/jt/Hinamatsuri.html",
-            "characters": [
-                "Hina",
-                "Nitta",
-                "Hitomi"
-            ],
-            "credit": {
-                "Cover": "Masao Ohtake",
-                "Inker": "Masao Ohtake",
-                "Penciller": "Masao Ohtake",
-                "Writer": "Masao Ohtake"
-            }
-        },
-        "Horimiya": {
-            "black_and_white": true,
-            "genre": "Romance & Drama",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press",
-            "series": "Horimiya",
-            "series_group": "Horimiya",
-            "web_link": "https://yenpress.com/series/horimiya",
-            "characters": [
-                "Kyouko Hori",
-                "Izumi Miyamura",
-                "Souta Hori",
-                "Tooru Ishikawa",
-                "Yuki Yoshikawa",
-                "Kakeru Sengoku",
-                "Remi Ayasaki",
-                "Sakura Kono",
-                "Shu Iura",
-                "Kōichi Shindo"
-            ],
-            "credit": {
-                "Cover": "Daisuke Hagiwara",
-                "Inker": "Daisuke Hagiwara",
-                "Penciller": "Daisuke Hagiwara",
-                "Writer": "HERO"
             }
         },
         "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)": {
@@ -1393,35 +820,6 @@
                 "Writer": "Tsutomu Nihei"
             }
         },
-        "Kakushigoto - My Dad's Secret Ambition": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Kodansha",
-            "series": "Kakushigoto: My Dad's Secret Ambition",
-            "series_group": "Kakushigoto: My Dad's Secret Ambition",
-            "web_link": "https://kodansha.us/series/kakushigoto-my-dads-secret-ambition",
-            "characters": [
-                "Kakushi Gotō",
-                "Hime Gotō",
-                "Aogu Shiji",
-                "Rasuna Sumita",
-                "Ami Kakei",
-                "Kakeru Keshi",
-                "Satsuki Tomaruin",
-                "Nadila",
-                "Kairi Imashigata"
-            ],
-            "credit": {
-                "Cover": "Kouji Kumeta",
-                "Inker": "Kouji Kumeta",
-                "Penciller": "Kouji Kumeta",
-                "Writer": "Kouji Kumeta"
-            }
-        },
         "Komi Can't Communicate": {
             "black_and_white": true,
             "genre": "Comedy & Slice of Life",
@@ -1450,36 +848,6 @@
                 "Inker": "Tomohito Oda",
                 "Penciller": "Tomohito Oda",
                 "Writer": "Tomohito Oda"
-            }
-        },
-        "Land of the Lustrous": {
-            "black_and_white": true,
-            "genre": "Sci-Fi & Fantasy",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha",
-            "series": "Land of the Lustrous",
-            "series_group": "Land of the Lustrous",
-            "web_link": "https://kodansha.us/series/land-of-the-lustrous",
-            "characters": [
-                "Phosphophyllite",
-                "Cinnabar",
-                "Diamond",
-                "Bort",
-                "Morganite",
-                "Goshenite",
-                "Rutile",
-                "Jade",
-                "Red Beryl",
-                "Amethyst"
-            ],
-            "credit": {
-                "Cover": "Haruko Ichikawa",
-                "Inker": "Haruko Ichikawa",
-                "Penciller": "Haruko Ichikawa",
-                "Writer": "Haruko Ichikawa"
             }
         },
         "Lycoris Recoil (manga)": {
@@ -1512,30 +880,6 @@
                 "Writer": "Spider Lily"
             }
         },
-        "My Dress-Up Darling": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "Square Enix Manga & Books",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "SQUARE ENIX INC",
-            "series": "My Dress-Up Darling",
-            "series_group": "My Dress-Up Darling",
-            "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-dress-up-darling",
-            "characters": [
-                "Wakana Gojo",
-                "Marin Kitagawa",
-                "Sajuna Inui",
-                "Shinju Inui"
-            ],
-            "credit": {
-                "Cover": "Shinichi Fukuda",
-                "Inker": "Shinichi Fukuda",
-                "Penciller": "Shinichi Fukuda",
-                "Writer": "Shinichi Fukuda"
-            }
-        },
         "My Happy Marriage": {
             "black_and_white": true,
             "genre": "Romance & Drama",
@@ -1563,36 +907,6 @@
                 "Inker": "Rito Kohsaka",
                 "Penciller": "Rito Kohsaka",
                 "Writer": "Akumi Agitogi"
-            }
-        },
-        "Nisekoi - False Love": {
-            "black_and_white": true,
-            "genre": "Romance & Drama",
-            "imprint": "SHONEN JUMP",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "VIZ",
-            "series": "Nisekoi: False Love",
-            "series_group": "Nisekoi: False Love",
-            "web_link": "https://viz.com/nisekoi-false-love",
-            "characters": [
-                "Raku Ichijo",
-                "Chitoge Kirisaki",
-                "Kosaki Onodera",
-                "Ruri Miyamoto",
-                "Seishiro Tsugumi",
-                "Marika Tachibana",
-                "Paula McCoy",
-                "Suzu Ayakaji",
-                "Yui Kanakura",
-                "Shu Maiko"
-            ],
-            "credit": {
-                "Cover": "Naoshi Komi",
-                "Inker": "Naoshi Komi",
-                "Penciller": "Naoshi Komi",
-                "Writer": "Naoshi Komi"
             }
         },
         "Now That We Draw": {
@@ -1707,66 +1021,6 @@
                 "Writer": "Aka Akasaka"
             }
         },
-        "Overlord (manga)": {
-            "black_and_white": true,
-            "genre": "Sci-Fi & Fantasy",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Yen Press",
-            "series": "Overlord (manga)",
-            "series_group": "Overlord",
-            "web_link": "https://yenpress.com/series/overlord-manga",
-            "characters": [
-                "Ainz Ooal Gown",
-                "Albedo",
-                "Shalltear Bloodfallen",
-                "Aura Bella Fiora",
-                "Mare Bello Fiore",
-                "Demiurge",
-                "Cocytus",
-                "Pandora's Actor",
-                "Sebas Tian",
-                "Yuri Alpha"
-            ],
-            "credit": {
-                "Cover": "Hugin Miyama",
-                "Inker": "Hugin Miyama",
-                "Penciller": "Hugin Miyama",
-                "Writer": "Kugane Maruyama"
-            }
-        },
-        "Parallel Paradise": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Ghost Ship",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Parallel Paradise",
-            "series_group": "Parallel Paradise",
-            "web_link": "https://sevenseasentertainment.com/series/parallel-paradise/",
-            "characters": [
-                "Youta Tada",
-                "Lumi",
-                "Genius",
-                "Lilia",
-                "Misaki",
-                "Momo",
-                "Haru",
-                "Mona",
-                "Sayuri",
-                "Nishina"
-            ],
-            "credit": {
-                "Cover": "Lynn Okamoto",
-                "Inker": "Lynn Okamoto",
-                "Penciller": "Lynn Okamoto",
-                "Writer": "Lynn Okamoto"
-            }
-        },
         "Parallel World Pharmacy": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
@@ -1827,54 +1081,6 @@
                 "Writer": "Hitoshi Iwaaki"
             }
         },
-        "Please Put Them On, Takamine-san": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Yen Press",
-            "series": "Please Put Them On^, Takamine-san",
-            "series_group": "Please Put Them On^, Takamine-san",
-            "web_link": "https://yenpress.com/series/please-put-them-on-takamine-san",
-            "characters": [
-                "Takane Takamine",
-                "Koushi Shirota",
-                "Eri"
-            ],
-            "credit": {
-                "Cover": "Yuichi Hiiragi",
-                "Inker": "Yuichi Hiiragi",
-                "Penciller": "Yuichi Hiiragi",
-                "Writer": "Yuichi Hiiragi"
-            }
-        },
-        "Rent-A-Girlfriend": {
-            "black_and_white": true,
-            "genre": "Romance & Drama",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Kodansha",
-            "series": "Rent-A-Girlfriend",
-            "series_group": "Rent-A-Girlfriend",
-            "web_link": "https://kodansha.us/series/rent-a-girlfriend",
-            "characters": [
-                "Kazuya Kinoshita",
-                "Chizuru Mizuhara",
-                "Mami Nanami",
-                "Ruka Sarashina",
-                "Sumi Sakurasawa"
-            ],
-            "credit": {
-                "Cover": "Reiji Miyajima",
-                "Inker": "Reiji Miyajima",
-                "Penciller": "Reiji Miyajima",
-                "Writer": "Reiji Miyajima"
-            }
-        },
         "Shikimori's Not Just a Cutie": {
             "black_and_white": true,
             "genre": "Comedy & Slice of Life",
@@ -1905,36 +1111,6 @@
                 "Writer": "Keigo Maki"
             }
         },
-        "Skeleton Knight in Another World (Manga)": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Seven Seas Entertainment",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Seven Seas Entertainment",
-            "series": "Skeleton Knight in Another World (Manga)",
-            "series_group": "Skeleton Knight in Another World",
-            "web_link": "https://sevenseasentertainment.com/series/skeleton-knight-in-another-world-manga/",
-            "characters": [
-                "Arc",
-                "Ariane Glenys Maple",
-                "Ponta",
-                "Chiyome",
-                "Danka",
-                "Dillan",
-                "Glenys",
-                "Eevin",
-                "Goemon",
-                "Sekt"
-            ],
-            "credit": {
-                "Cover": "Akira Sawano",
-                "Inker": "Akira Sawano",
-                "Penciller": "Akira Sawano",
-                "Writer": "Ennki Hakari"
-            }
-        },
         "SPRIGGAN - Deluxe Edition": {
             "black_and_white": true,
             "genre": "Action & Adventure",
@@ -1963,36 +1139,6 @@
                 "Inker": "Ryōji Minagawa",
                 "Penciller": "Ryōji Minagawa",
                 "Writer": "Hiroshi Takashige"
-            }
-        },
-        "Summertime Rendering": {
-            "black_and_white": true,
-            "genre": "Mystery & Thriller",
-            "imprint": "UDON Entertainment",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "UDON Entertainment",
-            "series": "Summertime Rendering",
-            "series_group": "Summertime Rendering",
-            "web_link": "https://store.udonentertainment.com/collections/manga/products/summertime-rendering-complete-manga-collection",
-            "characters": [
-                "Shinpei Ajiro",
-                "Ushio Kofune",
-                "Mio Kofune",
-                "Hizuru Minakata",
-                "Sō Hishigata",
-                "Tokiko Hishigata",
-                "Ginjirō Nezu",
-                "Masahito Karikiri",
-                "Shiori Kobayakawa",
-                "Hiruko"
-            ],
-            "credit": {
-                "Cover": "Yasuki Tanaka",
-                "Inker": "Yasuki Tanaka",
-                "Penciller": "Yasuki Tanaka",
-                "Writer": "Yasuki Tanaka"
             }
         },
         "Suzume": {
@@ -2102,6 +1248,28 @@
                 "Inker": "BroccoLee",
                 "Penciller": "BroccoLee",
                 "Writer": "Nekoko"
+            }
+        },
+        "The Fake Alchemist": {
+            "black_and_white": true,
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": true,
+            "maturity_rating": "M",
+            "publisher": "Yen Press",
+            "series": "The Fake Alchemist",
+            "series_group": "The Fake Alchemist",
+            "web_link": "https://yenpress.com/series/the-fake-alchemist",
+            "characters": [
+                "Paracelsus",
+                "Nora Petan"
+            ],
+            "credit": {
+                "Cover": "Umemaru",
+                "Inker": "Umemaru",
+                "Penciller": "Umemaru",
+                "Writer": "Jirō Sugiura"
             }
         },
         "The Faraway Paladin (Manga)": {
@@ -2365,107 +1533,34 @@
                 "Writer": "Tadashi Kubō"
             }
         },
-        "The Witches of Adamas": {
+        "Though I Am an Inept Villainess - Tale of the Butterfly-Rat Body Swap in the Maiden Court (Manga)": {
             "black_and_white": true,
-            "genre": "Sci-Fi & Fantasy",
-            "imprint": "Ghost Ship",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Seven Seas Entertainment",
-            "series": "The Witches of Adamas",
-            "series_group": "The Witches of Adamas",
-            "web_link": "https://sevenseasentertainment.com/series/the-witches-of-adamas/",
-            "characters": [
-                "Satou Yukinari",
-                "Nekomori Ayane",
-                "Miyoshi Miku",
-                "Dr. Shinonome"
-            ],
-            "credit": {
-                "Cover": "Yu Imai",
-                "Inker": "Yu Imai",
-                "Penciller": "Yu Imai",
-                "Writer": "Yu Imai"
-            }
-        },
-        "The Wolf Never Sleeps": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press",
-            "series": "The Wolf Never Sleeps",
-            "series_group": "The Wolf Never Sleeps",
-            "web_link": "https://yenpress.com/series/the-wolf-never-sleeps",
-            "characters": [
-                "Lecan",
-                "Sheila",
-                "Eda"
-            ],
-            "credit": {
-                "Cover": "Gonbe Shinkawa",
-                "Inker": "Gonbe Shinkawa",
-                "Penciller": "Gonbe Shinkawa",
-                "Writer": "Shienbishop"
-            }
-        },
-        "This Art Club Has a Problem!": {
-            "black_and_white": true,
-            "genre": "Comedy & Slice of Life",
-            "imprint": "J-Novel Club",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "J-Novel Club",
-            "series": "This Art Club Has a Problem!",
-            "series_group": "This Art Club Has a Problem!",
-            "web_link": "https://j-novel.club/series/this-art-club-has-a-problem",
-            "characters": [
-                "Mizuki Usami",
-                "Subaru Uchimaki",
-                "Colette",
-                "President",
-                "Maria Imari",
-                "Yumeko Tachibana"
-            ],
-            "credit": {
-                "Cover": "Imigimuru",
-                "Inker": "Imigimuru",
-                "Penciller": "Imigimuru",
-                "Writer": "Imigimuru"
-            }
-        },
-        "Time Stop Hero": {
-            "black_and_white": true,
-            "genre": "Action & Adventure",
+            "genre": "Historical & Period Drama",
             "imprint": "Seven Seas Entertainment",
             "language": "en",
             "manga": true,
-            "maturity_rating": "M",
+            "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
-            "series": "Time Stop Hero",
-            "series_group": "Time Stop Hero",
-            "web_link": "https://sevenseasentertainment.com/series/time-stop-hero/",
+            "series": "Though I Am an Inept Villainess: Tale of the Butterfly-Rat Body Swap in the Maiden Court (Manga)",
+            "series_group": "Though I Am an Inept Villainess",
+            "web_link": "https://sevenseasentertainment.com/series/though-i-am-an-inept-villainess-tale-of-the-butterfly-rat-body-swap-in-the-maiden-court-manga/",
             "characters": [
-                "Kuzuno Sekai",
-                "Niña",
-                "Fury",
-                "Leafa",
-                "Gankichi",
-                "Clau",
-                "Alicia",
-                "Lovisa",
-                "Ranga",
-                "Bahamut"
+                "Kō Reirin",
+                "Shu Keigetsu",
+                "Ei Gyōmei",
+                "Shin-u",
+                "Leelee",
+                "Kō Tōsetsu",
+                "Shu Gabi",
+                "Kin Seika",
+                "Kō Kenshū",
+                "Ran Hōshun"
             ],
             "credit": {
-                "Cover": "Yasunori Mitsunaga",
-                "Inker": "Yasunori Mitsunaga",
-                "Penciller": "Yasunori Mitsunaga",
-                "Writer": "Yasunori Mitsunaga"
+                "Cover": "Ei Ohitsuji",
+                "Inker": "Ei Ohitsuji",
+                "Penciller": "Ei Ohitsuji",
+                "Writer": "Satsuki Nakamura"
             }
         },
         "To Your Eternity": {
@@ -2627,36 +1722,6 @@
                 "Inker": "Yuu",
                 "Penciller": "Yuu",
                 "Writer": "Mamoru Hosoda"
-            }
-        },
-        "Your Lie in April": {
-            "black_and_white": true,
-            "genre": "Romance & Drama",
-            "imprint": "Kodansha Comics",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "M",
-            "publisher": "Kodansha",
-            "series": "Your Lie in April",
-            "series_group": "Your Lie in April",
-            "web_link": "https://kodansha.us/series/your-lie-in-april",
-            "characters": [
-                "Kōsei Arima",
-                "Kaori Miyazono",
-                "Tsubaki Sawabe",
-                "Ryōta Watari",
-                "Takeshi Aiza",
-                "Emi Igawa",
-                "Nagi Aiza",
-                "Saki Arima",
-                "Hiroko Seto",
-                "Koharu Seto"
-            ],
-            "credit": {
-                "Cover": "Naoshi Arakawa",
-                "Inker": "Naoshi Arakawa",
-                "Penciller": "Naoshi Arakawa",
-                "Writer": "Naoshi Arakawa"
             }
         },
         "your name. (manga)": {
