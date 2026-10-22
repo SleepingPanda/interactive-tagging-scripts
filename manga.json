@@ -1,6 +1,6 @@
 {
     "Manga": {
-        "[Oshi No Ko]": {
+        "【Oshi No Ko】": {
             "black_and_white": true,
             "genre": "Mystery & Thriller",
             "imprint": "Yen Press",
@@ -8,20 +8,20 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "[Oshi No Ko]",
-            "series_group": "[Oshi No Ko]",
+            "series": "【Oshi No Ko】",
+            "series_group": "【Oshi No Ko】",
             "web_link": "https://yenpress.com/series/oshi-no-ko",
             "characters": [
+                "Ai Hoshino",
                 "Aquamarine Hoshino",
                 "Ruby Hoshino",
                 "Kana Arima",
                 "Akane Kurokawa",
-                "Ai Hoshino",
+                "MEM-cho",
                 "Ichigo Saitō",
                 "Miyako Saitō",
-                "MEM-cho",
-                "Pieyon",
-                "Frill Shiranui"
+                "Taishi Gotanda",
+                "Hikaru Kamiki"
             ],
             "credit": {
                 "Cover": "Mengo Yokoyari",
