@@ -1,5 +1,35 @@
 {
     "Manga": {
+        "[Oshi No Ko]": {
+            "black_and_white": true,
+            "genre": "Mystery & Thriller",
+            "imprint": "Yen Press",
+            "language": "en",
+            "manga": true,
+            "maturity_rating": "Teen",
+            "publisher": "Yen Press",
+            "series": "[Oshi No Ko]",
+            "series_group": "[Oshi No Ko]",
+            "web_link": "https://yenpress.com/series/oshi-no-ko",
+            "characters": [
+                "Aquamarine Hoshino",
+                "Ruby Hoshino",
+                "Kana Arima",
+                "Akane Kurokawa",
+                "Ai Hoshino",
+                "Ichigo Saitō",
+                "Miyako Saitō",
+                "MEM-cho",
+                "Pieyon",
+                "Frill Shiranui"
+            ],
+            "credit": {
+                "Cover": "Mengo Yokoyari",
+                "Inker": "Mengo Yokoyari",
+                "Penciller": "Mengo Yokoyari",
+                "Writer": "Aka Akasaka"
+            }
+        },
         "5 Centimeters per Second": {
             "black_and_white": true,
             "genre": "Romance & Drama",
@@ -47,10 +77,10 @@
                 "Ito Nishimiya"
             ],
             "credit": {
-                "Cover": "Yoshitoki Oima",
-                "Inker": "Yoshitoki Oima",
-                "Penciller": "Yoshitoki Oima",
-                "Writer": "Yoshitoki Oima"
+                "Cover": "Yoshitoki Ōima",
+                "Inker": "Yoshitoki Ōima",
+                "Penciller": "Yoshitoki Ōima",
+                "Writer": "Yoshitoki Ōima"
             }
         },
         "Arakawa Under the Bridge": {
@@ -197,6 +227,36 @@
                 "Cover": "Hikaru Katsuki",
                 "Inker": "Hikaru Katsuki",
                 "Penciller": "Hikaru Katsuki",
+                "Writer": "Miya Kazuki"
+            }
+        },
+        "Ascendance of a Bookworm (Manga) Part 5": {
+            "black_and_white": true,
+            "genre": "Sci-Fi & Fantasy",
+            "imprint": "J-Novel Club",
+            "language": "en",
+            "manga": true,
+            "maturity_rating": "Teen",
+            "publisher": "J-Novel Club",
+            "series": "Ascendance of a Bookworm ~I'll do anything to become a librarian!~",
+            "series_group": "Ascendance of a Bookworm",
+            "web_link": "https://j-novel.club/series/ascendance-of-a-bookworm-manga",
+            "characters": [
+                "Rozemyne",
+                "Cornelius",
+                "Angelica",
+                "Hartmut",
+                "Brunhilde",
+                "Philine",
+                "Lieseleta",
+                "Rihyarda",
+                "Ferdinand",
+                "Sylvester"
+            ],
+            "credit": {
+                "Cover": "Suzuka",
+                "Inker": "Suzuka",
+                "Penciller": "Suzuka",
                 "Writer": "Miya Kazuki"
             }
         },
@@ -663,7 +723,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
-            "series": "Higehiro - After Being Rejected^, I Shaved and Took in a High School Runaway",
+            "series": "Higehiro - After Being Rejected, I Shaved and Took in a High School Runaway",
             "series_group": "Higehiro",
             "web_link": "https://onepeacebooks.com/jt/Higehiro.html",
             "characters": [
@@ -685,8 +745,8 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too (manga)",
-            "series_group": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World^, Too",
+            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)",
+            "series_group": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too",
             "web_link": "https://yenpress.com/series/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-the-real-world-too-manga",
             "characters": [
                 "Yūya Tenjō",
@@ -989,36 +1049,6 @@
                 "Inker": "Uoto",
                 "Penciller": "Uoto",
                 "Writer": "Uoto"
-            }
-        },
-        "Oshi No Ko": {
-            "black_and_white": true,
-            "genre": "Mystery & Thriller",
-            "imprint": "Yen Press",
-            "language": "en",
-            "manga": true,
-            "maturity_rating": "Teen",
-            "publisher": "Yen Press",
-            "series": "[Oshi No Ko]",
-            "series_group": "[Oshi No Ko]",
-            "web_link": "https://yenpress.com/series/oshi-no-ko",
-            "characters": [
-                "Aquamarine Hoshino",
-                "Ruby Hoshino",
-                "Kana Arima",
-                "Akane Kurokawa",
-                "Ai Hoshino",
-                "Ichigo Saitō",
-                "Miyako Saitō",
-                "MEM-cho",
-                "Pieyon",
-                "Frill Shiranui"
-            ],
-            "credit": {
-                "Cover": "Mengo Yokoyari",
-                "Inker": "Mengo Yokoyari",
-                "Penciller": "Mengo Yokoyari",
-                "Writer": "Aka Akasaka"
             }
         },
         "Parallel World Pharmacy": {
@@ -1682,8 +1712,8 @@
             "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
-            "series": "Welcome Back^, Alice",
-            "series_group": "Welcome Back^, Alice",
+            "series": "Welcome Back, Alice",
+            "series_group": "Welcome Back, Alice",
             "web_link": "https://kodansha.us/series/welcome-back-alice",
             "characters": [
                 "Yohei Kamehara",
