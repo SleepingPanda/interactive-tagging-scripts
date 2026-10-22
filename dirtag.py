@@ -1,525 +1,271 @@
 #!/usr/bin/env python3
-"""dirtag.py — Batch-tag manga CBZ files using ComicTagger and a JSON metadata file.
+"""Batch-tag manga CBZ files with ComicTagger using a JSON formatted metadata file.
 
-Usage examples:
-    python dirtag.py                          # interactive mode
-    python dirtag.py -a                       # tag all subdirectories automatically
-    python dirtag.py -a -r                    # tag only recently modified files
-    python dirtag.py -m my_metadata.json -d /path/to/manga
+Metadata file layout:
+    {"Manga": {"<series directory name>": {...series fields...}}}
+
+Usage:
+    dirtag.py                          # interactive mode
+    dirtag.py -a                       # tag every series subdirectory
+    dirtag.py -a -r                    # only files modified in the last 14 days
+    dirtag.py -m meta.json -d /library
 """
+
+from __future__ import annotations
 
 import argparse
 import json
 import logging
-import platform
+import os
 import re
+import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional, TypedDict
+from typing import Any
 
-from colorama import Fore, init
+RECENT_DAYS = 14
+DEFAULT_METADATA = Path("manga.json")
+ISSUE_SENTINEL = -100_000
+OWNER_UID = 1000
+OWNER_GID = 1000
+FILE_MODE = 0o644
 
-# Initialise colorama so ANSI colour codes are reset after each print.
-init(autoreset=True)
+VOLUME_RE = re.compile(r"\bv(?:ol\.?\s*)?(\d+)\b", re.IGNORECASE)
+YEAR_RE = re.compile(r"\((\d{4})\)")
+TEXT_FIELDS = ("language", "genre", "maturity_rating", "publisher", "imprint", "series", "series_group", "web_link")
 
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
+log = logging.getLogger("dirtag")
 
-#: Number of days used to define "recent" when --recent is passed.
-RECENT_DAYS: int = 14
-
-#: Default path to the JSON file that contains per-series metadata.
-DEFAULT_METADATA_FILE: str = "manga.json"
-
-#: ComicTagger uses -100 000 as a sentinel that means "not a numbered issue".
-COMICTAGGER_VOLUME_SENTINEL: int = -100_000
-
-FILE_OWNER: str = "1000:1000"
-FILE_MODE: str = "644"
+USE_COLOR = sys.stdout.isatty() and "NO_COLOR" not in os.environ
+LEVEL_CODES = {"DEBUG": "36", "INFO": "36", "WARNING": "33", "ERROR": "31", "CRITICAL": "31"}
 
 
-# ---------------------------------------------------------------------------
-# Types
-# ---------------------------------------------------------------------------
+def paint(text: str, code: str) -> str:
+    """Wrap *text* in an ANSI SGR code, or return it unchanged if colors are off."""
+    return f"\033[{code}m{text}\033[0m" if USE_COLOR else text
 
-class SeriesMetadata(TypedDict, total=False):
-    manga: bool
-    black_and_white: bool
-    language: str
-    genre: str
-    maturity_rating: str
-    publisher: str
-    imprint: str
-    series: str
-    series_group: str
-    web_link: str
-    characters: List[str]
-    credit: Dict[str, str]
+
+class ColorFormatter(logging.Formatter):
+    """Log formatter that colors the level tag by severity."""
+    def format(self, record: logging.LogRecord) -> str:
+        label = paint(f"[{record.levelname}]", LEVEL_CODES.get(record.levelname, "0"))
+        return f"{label} {record.getMessage()}"
 
 
 # ---------------------------------------------------------------------------
-# Logging
+# Parsing helpers
 # ---------------------------------------------------------------------------
 
-def setup_logging(verbose: bool) -> None:
-    """Configure the root logger.
-
-    Args:
-        verbose: When True, emit DEBUG messages in addition to INFO and above.
-    """
-    logging.basicConfig(
-        level=logging.DEBUG if verbose else logging.INFO,
-        format=f"{Fore.CYAN}[%(levelname)s]{Fore.RESET} %(message)s",
-    )
-
-
-# ---------------------------------------------------------------------------
-# File-system helpers
-# ---------------------------------------------------------------------------
-
-def list_subdirectories(parent: Path) -> List[Path]:
-    """Return a sorted list of immediate subdirectories inside *parent*.
-
-    Args:
-        parent: The directory to inspect.
-
-    Returns:
-        Sorted list of :class:`Path` objects, one per subdirectory.
-        Returns an empty list (and logs an error) if *parent* does not exist.
-    """
-    if not parent.exists():
-        logging.error(f"Directory '{parent}' does not exist.")
-        return []
-    return sorted(d for d in parent.iterdir() if d.is_dir())
-
-
-def get_cbz_files(directory: Path, recent_only: bool = False, days: int = RECENT_DAYS) -> List[Path]:
-    """Recursively find all .cbz files inside *directory*.
-
-    Args:
-        directory:   Root directory to search.
-        recent_only: When True, only return files modified within the last *days* days.
-        days:        Age threshold (in days) used when *recent_only* is True.
-
-    Returns:
-        List of matching :class:`Path` objects.
-    """
-    cutoff_mtime = time.time() - days * 86_400 if recent_only else 0.0
-    return [
-        f for f in directory.rglob("*.cbz")
-        if not recent_only or f.stat().st_mtime >= cutoff_mtime
-    ]
-
-
-# ---------------------------------------------------------------------------
-# Filename parsing
-# ---------------------------------------------------------------------------
-
-def extract_volume_number(filename: str) -> Optional[int]:
-    """Parse a volume number from a CBZ filename.
-
-    Recognises patterns such as ``v01``, ``v1``, ``Vol.2``, ``Vol 03``.
-
-    Args:
-        filename: Bare filename (not a full path) of the CBZ file.
-
-    Returns:
-        The volume number as an integer, or ``None`` if no match was found.
-    """
-    match = re.search(r"[Vv](?:ol\.?\s*)?(\d+)", filename)
+def parse_volume(filename: str) -> int | None:
+    """Return the volume number in a filename such as 'v01' or 'Vol.2', or None."""
+    match = VOLUME_RE.search(filename)
     if match:
         return int(match.group(1))
-    logging.warning(f"Could not extract volume number from '{filename}'.")
+    log.warning("Could not extract volume number from '%s'.", filename)
     return None
 
 
-def extract_publication_year(filename: str) -> Optional[int]:
-    """Parse a four-digit publication year from a CBZ filename.
-
-    Expects the year to be wrapped in parentheses, e.g. ``(2023)``.
-
-    Args:
-        filename: Bare filename (not a full path) of the CBZ file.
-
-    Returns:
-        The year as an integer, or ``None`` if no match was found.
-    """
-    match = re.search(r"\((\d{4})\)", filename)
+def parse_year(filename: str) -> int | None:
+    """Return the year in a filename such as '(2023)', or None."""
+    match = YEAR_RE.search(filename)
     if match:
         return int(match.group(1))
-    logging.warning(f"Could not extract year from '{filename}'.")
+    log.warning("Could not extract year from '%s'.", filename)
     return None
 
 
-# ---------------------------------------------------------------------------
-# Metadata formatting
-# ---------------------------------------------------------------------------
-
-def _escape(value: Any) -> str:
-    """Escape characters that ComicTagger treats as delimiters.
-
-    ComicTagger uses ``,`` as a field separator and ``=`` as a key/value
-    separator.  Literal occurrences of these characters inside a value must
-    be escaped with a preceding ``^``.
-
-    Args:
-        value: The raw metadata value (will be coerced to ``str``).
-
-    Returns:
-        The escaped string.
-    """
+def _esc(value: Any) -> str:
+    """Escape ',' and '=' which ComicTagger treats as delimiters."""
     return str(value).replace(",", "^,").replace("=", "^=")
 
 
-def _bool_field(value: bool) -> str:
-    """Serialise a boolean to the 'Yes'/'No' string ComicTagger expects."""
-    return "Yes" if value else "No"
+def _yn(flag: bool) -> str:
+    return "Yes" if flag else "No"
 
 
-def build_comictagger_metadata_string(
-    metadata: SeriesMetadata,
-    volume: Optional[int] = None,
-    year: Optional[int] = None,
-) -> str:
-    """Serialise a metadata dict into the ``-m`` string expected by ComicTagger.
-
-    Volume-specific fields (``volume``, ``year``, ``title``) are injected when
-    the corresponding arguments are provided so the same series-level *metadata*
-    dict can be reused across multiple volumes.
-
-    Args:
-        metadata: Series-level metadata loaded from the JSON file.
-        volume:   Volume number parsed from the CBZ filename.
-        year:     Publication year parsed from the CBZ filename.
-
-    Returns:
-        A comma-delimited ``key=value`` string ready to pass to ``comictagger -m``.
-    """
-    fields: List[str] = []
-
-    # --- Static series-level fields ---
-    fields.append(f"manga={_bool_field(metadata.get('manga', False))}")
-    fields.append(f"issue={COMICTAGGER_VOLUME_SENTINEL}")
-    fields.append(f"black_and_white={_bool_field(metadata.get('black_and_white', False))}")
-    fields.append(f"language={metadata.get('language', '')}")
-    fields.append(f"genre={_escape(metadata.get('genre', ''))}")
-    fields.append(f"maturity_rating={metadata.get('maturity_rating', '')}")
-    fields.append(f"publisher={_escape(metadata.get('publisher', ''))}")
-    fields.append(f"imprint={_escape(metadata.get('imprint', ''))}")
-    fields.append(f"series={_escape(metadata.get('series', ''))}")
-    fields.append(f"series_group={_escape(metadata.get('series_group', ''))}")
-    fields.append(f"web_link={_escape(metadata.get('web_link', ''))}")
-
-    # --- Volume-specific fields (omitted when unknown) ---
+def build_metadata_string(meta: dict, volume: int | None = None, year: int | None = None) -> str:
+    """Build the comma-delimited key=value string for `comictagger -m`."""
+    parts = [
+        f"manga={_yn(meta.get('manga', False))}",
+        f"issue={ISSUE_SENTINEL}",
+        f"black_and_white={_yn(meta.get('black_and_white', False))}",
+    ]
+    parts += [f"{key}={_esc(meta.get(key, ''))}" for key in TEXT_FIELDS]
     if volume is not None:
-        fields.append(f"volume={volume}")
-        fields.append(f"title=Volume {volume}")
+        parts += [f"volume={volume}", f"title=Volume {volume}"]
     if year is not None:
-        fields.append(f"year={year}")
+        parts.append(f"year={year}")
 
-    # --- Credits ---
-    for role, person in metadata.get("credit", {}).items():
-        fields.append(f"credit={role}:{person}")
-
-    # --- Characters (multi-value: joined with escaped comma) ---
-    characters = metadata.get("characters", [])
+    for role, person in meta.get("credit", {}).items():
+        parts.append(f"credit={role}:{_esc(person)}")
+    characters = meta.get("characters", [])
     if characters:
-        fields.append(f"characters={'^,'.join(characters)}")
+        parts.append("characters=" + "^,".join(_esc(c) for c in characters))
 
-    return ",".join(fields)
+    return ",".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# Filesystem
+# ---------------------------------------------------------------------------
+
+def find_cbz(directory: Path, recent_only: bool) -> list[Path]:
+    """Recursively list .cbz files, optionally limited to recently modified ones."""
+    cutoff = time.time() - RECENT_DAYS * 86_400
+    return [
+        p for p in directory.rglob("*.cbz")
+        if not recent_only or p.stat().st_mtime >= cutoff
+    ]
+
+
+def fix_permissions(directory: Path) -> None:
+    """Chown the series directory tree and chmod its .cbz files. No-op on Windows."""
+    if os.name == "nt":
+        return
+    try:
+        for root, dirs, files in os.walk(directory):
+            for name in dirs + files:
+                os.chown(os.path.join(root, name), OWNER_UID, OWNER_GID)
+            for name in files:
+                if name.lower().endswith(".cbz"):
+                    os.chmod(os.path.join(root, name), FILE_MODE)
+        os.chown(directory, OWNER_UID, OWNER_GID)
+    except OSError as exc:
+        log.warning("Permission update failed for '%s': %s", directory, exc)
 
 
 # ---------------------------------------------------------------------------
 # Tagging
 # ---------------------------------------------------------------------------
 
-def tag_cbz_files(cbz_files: List[Path], metadata: SeriesMetadata) -> None:
-    """Run ComicTagger on every file in *cbz_files*, injecting per-file metadata.
-
-    Volume number and publication year are extracted from each filename so the
-    correct values are written even when a single metadata dict covers an entire
-    series.
-
-    Args:
-        cbz_files: List of .cbz files to tag.
-        metadata:  Series-level metadata dict for this collection.
-    """
-    if not cbz_files:
-        logging.info("No .cbz files found to tag.")
-        return
-
-    logging.info(f"Tagging {len(cbz_files)} file(s) with ComicTagger.")
-
-    for cbz_file in cbz_files:
-        volume = extract_volume_number(cbz_file.name)
-        year = extract_publication_year(cbz_file.name)
-        metadata_string = build_comictagger_metadata_string(metadata, volume=volume, year=year)
-
+def tag_files(files: list[Path], meta: dict) -> None:
+    """Run ComicTagger on each file, deriving volume and year from its name."""
+    for cbz in files:
+        volume = parse_volume(cbz.name)
+        year = parse_year(cbz.name)
         command = [
             "comictagger",
-            "-R",           # recursive (required even for a single file)
-            "-s",           # save tags
-            "-t", "cr",     # tag type: ComicRack
+            "-R",            # required even for a single file
+            "-s",            # save tags
+            "-t", "cr",      # ComicRack tag format
             "--overwrite",
             "--nosummary",
-            "-m", metadata_string,
-            str(cbz_file),
+            "-m", build_metadata_string(meta, volume, year),
+            str(cbz),
         ]
-
-        logging.debug(f"Tagging '{cbz_file.name}' (volume={volume}, year={year}).")
+        log.debug("Tagging '%s' (volume=%s, year=%s).", cbz.name, volume, year)
         try:
             subprocess.run(command, check=True)
         except subprocess.CalledProcessError as exc:
-            logging.error(f"ComicTagger failed for '{cbz_file.name}': {exc}")
+            log.error("ComicTagger failed for '%s': %s", cbz.name, exc)
 
 
-# ---------------------------------------------------------------------------
-# Permissions
-# ---------------------------------------------------------------------------
-
-def update_file_permissions(directory: Path) -> None:
-    """Set standard ownership and permissions on all .cbz files in *directory*.
-
-    This is a no-op on Windows because ``chmod`` / ``chown`` are Unix-only.
-
-    File permissions are set to ``644`` (owner read/write, group/others
-    read-only).  Ownership is set to UID 1000 / GID 1001.
-
-    Args:
-        directory: Root directory whose .cbz files will be updated.
-    """
-    if platform.system() == "Windows":
+def process_series(directory: Path, book: dict[str, dict], recent_only: bool, perms: bool) -> None:
+    """Tag all .cbz files in one series directory, matched by directory name."""
+    meta = book.get(directory.name)
+    if meta is None:
+        log.warning("No metadata entry for '%s'. Skipping.", directory.name)
         return
-
-    try:
-        subprocess.run(
-            ["find", str(directory), "-type", "f", "-name", "*.cbz",
-             "-exec", "chmod", FILE_MODE, "{}", "+"],
-            check=True,
-        )
-        subprocess.run(["chown", "-R", FILE_OWNER, str(directory)], check=True)
-    except subprocess.CalledProcessError as exc:
-        logging.warning(f"Permission update failed for '{directory}': {exc}")
-
-
-# ---------------------------------------------------------------------------
-# Metadata loading
-# ---------------------------------------------------------------------------
-
-def load_book_metadata(path: Path) -> Dict[str, SeriesMetadata]:
-    """Read the JSON metadata file and return the ``Manga`` section.
-
-    The expected top-level structure is::
-
-        {
-            "Manga": {
-                "Series Title": { ... },
-                ...
-            }
-        }
-
-    Args:
-        path: Path to the JSON metadata file.
-
-    Returns:
-        A dict mapping series names to their metadata dicts.
-
-    Raises:
-        SystemExit: On any I/O or parse error so the CLI surfaces a clean message.
-    """
-    if not path.exists():
-        logging.error(f"Metadata file '{path}' not found.")
-        sys.exit(1)
-
-    try:
-        with path.open("r", encoding="utf-8") as file_handle:
-            data = json.load(file_handle)
-    except json.JSONDecodeError as exc:
-        logging.error(f"Failed to parse '{path}': {exc}")
-        sys.exit(1)
-
-    manga_section = data.get("Manga")
-    if not isinstance(manga_section, dict):
-        logging.error(f"'{path}' is missing a top-level 'Manga' object.")
-        sys.exit(1)
-
-    return manga_section
-
-
-# ---------------------------------------------------------------------------
-# Processing
-# ---------------------------------------------------------------------------
-
-def process_directory(
-    directory: Path,
-    book_data: Dict[str, SeriesMetadata],
-    recent_only: bool = False,
-    update_permissions: bool = True,
-) -> None:
-    """Tag all .cbz files in one series directory.
-
-    Looks up metadata by matching the directory name against the keys in
-    *book_data*.  If no matching entry is found the directory is skipped with
-    a warning.
-
-    Args:
-        directory:          Path to the series directory (e.g. ``./My Manga``).
-        book_data:          Full metadata dict loaded from the JSON file.
-        recent_only:        When True, only tag recently modified files.
-        update_permissions: When True, fix ownership/permissions after tagging.
-    """
-    series_name = directory.name
-    metadata = book_data.get(series_name)
-
-    if metadata is None:
-        logging.warning(f"No metadata entry for '{series_name}'. Skipping.")
+    files = find_cbz(directory, recent_only)
+    if not files:
+        log.info("No .cbz files found in '%s'.", directory)
         return
-
-    cbz_files = get_cbz_files(directory, recent_only=recent_only)
-    if not cbz_files:
-        logging.info(f"No .cbz files found in '{directory}'.")
-        return
-
-    tag_cbz_files(cbz_files, metadata)
-
-    if update_permissions:
-        update_file_permissions(directory)
-
-    logging.info(f"Finished tagging '{series_name}'.")
+    tag_files(files, meta)
+    if perms:
+        fix_permissions(directory)
+    log.info("Finished '%s' (%d file(s)).", directory.name, len(files))
 
 
 # ---------------------------------------------------------------------------
 # Interactive mode
 # ---------------------------------------------------------------------------
 
-def prompt_yes_no(question: str) -> bool:
-    return input(f"{Fore.RED}{question} (y/n): ").strip().lower().startswith("y")
-
-
-def prompt_directory_choice(directories: List[Path]) -> Optional[Path]:
-    """Interactively ask the user to pick one directory from a numbered list.
-
-    Args:
-        directories: The directories to present as choices.
-
-    Returns:
-        The selected :class:`Path`, or ``None`` if the user typed ``q``.
-    """
+def choose_directory(dirs: list[Path]) -> Path | None:
+    """Prompt until the user picks a directory number or enters 'q'."""
     while True:
-        print(f"{Fore.YELLOW}Available Directories:")
-        for index, directory in enumerate(directories, start=1):
-            print(f"  {Fore.RED}{index}. {Fore.GREEN}{directory.name}")
-
-        raw = input(f"{Fore.RED}Choose a directory # or 'q' to quit: ").strip()
-
-        if raw.lower() == "q":
+        print(paint("Available directories:", "33"))
+        for i, d in enumerate(dirs, start=1):
+            print(f"  {paint(str(i) + '.', '31')} {paint(d.name, '32')}")
+        raw = input(paint("Choose a directory # or 'q' to quit: ", "31")).strip().lower()
+        if raw == "q":
             return None
-
-        if raw.isdigit() and 1 <= int(raw) <= len(directories):
-            return directories[int(raw) - 1]
-
-        print(f"{Fore.RED}Invalid choice. Please enter a number between 1 and {len(directories)}.")
+        if raw.isdigit() and 1 <= int(raw) <= len(dirs):
+            return dirs[int(raw) - 1]
+        print(paint(f"Invalid choice. Enter a number from 1 to {len(dirs)}, or 'q'.", "31"))
 
 
-def run_interactive_mode(
-    subdirs: List[Path],
-    book_data: Dict[str, SeriesMetadata],
-    update_permissions: bool,
-) -> None:
-    """Let the user repeatedly pick directories to tag until they quit.
+def ask_yes_no(question: str) -> bool:
+    return input(paint(f"{question} (y/n): ", "31")).strip().lower().startswith("y")
 
-    Args:
-        subdirs:            All available subdirectories.
-        book_data:          Metadata loaded from the JSON file.
-        update_permissions: Forwarded to :func:`process_directory`.
-    """
-    while True:
-        selected = prompt_directory_choice(subdirs)
-        if selected is None:
-            break
 
-        recent = prompt_yes_no(f"Process only recent files in '{selected.name}'?")
-        process_directory(selected, book_data, recent_only=recent, update_permissions=update_permissions)
-
-    logging.info("Finished manual processing.")
+def run_interactive(subdirs: list[Path], book: dict[str, dict], perms: bool) -> None:
+    try:
+        while (selected := choose_directory(subdirs)) is not None:
+            recent = ask_yes_no(f"Process only recent files in '{selected.name}'?")
+            process_series(selected, book, recent, perms)
+    except (KeyboardInterrupt, EOFError):
+        print()
+    log.info("Finished manual processing.")
 
 
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
-def build_argument_parser() -> argparse.ArgumentParser:
-    """Create and return the CLI argument parser."""
-    parser = argparse.ArgumentParser(
-        description="Batch tag manga CBZ files using ComicTagger and a JSON metadata file."
-    )
-    parser.add_argument(
-        "-m", "--metadata",
-        type=Path,
-        default=Path(DEFAULT_METADATA_FILE),
-        help=f"Path to the metadata JSON file (default: {DEFAULT_METADATA_FILE}).",
-    )
-    parser.add_argument(
-        "-d", "--directory",
-        type=Path,
-        default=Path("."),
-        help="Root directory containing series subdirectories (default: current directory).",
-    )
-    parser.add_argument(
-        "-r", "--recent",
-        action="store_true",
-        help=f"Only process .cbz files modified within the last {RECENT_DAYS} days.",
-    )
-    parser.add_argument(
-        "-a", "--all",
-        action="store_true",
-        help="Automatically process every subdirectory without prompting.",
-    )
-    parser.add_argument(
-        "--no-perms",
-        action="store_true",
-        help="Skip updating file ownership and permissions after tagging.",
-    )
-    parser.add_argument(
-        "-v", "--verbose",
-        action="store_true",
-        help="Enable verbose (DEBUG) output.",
-    )
-    return parser
+def load_metadata(path: Path) -> dict[str, dict]:
+    """Load the 'Manga' section of the metadata JSON, exiting with a message on error."""
+    if not path.is_file():
+        sys.exit(f"Metadata file '{path}' not found.")
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        sys.exit(f"Failed to parse '{path}': {exc}")
+    manga = data.get("Manga") if isinstance(data, dict) else None
+    if not isinstance(manga, dict):
+        sys.exit(f"'{path}' is missing a top-level 'Manga' object.")
+    return manga
+
+
+def build_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(description="Batch tag manga CBZ files with ComicTagger.")
+    p.add_argument("-m", "--metadata", type=Path, default=DEFAULT_METADATA,
+                   help=f"Metadata JSON path (default: {DEFAULT_METADATA}).")
+    p.add_argument("-d", "--directory", type=Path, default=Path("."),
+                   help="Root directory containing series subdirectories (default: .).")
+    p.add_argument("-r", "--recent", action="store_true",
+                   help=f"Only process .cbz files modified in the last {RECENT_DAYS} days.")
+    p.add_argument("-a", "--all", action="store_true",
+                   help="Process every subdirectory without prompting.")
+    p.add_argument("--no-perms", action="store_true",
+                   help="Skip chown/chmod after tagging.")
+    p.add_argument("-v", "--verbose", action="store_true", help="Enable DEBUG output.")
+    return p
 
 
 def main() -> None:
-    """Parse CLI arguments and run the tagger in batch or interactive mode."""
-    parser = build_argument_parser()
-    args = parser.parse_args()
-
-    setup_logging(args.verbose)
-
-    book_data = load_book_metadata(args.metadata)
-
-    subdirs = list_subdirectories(args.directory)
+    args = build_parser().parse_args()
+    if os.name == "nt":
+        os.system("")  # enables ANSI escape handling in older Windows consoles
+    handler = logging.StreamHandler()
+    handler.setFormatter(ColorFormatter())
+    logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
+    if shutil.which("comictagger") is None:
+        sys.exit("'comictagger' was not found on PATH.")
+    if not args.directory.is_dir():
+        sys.exit(f"Directory '{args.directory}' does not exist.")
+    book = load_metadata(args.metadata)
+    subdirs = sorted(p for p in args.directory.iterdir() if p.is_dir())
     if not subdirs:
-        logging.error(f"No subdirectories found in '{args.directory}'.")
-        sys.exit(1)
-
-    # --no-perms inverts to a positive "should we update permissions?" flag so
-    # it can be passed down without double negatives at every call site.
-    should_update_permissions = not args.no_perms
-
+        sys.exit(f"No subdirectories found in '{args.directory}'.")
+    perms = not args.no_perms
     if args.all:
-        for subdir in subdirs:
-            process_directory(
-                subdir,
-                book_data,
-                recent_only=args.recent,
-                update_permissions=should_update_permissions,
-            )
-        logging.info("Finished processing all directories.")
+        for d in subdirs:
+            process_series(d, book, args.recent, perms)
+        log.info("Finished processing all directories.")
     else:
-        run_interactive_mode(subdirs, book_data, update_permissions=should_update_permissions)
+        run_interactive(subdirs, book, perms)
 
 
 if __name__ == "__main__":
