@@ -65,8 +65,8 @@
             "series_group": "A Silent Voice",
             "web_link": "https://kodansha.us/series/a-silent-voice",
             "characters": [
-                "Shoya Ishida",
-                "Shoko Nishimiya",
+                "Shōya Ishida",
+                "Shōko Nishimiya",
                 "Naoka Ueno",
                 "Miki Kawai",
                 "Miyoko Sahara",
@@ -95,7 +95,7 @@
             "series_group": "Arakawa Under the Bridge",
             "web_link": "https://kodansha.us/series/arakawa-under-the-bridge",
             "characters": [
-                "Kou Ichinomiya",
+                "Kō Ichinomiya",
                 "Nino",
                 "Village Chief",
                 "Hoshi",
@@ -113,7 +113,7 @@
                 "Writer": "Hikaru Nakamura"
             }
         },
-        "Ascendance of a Bookworm (Manga) Part 1": {
+        "Ascendance of a Bookworm Part 1": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -140,7 +140,7 @@
                 "Writer": "Miya Kazuki"
             }
         },
-        "Ascendance of a Bookworm (Manga) Part 2": {
+        "Ascendance of a Bookworm Part 2": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -170,7 +170,7 @@
                 "Writer": "Miya Kazuki"
             }
         },
-        "Ascendance of a Bookworm (Manga) Part 3": {
+        "Ascendance of a Bookworm Part 3": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -194,13 +194,13 @@
                 "Lutz"
             ],
             "credit": {
-                "Cover": "Ryo Namino",
-                "Inker": "Ryo Namino",
-                "Penciller": "Ryo Namino",
+                "Cover": "Ryō Namino",
+                "Inker": "Ryō Namino",
+                "Penciller": "Ryō Namino",
                 "Writer": "Miya Kazuki"
             }
         },
-        "Ascendance of a Bookworm (Manga) Part 4": {
+        "Ascendance of a Bookworm Part 4": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -230,7 +230,7 @@
                 "Writer": "Miya Kazuki"
             }
         },
-        "Ascendance of a Bookworm (Manga) Part 5": {
+        "Ascendance of a Bookworm Part 5": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -260,7 +260,7 @@
                 "Writer": "Miya Kazuki"
             }
         },
-        "BAKEMONOGATARI (manga)": {
+        "BAKEMONOGATARI": {
             "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "Kodansha Comics",
@@ -268,7 +268,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Kodansha",
-            "series": "BAKEMONOGATARI (manga)",
+            "series": "BAKEMONOGATARI",
             "series_group": "BAKEMONOGATARI",
             "web_link": "https://kodansha.us/series/bakemonogatari-manga",
             "characters": [
@@ -345,7 +345,7 @@
                 "Writer": "Tatsuki Fujimoto"
             }
         },
-        "Death March to the Parallel World Rhapsody (manga)": {
+        "Death March to the Parallel World Rhapsody": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
@@ -353,7 +353,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "Death March to the Parallel World Rhapsody (manga)",
+            "series": "Death March to the Parallel World Rhapsody",
             "series_group": "Death March to the Parallel World Rhapsody",
             "web_link": "https://yenpress.com/series/death-march-to-the-parallel-world-rhapsody-manga",
             "characters": [
@@ -385,25 +385,25 @@
             "series_group": "Delicious in Dungeon",
             "web_link": "https://yenpress.com/series/delicious-in-dungeon",
             "characters": [
-                "Laios Touden",
+                "Laios Tōden",
                 "Marcille Donato",
                 "Chilchuck Tims",
                 "Senshi",
                 "Izutsumi",
-                "Falin Touden",
+                "Falin Tōden",
                 "Namari",
                 "Shuro",
                 "Kabru",
                 "Sissel"
             ],
             "credit": {
-                "Cover": "Ryoko Kui",
-                "Inker": "Ryoko Kui",
-                "Penciller": "Ryoko Kui",
-                "Writer": "Ryoko Kui"
+                "Cover": "Ryōko Kui",
+                "Inker": "Ryōko Kui",
+                "Penciller": "Ryōko Kui",
+                "Writer": "Ryōko Kui"
             }
         },
-        "Easygoing Territory Defense by the Optimistic Lord - Production Magic Turns a Nameless Village into the Strongest Fortified City (Manga)": {
+        "Easygoing Territory Defense by the Optimistic Lord - Production Magic Turns a Nameless Village into the Strongest Fortified City": {
             "black_and_white": true,
             "genre": "Comedy & Slice of Life",
             "imprint": "Seven Seas Entertainment",
@@ -428,7 +428,7 @@
                 "Cover": "Maro Aoiro",
                 "Inker": "Maro Aoiro",
                 "Penciller": "Maro Aoiro",
-                "Writer": "Sou Akaike"
+                "Writer": "Sō Akaike"
             }
         },
         "Farming Life in Another World": {
@@ -475,14 +475,14 @@
             "characters": [
                 "Miyamoto Musashi",
                 "Senji Muramasa",
-                "Inshun Hozoin",
-                "Fuma Kotaro",
+                "Hōzōin Inshun",
+                "Fūma Kotarō",
                 "Tomoe Gozen",
-                "Yagyu Munenori",
+                "Yagyū Munenori",
                 "Mochizuki Chiyome",
                 "Ashiya Dōman",
                 "Katō Danzō",
-                "Minamoto-no-Raikou"
+                "Minamoto-no-Raikō"
             ],
             "credit": {
                 "Cover": "Rei Wataru",
@@ -593,9 +593,9 @@
                 "Mamoru Itō"
             ],
             "credit": {
-                "Cover": "Toru Oikawa",
-                "Inker": "Toru Oikawa",
-                "Penciller": "Toru Oikawa",
+                "Cover": "Tōru Oikawa",
+                "Inker": "Tōru Oikawa",
+                "Penciller": "Tōru Oikawa",
                 "Writer": "Yusuke Kishi"
             }
         },
@@ -655,7 +655,7 @@
                 "Writer": "Sun Takeda"
             }
         },
-        "Hell Mode (Manga)": {
+        "Hell Mode": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "J-Novel Club",
@@ -737,7 +737,7 @@
                 "Writer": "Shimesaba"
             }
         },
-        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)": {
+        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
@@ -745,7 +745,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too (manga)",
+            "series": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too",
             "series_group": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too",
             "web_link": "https://yenpress.com/series/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-the-real-world-too-manga",
             "characters": [
@@ -793,7 +793,7 @@
                 "Cover": "Chashiba Katase",
                 "Inker": "Chashiba Katase",
                 "Penciller": "Chashiba Katase",
-                "Writer": "Kyo Shirodaira"
+                "Writer": "Kyō Shirodaira"
             }
         },
         "Jujutsu Kaisen": {
@@ -814,10 +814,10 @@
                 "Maki Zen'in",
                 "Toge Inumaki",
                 "Panda",
-                "Yuta Okkotsu",
+                "Yūta Okkotsu",
                 "Kinji Hakari",
                 "Kirara Hoshi",
-                "Satoru Gojo"
+                "Satoru Gojō"
             ],
             "credit": {
                 "Cover": "Gege Akutami",
@@ -841,9 +841,9 @@
                 "Kaguya Shinomiya",
                 "Miyuki Shirogane",
                 "Chika Fujiwara",
-                "Yu Ishigami",
+                "Yū Ishigami",
                 "Ai Hayasaka",
-                "Miko Ino"
+                "Miko Iino"
             ],
             "credit": {
                 "Cover": "Aka Akasaka",
@@ -910,7 +910,7 @@
                 "Writer": "Tomohito Oda"
             }
         },
-        "Lycoris Recoil (manga)": {
+        "Lycoris Recoil": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
@@ -918,7 +918,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "Lycoris Recoil (manga)",
+            "series": "Lycoris Recoil",
             "series_group": "Lycoris Recoil",
             "web_link": "https://yenpress.com/series/lycoris-recoil-manga",
             "characters": [
@@ -953,7 +953,7 @@
             "web_link": "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-happy-marriage",
             "characters": [
                 "Miyo Saimori",
-                "Kiyoka Kudou",
+                "Kiyoka Kudō",
                 "Kaya Saimori",
                 "Kouji Tatsuishi",
                 "Yurie",
@@ -963,9 +963,9 @@
                 "Takaihito"
             ],
             "credit": {
-                "Cover": "Rito Kohsaka",
-                "Inker": "Rito Kohsaka",
-                "Penciller": "Rito Kohsaka",
+                "Cover": "Rito Kōsaka",
+                "Inker": "Rito Kōsaka",
+                "Penciller": "Rito Kōsaka",
                 "Writer": "Akumi Agitogi"
             }
         },
@@ -981,14 +981,14 @@
             "series_group": "Now That We Draw",
             "web_link": "https://sevenseasentertainment.com/series/now-that-we-draw/",
             "characters": [
-                "Uehara Yuuki",
+                "Uehara Yūki",
                 "Miyamoto Niina"
             ],
             "credit": {
                 "Cover": "Yuwji Kaba",
                 "Inker": "Yuwji Kaba",
                 "Penciller": "Yuwji Kaba",
-                "Writer": "Kyu Takahata"
+                "Writer": "Kyū Takahata"
             }
         },
         "One-Punch Man": {
@@ -1015,9 +1015,9 @@
                 "Mumen Rider"
             ],
             "credit": {
-                "Cover": "Yusuke Murata",
-                "Inker": "Yusuke Murata",
-                "Penciller": "Yusuke Murata",
+                "Cover": "Yūsuke Murata",
+                "Inker": "Yūsuke Murata",
+                "Penciller": "Yūsuke Murata",
                 "Writer": "ONE"
             }
         },
@@ -1081,7 +1081,7 @@
                 "Writer": "Liz Takayama"
             }
         },
-        "Parasyte Full Color Collection": {
+        "Parasyte": {
             "black_and_white": true,
             "genre": "Supernatural & Horror",
             "imprint": "Kodansha Comics",
@@ -1089,15 +1089,15 @@
             "manga": true,
             "maturity_rating": "M",
             "publisher": "Kodansha",
-            "series": "Parasyte Full Color Collection",
+            "series": "Parasyte",
             "series_group": "Parasyte",
             "web_link": "https://kodansha.us/series/parasyte-full-color-collection",
             "characters": [
-                "Shinichi Izumi",
+                "Shin'ichi Izumi",
                 "Migi",
                 "Satomi Murano",
                 "Kana Kimishima",
-                "Yuko Tachikawa",
+                "Yūko Tachikawa",
                 "Akiho Suzuki",
                 "Uragami",
                 "Kazuyuki Izumi",
@@ -1123,10 +1123,10 @@
             "series_group": "Shikimori's Not Just a Cutie",
             "web_link": "https://kodansha.us/series/shikimoris-not-just-a-cutie",
             "characters": [
-                "Yuuki Izumi",
+                "Yūki Izumi",
                 "Miyako Shikimori",
-                "Shu Inuzuka",
-                "Kyo Nekozaki",
+                "Shū Inuzuka",
+                "Kyō Nekozaki",
                 "Yui Hachimitsu",
                 "Ai Kamiya",
                 "Motoko Izumi",
@@ -1141,7 +1141,7 @@
                 "Writer": "Keigo Maki"
             }
         },
-        "SPRIGGAN - Deluxe Edition": {
+        "SPRIGGAN": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Seven Seas Entertainment",
@@ -1149,7 +1149,7 @@
             "manga": true,
             "maturity_rating": "M",
             "publisher": "Seven Seas Entertainment",
-            "series": "SPRIGGAN: Deluxe Edition",
+            "series": "SPRIGGAN",
             "series_group": "SPRIGGAN",
             "web_link": "https://sevenseasentertainment.com/series/spriggan-deluxe-edition/",
             "characters": [
@@ -1184,10 +1184,14 @@
             "web_link": "https://kodansha.us/series/suzume",
             "characters": [
                 "Suzume Iwato",
-                "Souta Munakata",
+                "Sōta Munakata",
                 "Tamaki Iwato",
+                "Minoru Okabe",
+                "Rumi Ninomiya",
+                "Chika Amabe",
+                "Tsubame Iwato",
+                "Hitsujirō Munakata",
                 "Tomoya Serizawa",
-                "Hitsujirou Munakata",
                 "Daijin"
             ],
             "credit": {
@@ -1215,19 +1219,19 @@
                 "Licorice Mill Hubarek",
                 "Casserole Mill Morteln",
                 "Josephine Mill Morteln",
-                "Sheets Beetwin",
+                "Feuille Beetwin",
                 "Petra Mill Hubarek",
                 "Squale Mill Kadorecheck",
                 "Anies Mill Morteln"
             ],
             "credit": {
-                "Cover": "Iida Seriko",
-                "Inker": "Iida Seriko",
-                "Penciller": "Iida Seriko",
-                "Writer": "Tomizawa Midori"
+                "Cover": "Seriko Iida",
+                "Inker": "Seriko Iida",
+                "Penciller": "Seriko Iida",
+                "Writer": "Midori Tomizawa"
             }
         },
-        "The Eminence in Shadow (manga)": {
+        "The Eminence in Shadow": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "Yen Press",
@@ -1235,11 +1239,11 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "The Eminence in Shadow (manga)",
+            "series": "The Eminence in Shadow",
             "series_group": "The Eminence in Shadow",
             "web_link": "https://yenpress.com/series/the-eminence-in-shadow-manga",
             "characters": [
-                "Cid Kagenou",
+                "Cid Kagenō",
                 "Alpha",
                 "Beta",
                 "Gamma",
@@ -1247,8 +1251,8 @@
                 "Epsilon",
                 "Zeta",
                 "Eta",
-                "Lambda",
-                "Nu"
+                "Claire Kagenō",
+                "Alexia Midgar"
             ],
             "credit": {
                 "Cover": "Anri Sakano",
@@ -1257,7 +1261,7 @@
                 "Writer": "Daisuke Aizawa"
             }
         },
-        "The Exiled Heavy Knight Knows How to Game the System (Omnibus)": {
+        "The Exiled Heavy Knight Knows How to Game the System": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "Seven Seas Entertainment",
@@ -1265,7 +1269,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
-            "series": "The Exiled Heavy Knight Knows How to Game the System (Omnibus)",
+            "series": "The Exiled Heavy Knight Knows How to Game the System",
             "series_group": "The Exiled Heavy Knight Knows How to Game the System",
             "web_link": "https://sevenseasentertainment.com/series/the-exiled-heavy-knight-knows-how-to-game-the-system-omnibus",
             "characters": [
@@ -1302,7 +1306,7 @@
                 "Writer": "Jirō Sugiura"
             }
         },
-        "The Faraway Paladin (Manga)": {
+        "The Faraway Paladin": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "J-Novel Club",
@@ -1310,7 +1314,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "J-Novel Club",
-            "series": "The Faraway Paladin (Manga)",
+            "series": "The Faraway Paladin",
             "series_group": "The Faraway Paladin",
             "web_link": "https://j-novel.club/series/the-faraway-paladin-manga",
             "characters": [
@@ -1327,9 +1331,9 @@
                 "Bart Bagley"
             ],
             "credit": {
-                "Cover": "Mutsumi Okubashi",
-                "Inker": "Mutsumi Okubashi",
-                "Penciller": "Mutsumi Okubashi",
+                "Cover": "Mutsumi Okuhashi",
+                "Inker": "Mutsumi Okuhashi",
+                "Penciller": "Mutsumi Okuhashi",
                 "Writer": "Kanata Yanagino"
             }
         },
@@ -1345,16 +1349,16 @@
             "series_group": "The Fragrant Flower Blooms With Dignity",
             "web_link": "https://kodansha.us/series/the-fragrant-flower-blooms-with-dignity",
             "characters": [
-                "Rintaro Tsumugi",
+                "Rintarō Tsumugi",
                 "Kaoruko Waguri",
-                "Shohei Usami",
+                "Shōhei Usami",
                 "Saku Natsusawa",
                 "Ayato Yorita",
                 "Subaru Hoshina",
                 "Madoka Yuzuhara",
-                "Kyoko Tsumugi",
-                "Keiichiro Tsumugi",
-                "Sotaro Tsumugi"
+                "Kyōko Tsumugi",
+                "Keīchirō Tsumugi",
+                "Sōtarō Tsumugi"
             ],
             "credit": {
                 "Cover": "Saka Mikami",
@@ -1399,7 +1403,7 @@
             "characters": [
                 "Makoto Konno",
                 "Chiaki Mamiya",
-                "Kosuke Tsuda",
+                "Kōsuke Tsuda",
                 "Yuri Hayakawa",
                 "Kaho Fujitani",
                 "Kazuko Yoshiyama",
@@ -1407,9 +1411,9 @@
                 "Sojiro Takase"
             ],
             "credit": {
-                "Cover": "Yasutaka Tsusui",
-                "Inker": "Yasutaka Tsusui",
-                "Penciller": "Yasutaka Tsusui",
+                "Cover": "Ranmaru Kotone",
+                "Inker": "Ranmaru Kotone",
+                "Penciller": "Ranmaru Kotone",
                 "Writer": "Ranmaru Kotone"
             }
         },
@@ -1473,7 +1477,7 @@
                 "Writer": "Kaiu Shirai"
             }
         },
-        "The Rising of the Shield Hero - The Manga Companion": {
+        "The Rising of the Shield Hero": {
             "black_and_white": true,
             "genre": "Action & Adventure",
             "imprint": "One Peace Books",
@@ -1481,7 +1485,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "One Peace Books",
-            "series": "The Rising of the Shield Hero: The Manga Companion",
+            "series": "The Rising of the Shield Hero",
             "series_group": "The Rising of the Shield Hero",
             "web_link": "https://onepeacebooks.com/jt/ShieldHeroManga.html",
             "characters": [
@@ -1497,9 +1501,9 @@
                 "Rishia Ivyred"
             ],
             "credit": {
-                "Cover": "Aiya Kyu",
-                "Inker": "Aiya Kyu",
-                "Penciller": "Aiya Kyu",
+                "Cover": "Aiya Kyū",
+                "Inker": "Aiya Kyū",
+                "Penciller": "Aiya Kyū",
                 "Writer": "Aneko Yusagi"
             }
         },
@@ -1533,7 +1537,7 @@
                 "Writer": "Isao Miura"
             }
         },
-        "The Water Magician (Manga)": {
+        "The Water Magician": {
             "black_and_white": true,
             "genre": "Sci-Fi & Fantasy",
             "imprint": "J-Novel Club",
@@ -1563,7 +1567,7 @@
                 "Writer": "Tadashi Kubō"
             }
         },
-        "Though I Am an Inept Villainess - Tale of the Butterfly-Rat Body Swap in the Maiden Court (Manga)": {
+        "Though I Am an Inept Villainess - Tale of the Butterfly-Rat Body Swap in the Maiden Court": {
             "black_and_white": true,
             "genre": "Historical & Period Drama",
             "imprint": "Seven Seas Entertainment",
@@ -1571,7 +1575,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Seven Seas Entertainment",
-            "series": "Though I Am an Inept Villainess: Tale of the Butterfly-Rat Body Swap in the Maiden Court (Manga)",
+            "series": "Though I Am an Inept Villainess: Tale of the Butterfly-Rat Body Swap in the Maiden Court",
             "series_group": "Though I Am an Inept Villainess",
             "web_link": "https://sevenseasentertainment.com/series/though-i-am-an-inept-villainess-tale-of-the-butterfly-rat-body-swap-in-the-maiden-court-manga/",
             "characters": [
@@ -1716,15 +1720,15 @@
             "series_group": "Welcome Back, Alice",
             "web_link": "https://kodansha.us/series/welcome-back-alice",
             "characters": [
-                "Yohei Kamehara",
+                "Yōhei Kamehara",
                 "Yui Mitani",
                 "Kei Murota"
             ],
             "credit": {
-                "Cover": "Shuzo Oshimi",
-                "Inker": "Shuzo Oshimi",
-                "Penciller": "Shuzo Oshimi",
-                "Writer": "Shuzo Oshimi"
+                "Cover": "Shūzō Oshimi",
+                "Inker": "Shūzō Oshimi",
+                "Penciller": "Shūzō Oshimi",
+                "Writer": "Shūzō Oshimi"
             }
         },
         "Wolf Children - Ame & Yuki": {
@@ -1743,18 +1747,16 @@
                 "Ookami",
                 "Ame",
                 "Yuki",
-                "Sōhei Fujii",
-                "Grandpa Nirasaki",
-                "Shino"
+                "Sōhei Fujii"
             ],
             "credit": {
-                "Cover": "Yuu",
-                "Inker": "Yuu",
-                "Penciller": "Yuu",
+                "Cover": "Yū",
+                "Inker": "Yū",
+                "Penciller": "Yū",
                 "Writer": "Mamoru Hosoda"
             }
         },
-        "your name. (manga)": {
+        "your name.": {
             "black_and_white": true,
             "genre": "Romance & Drama",
             "imprint": "Yen Press",
@@ -1762,7 +1764,7 @@
             "manga": true,
             "maturity_rating": "Teen",
             "publisher": "Yen Press",
-            "series": "your name. (manga)",
+            "series": "your name.",
             "series_group": "your name.",
             "web_link": "https://yenpress.com/series/your-name-manga",
             "characters": [
