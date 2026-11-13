@@ -1,0 +1,20 @@
+[package]
+name = "dirtag"
+version = "0.1.0"
+edition = "2021"
+description = "Batch-tag manga CBZ files with ComicTagger using a JSON5 metadata file"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+colored = "2"
+indexmap = { version = "2", features = ["serde"] }
+json5 = "0.4"
+log = "0.4"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+walkdir = "2"
+which = "6"
+
+[profile.release]
+lto = true
+strip = true

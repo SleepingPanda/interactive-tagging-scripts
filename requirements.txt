@@ -1,1 +1,0 @@
-comictagger[GUI]==1.5.5
