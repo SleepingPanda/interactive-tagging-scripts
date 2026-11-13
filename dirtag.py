@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Batch-tag manga CBZ files with ComicTagger using a JSON formatted metadata file.
 
-Metadata file layout:
-    {"Manga": {"<series directory name>": {...series fields...}}}
+# Batch-tag manga CBZ files with ComicTagger using a JSON formatted metadata file.
 
-Usage:
-    dirtag.py                          # interactive mode
-    dirtag.py -a                       # tag every series subdirectory
-    dirtag.py -a -r                    # only files modified in the last 14 days
-    dirtag.py -m meta.json -d /library
-"""
+# Metadata file layout:
+#     {"Manga": {"<series directory name>": {...series fields...}}}
+
+# Usage:
+#     dirtag.py                          # interactive mode
+#     dirtag.py -a                       # tag every series subdirectory
+#     dirtag.py -a -r                    # only files modified in the last 14 days
+#     dirtag.py -m meta.json -d /library
+
 
 from __future__ import annotations
 
@@ -42,13 +43,13 @@ USE_COLOR = sys.stdout.isatty() and "NO_COLOR" not in os.environ
 LEVEL_CODES = {"DEBUG": "36", "INFO": "36", "WARNING": "33", "ERROR": "31", "CRITICAL": "31"}
 
 
+# Wrap *text* in an ANSI SGR code, or return it unchanged if colors are off.
 def paint(text: str, code: str) -> str:
-    """Wrap *text* in an ANSI SGR code, or return it unchanged if colors are off."""
     return f"\033[{code}m{text}\033[0m" if USE_COLOR else text
 
 
+# Log formatter that colors the level tag by severity.
 class ColorFormatter(logging.Formatter):
-    """Log formatter that colors the level tag by severity."""
     def format(self, record: logging.LogRecord) -> str:
         label = paint(f"[{record.levelname}]", LEVEL_CODES.get(record.levelname, "0"))
         return f"{label} {record.getMessage()}"
@@ -58,8 +59,8 @@ class ColorFormatter(logging.Formatter):
 # Parsing helpers
 # ---------------------------------------------------------------------------
 
+# Return the volume number in a filename such as 'v01' or 'Vol.2', or None.
 def parse_volume(filename: str) -> int | None:
-    """Return the volume number in a filename such as 'v01' or 'Vol.2', or None."""
     match = VOLUME_RE.search(filename)
     if match:
         return int(match.group(1))
@@ -67,8 +68,8 @@ def parse_volume(filename: str) -> int | None:
     return None
 
 
+# Return the year in a filename such as '(2023)', or None.
 def parse_year(filename: str) -> int | None:
-    """Return the year in a filename such as '(2023)', or None."""
     match = YEAR_RE.search(filename)
     if match:
         return int(match.group(1))
@@ -76,8 +77,8 @@ def parse_year(filename: str) -> int | None:
     return None
 
 
+# Escape ',' and '=' which ComicTagger treats as delimiters.
 def _esc(value: Any) -> str:
-    """Escape ',' and '=' which ComicTagger treats as delimiters."""
     return str(value).replace(",", "^,").replace("=", "^=")
 
 
@@ -85,8 +86,8 @@ def _yn(flag: bool) -> str:
     return "Yes" if flag else "No"
 
 
+# Build the comma-delimited key=value string for `comictagger -m`.
 def build_metadata_string(meta: dict, volume: int | None = None, year: int | None = None) -> str:
-    """Build the comma-delimited key=value string for `comictagger -m`."""
     parts = [
         f"manga={_yn(meta.get('manga', False))}",
         f"issue={ISSUE_SENTINEL}",
@@ -111,8 +112,8 @@ def build_metadata_string(meta: dict, volume: int | None = None, year: int | Non
 # Filesystem
 # ---------------------------------------------------------------------------
 
+# Recursively list .cbz files, optionally limited to recently modified ones.
 def find_cbz(directory: Path, recent_only: bool) -> list[Path]:
-    """Recursively list .cbz files, optionally limited to recently modified ones."""
     cutoff = time.time() - RECENT_DAYS * 86_400
     return [
         p for p in directory.rglob("*.cbz")
@@ -120,8 +121,8 @@ def find_cbz(directory: Path, recent_only: bool) -> list[Path]:
     ]
 
 
+# Chown the series directory tree and chmod its .cbz files. No-op on Windows.
 def fix_permissions(directory: Path) -> None:
-    """Chown the series directory tree and chmod its .cbz files. No-op on Windows."""
     if os.name == "nt":
         return
     try:
@@ -140,8 +141,8 @@ def fix_permissions(directory: Path) -> None:
 # Tagging
 # ---------------------------------------------------------------------------
 
+# Run ComicTagger on each file, deriving volume and year from its name.
 def tag_files(files: list[Path], meta: dict) -> None:
-    """Run ComicTagger on each file, deriving volume and year from its name."""
     for cbz in files:
         volume = parse_volume(cbz.name)
         year = parse_year(cbz.name)
@@ -162,8 +163,8 @@ def tag_files(files: list[Path], meta: dict) -> None:
             log.error("ComicTagger failed for '%s': %s", cbz.name, exc)
 
 
+# Tag all .cbz files in one series directory, matched by directory name.
 def process_series(directory: Path, book: dict[str, dict], recent_only: bool, perms: bool) -> None:
-    """Tag all .cbz files in one series directory, matched by directory name."""
     meta = book.get(directory.name)
     if meta is None:
         log.warning("No metadata entry for '%s'. Skipping.", directory.name)
@@ -182,8 +183,8 @@ def process_series(directory: Path, book: dict[str, dict], recent_only: bool, pe
 # Interactive mode
 # ---------------------------------------------------------------------------
 
+# Prompt until the user picks a directory number or enters 'q'.
 def choose_directory(dirs: list[Path]) -> Path | None:
-    """Prompt until the user picks a directory number or enters 'q'."""
     while True:
         print(paint("Available directories:", "33"))
         for i, d in enumerate(dirs, start=1):
@@ -214,8 +215,8 @@ def run_interactive(subdirs: list[Path], book: dict[str, dict], perms: bool) -> 
 # Entry point
 # ---------------------------------------------------------------------------
 
+# Load the 'Manga' section of the metadata JSON, exiting with a message on error.
 def load_metadata(path: Path) -> dict[str, dict]:
-    """Load the 'Manga' section of the metadata JSON, exiting with a message on error."""
     if not path.is_file():
         sys.exit(f"Metadata file '{path}' not found.")
     try:
