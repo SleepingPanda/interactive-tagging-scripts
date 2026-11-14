@@ -1,40 +1,47 @@
-//! Extract the volume number and year from a .cbz filename.
+//! Pulling the volume number and publication year out of a `.cbz` filename.
+//!
+//! Example: `My Series v03 (2021).cbz` -> volume 3, year 2021.
 
-use std::sync::OnceLock;
+use std::sync::LazyLock;
 
 use log::warn;
 use regex::Regex;
 
-fn volume_re() -> &'static Regex {
-    static RE: OnceLock<Regex> = OnceLock::new();
-    RE.get_or_init(|| Regex::new(r"(?i)\bv(?:ol\.?\s*)?([0-9]+)\b").unwrap())
+/// Matches `v1`, `v01`, `Vol.2`, `vol 3`, ... (case-insensitive) and captures the digits.
+///
+/// `\b` is a "word boundary": it stops the pattern from matching a `v` in the middle of a
+/// word, so `Revolution 5` does not count as volume 5.
+static VOLUME_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)\bv(?:ol\.?\s*)?([0-9]+)\b").expect("volume pattern is valid")
+});
+
+/// Matches a four-digit year in parentheses, such as `(2023)`, and captures the digits.
+static YEAR_RE: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"\(([0-9]{4})\)").expect("year pattern is valid"));
+
+/// Returns the first number captured by `pattern` in `filename`.
+///
+/// Logs a warning naming `what` (e.g. "year") and returns `None` when the filename has no
+/// match. The tag for that field is then simply left out.
+fn extract_number(pattern: &Regex, filename: &str, what: &str) -> Option<u32> {
+    let number = pattern
+        .captures(filename)
+        // Group 0 is the whole match; group 1 is the digits we asked to capture.
+        .and_then(|captures| captures[1].parse().ok());
+    if number.is_none() {
+        warn!("Could not extract {what} from '{filename}'.");
+    }
+    number
 }
 
-fn year_re() -> &'static Regex {
-    static RE: OnceLock<Regex> = OnceLock::new();
-    RE.get_or_init(|| Regex::new(r"\(([0-9]{4})\)").unwrap())
-}
-
-fn capture_number(re: &Regex, filename: &str) -> Option<u32> {
-    re.captures(filename)?.get(1)?.as_str().parse().ok()
-}
-
-/// Volume number in a filename such as `v01` or `Vol.2`.
+/// The volume number in a filename, e.g. `v01` or `Vol.2`.
 pub fn parse_volume(filename: &str) -> Option<u32> {
-    let volume = capture_number(volume_re(), filename);
-    if volume.is_none() {
-        warn!("Could not extract volume number from '{filename}'.");
-    }
-    volume
+    extract_number(&VOLUME_RE, filename, "volume number")
 }
 
-/// Year in a filename such as `(2023)`.
+/// The year in a filename, e.g. `(2023)`.
 pub fn parse_year(filename: &str) -> Option<u32> {
-    let year = capture_number(year_re(), filename);
-    if year.is_none() {
-        warn!("Could not extract year from '{filename}'.");
-    }
-    year
+    extract_number(&YEAR_RE, filename, "year")
 }
 
 #[cfg(test)]
@@ -47,8 +54,14 @@ mod tests {
         assert_eq!(parse_volume("Series Vol.2.cbz"), Some(2));
         assert_eq!(parse_volume("Series VOL. 13.cbz"), Some(13));
         assert_eq!(parse_volume("Series Vol 7 (2020).cbz"), Some(7));
+    }
+
+    #[test]
+    fn volume_missing_or_not_a_volume() {
         assert_eq!(parse_volume("Series (2023).cbz"), None);
         assert_eq!(parse_volume("Series.cbz"), None);
+        // A "v" inside a word must not be mistaken for a volume marker.
+        assert_eq!(parse_volume("Revolution 5.cbz"), None);
     }
 
     #[test]

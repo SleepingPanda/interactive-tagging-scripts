@@ -1,23 +1,31 @@
-//! The JSON5 metadata file and the string handed to `comictagger -m`.
+//! The JSON5 metadata file, and the `key=value,...` string that tells ComicTagger what to write.
 
 use std::collections::HashMap;
 use std::fs;
 use std::io;
 use std::path::Path;
 
+use anyhow::{anyhow, Context, Result};
 use indexmap::IndexMap;
 use serde::Deserialize;
 
 /// Use this figure for Kavita to recognize the tagged file as a single volume instead of as a chapter/issue.
 const ISSUE_SENTINEL: i32 = -100_000;
 
-/// Series directory name -> that series' metadata.
-pub type Book = HashMap<String, Series>;
+/// All known series, keyed by the exact name of the series' directory.
+pub type Catalog = HashMap<String, Series>;
 
+/// Metadata for one series, as written in the metadata file.
+///
+/// The field names are the keys used in the file. Any field left out of the file falls back
+/// to its default (empty text, `false`, empty list) thanks to `#[serde(default)]`, and keys
+/// this struct does not know about are ignored.
 #[derive(Debug, Default, Deserialize)]
 #[serde(default)]
 pub struct Series {
+    /// Whether the series is manga (as opposed to western comics).
     manga: bool,
+    /// Whether the pages are black and white.
     black_and_white: bool,
     language: String,
     genre: String,
@@ -25,35 +33,61 @@ pub struct Series {
     publisher: String,
     imprint: String,
     series: String,
+    /// Groups related series (e.g. several parts of one franchise) together.
     series_group: String,
     web_link: String,
+    /// Role -> person, e.g. `Writer: "Jane Doe"`. An `IndexMap` keeps the order of the file.
     credit: IndexMap<String, String>,
     characters: Vec<String>,
 }
 
+impl Series {
+    /// The plain-text fields as `(ComicTagger key, value)` pairs, in the order they are
+    /// passed to ComicTagger.
+    fn text_fields(&self) -> [(&'static str, &str); 8] {
+        [
+            ("language", &self.language),
+            ("genre", &self.genre),
+            ("maturity_rating", &self.maturity_rating),
+            ("publisher", &self.publisher),
+            ("imprint", &self.imprint),
+            ("series", &self.series),
+            ("series_group", &self.series_group),
+            ("web_link", &self.web_link),
+        ]
+    }
+}
+
+/// The shape of the whole file: one top-level `Manga` key containing every series.
 #[derive(Deserialize)]
 struct MetadataFile {
     #[serde(rename = "Manga")]
-    manga: Book,
+    manga: Catalog,
 }
 
-/// Load the `Manga` section of the JSON5 metadata file.
-pub fn load_metadata(path: &Path) -> Result<Book, String> {
-    let text = fs::read_to_string(path).map_err(|e| match e.kind() {
-        io::ErrorKind::NotFound => format!("Metadata file '{}' not found.", path.display()),
-        _ => format!("Failed to read '{}': {e}", path.display()),
+/// Reads and parses the metadata file, returning its `Manga` section.
+///
+/// The error messages are shown to the user as-is, so they name the file involved.
+pub fn load_metadata(path: &Path) -> Result<Catalog> {
+    let text = fs::read_to_string(path).map_err(|error| {
+        if error.kind() == io::ErrorKind::NotFound {
+            anyhow!("Metadata file '{}' not found.", path.display())
+        } else {
+            anyhow::Error::new(error).context(format!("Failed to read '{}'", path.display()))
+        }
     })?;
-    let file: MetadataFile = json5::from_str(&text)
-        .map_err(|e| format!("Failed to parse '{}': {e}", path.display()))?;
+    let file: MetadataFile =
+        json5::from_str(&text).with_context(|| format!("Failed to parse '{}'", path.display()))?;
     Ok(file.manga)
 }
 
-/// Escape `,` and `=`, which ComicTagger treats as delimiters.
-fn esc(value: &str) -> String {
+/// Escapes `,` and `=` with a `^`, because ComicTagger uses them as delimiters in its
+/// `key=value,key=value` argument.
+fn escape(value: &str) -> String {
     value.replace(',', "^,").replace('=', "^=")
 }
 
-fn yn(flag: bool) -> &'static str {
+fn yes_no(flag: bool) -> &'static str {
     if flag {
         "Yes"
     } else {
@@ -61,42 +95,53 @@ fn yn(flag: bool) -> &'static str {
     }
 }
 
-/// Build the comma-delimited key=value string for `comictagger -m`.
+/// Builds the value for ComicTagger's `-m` option: a comma-separated list of `key=value`
+/// pairs. For example (shortened):
+///
+/// ```text
+/// manga=Yes,issue=-100000,black_and_white=Yes,language=en,...,volume=3,title=Volume 3,year=2021,credit=Writer:Jane Doe,characters=A^,B
+/// ```
+///
+/// `volume` and `year` come from the filename (see the `filename` module); each is left out
+/// when `None`.
 pub fn build_metadata_string(meta: &Series, volume: Option<u32>, year: Option<u32>) -> String {
-    let text_fields = [
-        ("language", &meta.language),
-        ("genre", &meta.genre),
-        ("maturity_rating", &meta.maturity_rating),
-        ("publisher", &meta.publisher),
-        ("imprint", &meta.imprint),
-        ("series", &meta.series),
-        ("series_group", &meta.series_group),
-        ("web_link", &meta.web_link),
+    let mut pairs = vec![
+        format!("manga={}", yes_no(meta.manga)),
+        format!("issue={ISSUE_SENTINEL}"),
+        format!("black_and_white={}", yes_no(meta.black_and_white)),
     ];
 
-    let mut parts = vec![
-        format!("manga={}", yn(meta.manga)),
-        format!("issue={ISSUE_SENTINEL}"),
-        format!("black_and_white={}", yn(meta.black_and_white)),
-    ];
-    parts.extend(text_fields.iter().map(|(key, value)| format!("{key}={}", esc(value))));
-    if let Some(v) = volume {
-        parts.push(format!("volume={v}"));
-        parts.push(format!("title=Volume {v}"));
+    pairs.extend(
+        meta.text_fields()
+            .iter()
+            .map(|(key, value)| format!("{key}={}", escape(value))),
+    );
+
+    if let Some(volume) = volume {
+        pairs.push(format!("volume={volume}"));
+        pairs.push(format!("title=Volume {volume}"));
     }
-    if let Some(y) = year {
-        parts.push(format!("year={y}"));
+    if let Some(year) = year {
+        pairs.push(format!("year={year}"));
     }
-    parts.extend(
+
+    // One `credit=Role:Person` pair per entry.
+    pairs.extend(
         meta.credit
             .iter()
-            .map(|(role, person)| format!("credit={role}:{}", esc(person))),
+            .map(|(role, person)| format!("credit={role}:{}", escape(person))),
     );
+
+    // All characters go into a single `characters=` value. Items are joined with an
+    // escaped comma (`^,`) so ComicTagger reads them as one list rather than as separate
+    // key=value pairs. Note that a comma *inside* a name is escaped the same way, so it is
+    // indistinguishable from the separator (behavior carried over from the original script).
     if !meta.characters.is_empty() {
-        let names: Vec<String> = meta.characters.iter().map(|c| esc(c)).collect();
-        parts.push(format!("characters={}", names.join("^,")));
+        let names: Vec<String> = meta.characters.iter().map(|name| escape(name)).collect();
+        pairs.push(format!("characters={}", names.join("^,")));
     }
-    parts.join(",")
+
+    pairs.join(",")
 }
 
 #[cfg(test)]
@@ -146,5 +191,22 @@ mod tests {
     fn plain_json_still_parses() {
         let file: MetadataFile = json5::from_str(r#"{"Manga": {"X": {"manga": true}}}"#).unwrap();
         assert!(file.manga["X"].manga);
+    }
+
+    #[test]
+    fn load_metadata_error_messages() {
+        let dir = tempfile::tempdir().unwrap();
+
+        let missing = dir.path().join("nope.json5");
+        let message = load_metadata(&missing).unwrap_err().to_string();
+        assert_eq!(
+            message,
+            format!("Metadata file '{}' not found.", missing.display())
+        );
+
+        let broken = dir.path().join("broken.json5");
+        fs::write(&broken, "{ Manga: { ").unwrap();
+        let message = format!("{:#}", load_metadata(&broken).unwrap_err());
+        assert!(message.starts_with(&format!("Failed to parse '{}': ", broken.display())));
     }
 }

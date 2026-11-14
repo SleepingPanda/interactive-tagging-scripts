@@ -42,7 +42,7 @@ Each immediate subdirectory of the root is treated as one series. `.cbz` files a
 
 ### Permissions
 
-After tagging a series, `dirtag` changes ownership of everything in that series directory to UID/GID `1000` and sets its `.cbz` files to mode `644`. This does nothing on Windows. To change the owner or mode, edit the constants at the top of `src/library.rs`, or pass `--no-perms` to skip the step.
+After tagging a series, `dirtag` changes ownership of everything in that series directory to UID/GID `1000` and sets its `.cbz` files to mode `644`. This does nothing on Windows. To change the owner or mode, edit the constants in `src/permissions.rs`, or pass `--no-perms` to skip the step.
 
 ## Metadata file (`manga.json5`)
 
@@ -93,7 +93,8 @@ A file with no recognizable volume or year is still tagged, with a warning, and 
 | `src/main.rs` | Command-line options and top-level flow |
 | `src/metadata.rs` | Metadata file loading and the ComicTagger metadata string |
 | `src/filename.rs` | Volume and year extraction from filenames |
-| `src/library.rs` | Finding series directories and `.cbz` files; permissions |
+| `src/library.rs` | Finding series directories and `.cbz` files |
+| `src/permissions.rs` | Ownership/permission fix-up after tagging (Unix only) |
 | `src/tagger.rs` | Running ComicTagger on a series |
 | `src/interactive.rs` | Interactive menu |
 | `src/logger.rs` | Colored log output |
