@@ -40,7 +40,7 @@ dirtag -v                       # verbose output
 
 Each immediate subdirectory of the root is treated as one series. `.cbz` files are found recursively inside it (the extension match is case-insensitive) and processed in sorted order. Subdirectories with no matching entry in the metadata file are skipped with a warning.
 
-### Permissions
+## Permissions
 
 After tagging a series, `dirtag` changes ownership of everything in that series directory to UID/GID `1000` and sets its `.cbz` files to mode `644`. This does nothing on Windows. To change the owner or mode, edit the constants in `src/permissions.rs`, or pass `--no-perms` to skip the step.
 
