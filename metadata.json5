@@ -143,8 +143,8 @@
         "Chainsaw Man": {
             genre: "Action & Adventure",
             imprint: "SHONEN JUMP",
-            maturity_rating: "M",
             publisher: "VIZ",
+            maturity_rating: "M",
             series: "Chainsaw Man",
             series_group: "Chainsaw Man",
             web_link: "https://viz.com/chainsaw-man",
@@ -161,7 +161,7 @@
             series_group: "Death March to the Parallel World Rhapsody",
             web_link: "https://yenpress.com/series/death-march-to-the-parallel-world-rhapsody-manga",
             characters: [
-                "Satou", "Liza", "Tama", "Pochi", "Arisa", "Lulu", "Nana", "Mia",
+                "Satō", "Liza", "Tama", "Pochi", "Arisa", "Lulu", "Nana", "Mia",
             ],
             credit: { "Cover, Inker, Penciller": "Ayamegumu", Writer: "Hiro Ainana" },
         },
@@ -204,8 +204,8 @@
         "Fate-Grand Order -Epic of Remnant- Pseudo-Singularity III": {
             genre: "Sci-Fi & Fantasy",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Fate/Grand Order -Epic of Remnant- Pseudo-Singularity III: The Stage of Carnage, Shimousa - Seven Duels of Swordmasters",
             series_group: "Fate",
             web_link: "https://kodansha.us/series/fategrand-order-epic-of-remnant-pseudo-singularity-iii-the-stage-of-carnage-shimousa-seven-duels-of-swordmasters",
@@ -217,8 +217,8 @@
         "Fate-Grand Order -mortalis-stella": {
             genre: "Sci-Fi & Fantasy",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Fate/Grand Order -mortalis:stella",
             series_group: "Fate",
             web_link: "https://kodansha.us/series/fategrand-order-mortalisstella",
@@ -230,8 +230,8 @@
         "Flying Witch": {
             genre: "Comedy & Slice of Life",
             imprint: "Kodansha Comics",
-            maturity_rating: "Everyone",
             publisher: "Kodansha",
+            maturity_rating: "Everyone",
             series: "Flying Witch",
             series_group: "Flying Witch",
             web_link: "https://kodansha.us/series/flying-witch",
@@ -255,8 +255,8 @@
         "From the New World": {
             genre: "Sci-Fi & Fantasy",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "From the New World",
             series_group: "From the New World",
             web_link: "https://kodansha.us/series/from-the-new-world",
@@ -280,8 +280,8 @@
         "Gleipnir": {
             genre: "Mystery & Thriller",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Gleipnir",
             series_group: "Gleipnir",
             web_link: "https://kodansha.us/series/gleipnir",
@@ -449,8 +449,8 @@
         "Orb - On the Movements of the Earth": {
             genre: "Historical & Period Drama",
             imprint: "Seven Seas Entertainment",
-            maturity_rating: "M",
             publisher: "Seven Seas Entertainment",
+            maturity_rating: "M",
             series: "Orb: On the Movements of the Earth",
             series_group: "Orb: On the Movements of the Earth",
             web_link: "https://sevenseasentertainment.com/series/orb-on-the-movements-of-the-earth-omnibus/",
@@ -474,8 +474,8 @@
         "Parasyte": {
             genre: "Supernatural & Horror",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Parasyte",
             series_group: "Parasyte",
             web_link: "https://kodansha.us/series/parasyte-full-color-collection",
@@ -499,8 +499,8 @@
         "SPRIGGAN": {
             genre: "Action & Adventure",
             imprint: "Seven Seas Entertainment",
-            maturity_rating: "M",
             publisher: "Seven Seas Entertainment",
+            maturity_rating: "M",
             series: "SPRIGGAN",
             series_group: "SPRIGGAN",
             web_link: "https://sevenseasentertainment.com/series/spriggan-deluxe-edition/",
@@ -560,8 +560,8 @@
         "The Fake Alchemist": {
             genre: "Sci-Fi & Fantasy",
             imprint: "Yen Press",
-            maturity_rating: "M",
             publisher: "Yen Press",
+            maturity_rating: "M",
             series: "The Fake Alchemist",
             series_group: "The Fake Alchemist",
             web_link: "https://yenpress.com/series/the-fake-alchemist",
@@ -621,8 +621,8 @@
         "The Idaten Deities Know Only Peace": {
             genre: "Sci-Fi & Fantasy",
             imprint: "Seven Seas Entertainment",
-            maturity_rating: "M",
             publisher: "Seven Seas Entertainment",
+            maturity_rating: "M",
             series: "The Idaten Deities Know Only Peace",
             series_group: "The Idaten Deities Know Only Peace",
             web_link: "https://sevenseasentertainment.com/series/the-idaten-deities-know-only-peace/",
@@ -634,8 +634,8 @@
         "The Promised Neverland": {
             genre: "Mystery & Thriller",
             imprint: "SHONEN JUMP",
-            maturity_rating: "M",
             publisher: "VIZ",
+            maturity_rating: "M",
             series: "The Promised Neverland",
             series_group: "The Promised Neverland",
             web_link: "https://viz.com/the-promised-neverland",
@@ -659,8 +659,8 @@
         "The Sacred Blacksmith": {
             genre: "Action & Adventure",
             imprint: "Seven Seas Entertainment",
-            maturity_rating: "M",
             publisher: "Seven Seas Entertainment",
+            maturity_rating: "M",
             series: "The Sacred Blacksmith",
             series_group: "The Sacred Blacksmith",
             web_link: "https://sevenseasentertainment.com/series/the-sacred-blacksmith/",
@@ -720,8 +720,8 @@
         "Vinland Saga": {
             genre: "Historical & Period Drama",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Vinland Saga",
             series_group: "Vinland Saga",
             web_link: "https://kodansha.us/series/vinland-saga",
@@ -745,8 +745,8 @@
         "Welcome Back, Alice": {
             genre: "Psychological & Philosophical",
             imprint: "Kodansha Comics",
-            maturity_rating: "M",
             publisher: "Kodansha",
+            maturity_rating: "M",
             series: "Welcome Back, Alice",
             series_group: "Welcome Back, Alice",
             web_link: "https://kodansha.us/series/welcome-back-alice",
