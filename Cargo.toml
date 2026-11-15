@@ -3,7 +3,7 @@ name = "dirtag"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
-description = "Batch-tag manga CBZ files with ComicTagger using a JSON5 metadata file"
+description = "Batch-tag CBZ files with ComicTagger using a JSON5 metadata file"
 
 [dependencies]
 anyhow = "1"
