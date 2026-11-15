@@ -3,7 +3,8 @@
 //! Metadata file layout:
 //!
 //! ```text
-//! { Manga: { "<series directory name>": { ...series fields... } } }
+//! { Defaults: { ...optional fallback fields... },
+//!   Series: { "<series directory name>": { ...series fields... } } }
 //! ```
 //!
 //! Usage:
