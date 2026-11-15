@@ -1,4 +1,4 @@
-//! Batch-tag manga CBZ files with ComicTagger using a JSON5 metadata file.
+//! Batch-tag CBZ files with ComicTagger using a JSON5 metadata file.
 //!
 //! Metadata file layout:
 //!
@@ -41,12 +41,12 @@ use log::info;
 
 use crate::tagger::TagOptions;
 
-const DEFAULT_METADATA: &str = "manga.json5";
+const DEFAULT_METADATA: &str = "metadata.json5";
 
 /// Command-line options. `clap` generates the parsing and the `--help` text from this
 /// struct; the `///` comment on each field becomes its help line.
 #[derive(Parser)]
-#[command(about = "Batch tag manga CBZ files with ComicTagger.")]
+#[command(about = "Batch tag CBZ files with ComicTagger.")]
 struct Args {
     /// Metadata JSON5 path
     #[arg(short, long, default_value = DEFAULT_METADATA)]

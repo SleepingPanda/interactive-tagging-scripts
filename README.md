@@ -31,7 +31,7 @@ dirtag -v                       # verbose output
 
 | Option | Description | Default |
 |---|---|---|
-| `-m`, `--metadata <PATH>` | Metadata file | `manga.json5` |
+| `-m`, `--metadata <PATH>` | Metadata file | `metadata.json5` |
 | `-d`, `--directory <PATH>` | Root directory containing the series subdirectories | `.` |
 | `-a`, `--all` | Process every subdirectory without prompting | off (interactive) |
 | `-r`, `--recent` | Only process `.cbz` files modified in the last 14 days | off |
@@ -44,7 +44,7 @@ Each immediate subdirectory of the root is treated as one series. `.cbz` files a
 
 After tagging a series, `dirtag` changes ownership of everything in that series directory to UID/GID `1000` and sets its `.cbz` files to mode `644`. This does nothing on Windows. To change the owner or mode, edit the constants in `src/permissions.rs`, or pass `--no-perms` to skip the step.
 
-## Metadata file (`manga.json5`)
+## Metadata
 
 `dirtag` reads series metadata from a [JSON5](https://json5.org) file. The top-level key must be `Manga`, with each entry keyed by the **exact directory name** of the series.
 
@@ -75,9 +75,9 @@ After tagging a series, `dirtag` changes ownership of everything in that series 
 }
 ```
 
-Plain JSON is valid JSON5, so an existing `manga.json` works as-is. Pass it with `-m manga.json`, or rename it to `manga.json5` to use the default.
+Pass it with `-m my_metadata_filename.json5`, or just name it `metadata.json5` and dirtag will find it automatically.
 
-Missing fields are left empty (or `false` for `manga` and `black_and_white`), and unrecognized fields are ignored. A field with the wrong type, such as `manga: "yes"`, is an error.
+Missing fields are left empty (or `false` for `manga` and `black_and_white`), and unrecognized fields are ignored. A field with the wrong type, such as `manga: "yes"`, will be considered as an error.
 
 Volume numbers and publication years are extracted automatically from filenames. Supported patterns:
 
