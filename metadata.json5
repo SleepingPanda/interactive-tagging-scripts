@@ -210,7 +210,7 @@
             series_group: "Fate",
             web_link: "https://kodansha.us/series/fategrand-order-epic-of-remnant-pseudo-singularity-iii-the-stage-of-carnage-shimousa-seven-duels-of-swordmasters",
             characters: [
-                "Miyamoto Musashi", "Senji Muramasa", "Hōzōin Inshun", "Fūma Kotarō", "Tomoe Gozen", "Yagyū Munenori", "Mochizuki Chiyome", "Ashiya Dōman", "Katō Danzō", "Minamoto-no-Raikō",
+                "Musashi Miyamoto", "Muramasa Senji", "Inshun Hōzōin", "Kotarō Fūma", "Tomoe Gozen", "Munenori Yagyū", "Chiyome Mochizuki", "Dōman Ashiya", "Danzō Katō", "Minamoto-no-Raikō",
             ],
             credit: { "Cover, Inker, Penciller": "Rei Wataru", Writer: "Type-Moon" },
         },
@@ -223,7 +223,7 @@
             series_group: "Fate",
             web_link: "https://kodansha.us/series/fategrand-order-mortalisstella",
             characters: [
-                "Ritsuka Fujimaru", "Mash Kirielight", "Romani Archaman", "Leonardo Da Vinci",
+                "Ritsuka Fujimaru", "Mash Kirielight", "Romani Archaman", "Leonardo da Vinci",
             ],
             credit: { "Cover, Inker, Penciller": "Shiramine", Writer: "Type-Moon" },
         },
@@ -312,7 +312,7 @@
             characters: [
                 "Gabimaru", "Sagiri", "Yuzuriha", "Aza Chōbei", "Tamiya Gantetsusai", "Nurugai", "Rokurota", "Tōma", "Fuchi", "Shion",
             ],
-            credit: { "Cover, Inker, Penciller, Writer": "Yuji Kaku" },
+            credit: { "Cover, Inker, Penciller, Writer": "Yūji Kaku" },
         },
         "Higehiro - After Being Rejected, I Shaved and Took in a High School Runaway": {
             genre: "Romance & Drama",
@@ -358,7 +358,7 @@
             series_group: "Jujutsu Kaisen",
             web_link: "https://viz.com/jujutsu-kaisen",
             characters: [
-                "Yuji Itadori", "Megumi Fushiguro", "Nobara Kugisaki", "Maki Zen'in", "Toge Inumaki", "Panda", "Yūta Okkotsu", "Kinji Hakari", "Kirara Hoshi", "Satoru Gojō",
+                "Yūji Itadori", "Megumi Fushiguro", "Nobara Kugisaki", "Maki Zen'in", "Toge Inumaki", "Panda", "Yūta Okkotsu", "Kinji Hakari", "Kirara Hoshi", "Satoru Gojō",
             ],
             credit: { "Cover, Inker, Penciller, Writer": "Gege Akutami" },
         },
@@ -418,7 +418,7 @@
             series_group: "My Happy Marriage",
             web_link: "https://squareenixmangaandbooks.square-enix-games.com/en-us/series/my-happy-marriage",
             characters: [
-                "Miyo Saimori", "Kiyoka Kudō", "Kaya Saimori", "Kouji Tatsuishi", "Yurie", "Yoshito Godō", "Arata Tsuruki", "Kazushi Tatsuishi", "Takaihito",
+                "Miyo Saimori", "Kiyoka Kudō", "Kaya Saimori", "Kōji Tatsuishi", "Yurie", "Yoshito Godō", "Arata Tsuruki", "Kazushi Tatsuishi", "Takaihito",
             ],
             credit: { "Cover, Inker, Penciller": "Rito Kōsaka", Writer: "Akumi Agitogi" },
         },
@@ -432,7 +432,7 @@
             characters: [
                 "Yūki Uehara", "Niina Miyamoto",
             ],
-            credit: { "Cover, Inker, Penciller": "Yuwji Kaba", Writer: "Kyū Takahata" },
+            credit: { "Cover, Inker, Penciller": "Yūji Kaba", Writer: "Kyū Takahata" },
         },
         "One-Punch Man": {
             genre: "Action & Adventure",
@@ -442,7 +442,7 @@
             series_group: "One-Punch Man",
             web_link: "https://viz.com/one-punch-man",
             characters: [
-                "Saitama", "Genos", "Tatsumaki", "Bang", "Atomic Samurai", "Child Emperor", "King","Amai Mask", "Fubuki", "Mumen Rider",
+                "Saitama", "Genos", "Tatsumaki", "Bang", "Atomic Samurai", "Child Emperor", "King", "Amai Mask", "Fubuki", "Mumen Rider",
             ],
             credit: { "Cover, Inker, Penciller": "Yūsuke Murata", Writer: "ONE" },
         },
@@ -590,7 +590,7 @@
             series_group: "The Fragrant Flower Blooms With Dignity",
             web_link: "https://kodansha.us/series/the-fragrant-flower-blooms-with-dignity",
             characters: [
-                "Rintarō Tsumugi", "Kaoruko Waguri", "Shōhei Usami", "Saku Natsusawa", "Ayato Yorita", "Subaru Hoshina", "Madoka Yuzuhara", "Kyōko Tsumugi", "Keīchirō Tsumugi", "Sōtarō Tsumugi",
+                "Rintarō Tsumugi", "Kaoruko Waguri", "Shōhei Usami", "Saku Natsusawa", "Ayato Yorita", "Subaru Hoshina", "Madoka Yuzuhara", "Kyōko Tsumugi", "Keiichirō Tsumugi", "Sōtarō Tsumugi",
             ],
             credit: { "Cover, Inker, Penciller, Writer": "Saka Mikami" },
         },
@@ -763,7 +763,7 @@
             series_group: "Wolf Children",
             web_link: "https://yenpress.com/series/wolf-children-ame-yuki",
             characters: [
-                "Hana", "Ookami", "Ame", "Yuki", "Sōhei Fujii",
+                "Hana", "Ōkami", "Ame", "Yuki", "Sōhei Fujii",
             ],
             credit: { "Cover, Inker, Penciller": "Yū", Writer: "Mamoru Hosoda" },
         },
