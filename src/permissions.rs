@@ -1,9 +1,6 @@
 //! Fixing ownership and permissions after tagging (Unix only).
-//!
-//! ComicTagger rewrites each `.cbz`, so the new files may end up owned by whichever user ran
-//! the tool. Servers that read the library (Kavita, for example) usually need the files to
-//! belong to a specific account, so after tagging we hand the series folder back to it.
-//!
+//! ComicTagger rewrites each `.cbz`, so the new files may end up owned by whichever user ran the tool.
+//! Servers that read the library (Kavita, for example) usually need the files to belong to a specific account, so after tagging we hand the series folder back to it.
 //! On non-Unix platforms (Windows) this step does nothing.
 
 #[cfg(unix)]
@@ -26,18 +23,16 @@ mod unix {
     use crate::library::is_cbz_file;
 
     // These three values are the ones to change to suit your setup.
-    /// User ID that should own the library. 1000 is typically the first regular user on Linux.
+    /// User ID that should own the library.
+    /// 1000 is typically the first regular user on Linux.
     const OWNER_UID: u32 = 1000;
     /// Group ID that should own the library.
     const OWNER_GID: u32 = 1000;
     /// Permission bits for `.cbz` files: owner read/write, everyone else read-only.
     const FILE_MODE: u32 = 0o644;
 
-    /// Gives everything in `directory` to [`OWNER_UID`]:[`OWNER_GID`] and sets the mode of
-    /// its `.cbz` files to [`FILE_MODE`].
-    ///
-    /// A failure (for example, not being allowed to change ownership) is logged as a warning
-    /// and never stops the run: the files are already tagged at this point.
+    /// Gives everything in `directory` to [`OWNER_UID`]:[`OWNER_GID`] and sets the mode of its `.cbz` files to [`FILE_MODE`].
+    /// A failure (for example, not being allowed to change ownership) is logged as a warning and never stops the run: the files are already tagged at this point.
     pub fn fix_permissions(directory: &Path) {
         if let Err(error) = apply(directory) {
             warn!(

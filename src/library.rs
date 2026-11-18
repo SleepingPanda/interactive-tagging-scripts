@@ -1,8 +1,5 @@
 //! Looking around the comic library on disk: finding series folders and their `.cbz` files.
-//!
-//! Expected layout: the root directory contains one folder per series, and each series
-//! folder contains `.cbz` files (possibly nested in further subfolders).
-//!
+//! Expected layout: the root directory contains one folder per series, and each series folder contains `.cbz` files (possibly nested in further subfolders).
 //! ```text
 //! library/
 //! ├── My Series/
@@ -25,9 +22,8 @@ pub const RECENT_DAYS: u64 = 14;
 const SECONDS_PER_DAY: u64 = 24 * 60 * 60;
 
 /// The last component of a path (a file or folder name) as a `String`.
-///
-/// Names that are not valid UTF-8 are converted lossily, which is fine for logging and for
-/// looking a series up by name. Returns an empty string for paths without a final name.
+/// Names that are not valid UTF-8 are converted lossily, which is fine for logging and for looking a series up by name.
+/// Returns an empty string for paths without a final name.
 pub fn display_name(path: &Path) -> String {
     path.file_name()
         .unwrap_or_default()
@@ -36,7 +32,6 @@ pub fn display_name(path: &Path) -> String {
 }
 
 /// The immediate subdirectories of `root` (one per series), sorted by name.
-///
 /// Entries that cannot be read are skipped.
 pub fn subdirectories(root: &Path) -> anyhow::Result<Vec<PathBuf>> {
     use anyhow::Context;
@@ -52,9 +47,7 @@ pub fn subdirectories(root: &Path) -> anyhow::Result<Vec<PathBuf>> {
 }
 
 /// True for a regular file whose extension is `.cbz`, in any letter case.
-///
-/// The `is_file()` check (which follows symlinks) excludes folders that happen to be named
-/// like `something.cbz`.
+/// The `is_file()` check (which follows symlinks) excludes folders that happen to be named like `something.cbz`.
 pub fn is_cbz_file(path: &Path) -> bool {
     let has_cbz_extension = path
         .extension()
@@ -71,7 +64,6 @@ fn modified_since(path: &Path, cutoff: SystemTime) -> bool {
 }
 
 /// Finds every `.cbz` file below `directory`, sorted so runs are reproducible.
-///
 /// With `recent_only`, files not modified within the last [`RECENT_DAYS`] days are left out.
 pub fn find_cbz(directory: &Path, recent_only: bool) -> Vec<PathBuf> {
     let cutoff = SystemTime::now() - Duration::from_secs(RECENT_DAYS * SECONDS_PER_DAY);

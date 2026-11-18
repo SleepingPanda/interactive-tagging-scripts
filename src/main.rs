@@ -1,21 +1,16 @@
 //! Batch-tag CBZ files with ComicTagger using a JSON5 metadata file.
-//!
 //! Metadata file layout:
-//!
 //! ```text
 //! { Defaults: { ...optional fallback fields... },
 //!   Series: { "<series directory name>": { ...series fields... } } }
 //! ```
-//!
 //! Usage:
-//!
 //! ```text
 //! dirtag                          # interactive mode
 //! dirtag -a                       # tag every series subdirectory
 //! dirtag -a -r                    # only files modified in the last 14 days
 //! dirtag -m meta.json5 -d /library
 //! ```
-//!
 //! How the pieces fit together:
 //!   - `metadata`    loads the metadata file and builds ComicTagger's `-m` argument
 //!   - `library`     finds series folders and `.cbz` files on disk
@@ -44,8 +39,8 @@ use crate::tagger::TagOptions;
 
 const DEFAULT_METADATA: &str = "metadata.json5";
 
-/// Command-line options. `clap` generates the parsing and the `--help` text from this
-/// struct; the `///` comment on each field becomes its help line.
+/// Command-line options.
+/// `clap` generates the parsing and the `--help` text from this struct; the `///` comment on each field becomes its help line.
 #[derive(Parser)]
 #[command(about = "Batch tag CBZ files with ComicTagger.")]
 struct Args {
@@ -81,13 +76,13 @@ struct Args {
     verbose: bool,
 }
 
-/// The program proper. Any error returned here is printed by `main` and ends the run.
+/// The program proper.
+/// Any error returned here is printed by `main` and ends the run.
 fn run() -> Result<()> {
     let args = Args::parse();
     logger::init(args.verbose);
 
-    // Check everything we can up front, so the user is not asked questions that could
-    // never lead anywhere.
+    // Check everything we can up front, so the user is not asked questions that could never lead anywhere.
     tagger::ensure_comictagger_installed()?;
     if !args.directory.is_dir() {
         bail!("Directory '{}' does not exist.", args.directory.display());
@@ -117,8 +112,7 @@ fn main() -> ExitCode {
     match run() {
         Ok(()) => ExitCode::SUCCESS,
         Err(error) => {
-            // `{:#}` prints the whole chain of causes on one line ("what we were doing: why
-            // it failed"), which is how the messages built with `with_context` read best.
+            // `{:#}` prints the whole chain of causes on one line ("what we were doing: why it failed"), which is how the messages built with `with_context` read best.
             eprintln!("{error:#}");
             ExitCode::FAILURE
         }

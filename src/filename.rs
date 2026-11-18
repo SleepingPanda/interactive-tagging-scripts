@@ -1,5 +1,4 @@
 //! Pulling the volume number and publication year out of a `.cbz` filename.
-//!
 //! Example: `My Series v03 (2021).cbz` -> volume 3, year 2021.
 
 use std::sync::LazyLock;
@@ -8,9 +7,7 @@ use log::warn;
 use regex::Regex;
 
 /// Matches `v1`, `v01`, `Vol.2`, `vol 3`, ... (case-insensitive) and captures the digits.
-///
-/// `\b` is a "word boundary": it stops the pattern from matching a `v` in the middle of a
-/// word, so `Revolution 5` does not count as volume 5.
+// `\b` is a "word boundary": it stops the pattern from matching a `v` in the middle of a word, so `Revolution 5` does not count as volume 5.
 static VOLUME_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)\bv(?:ol\.?\s*)?([0-9]+)\b").expect("volume pattern is valid")
 });
@@ -18,11 +15,9 @@ static VOLUME_RE: LazyLock<Regex> = LazyLock::new(|| {
 /// Matches a four-digit year in parentheses, such as `(2023)`, and captures the digits.
 static YEAR_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"\(([0-9]{4})\)").expect("year pattern is valid"));
-
 /// Returns the first number captured by `pattern` in `filename`.
-///
-/// Logs a warning naming `what` (e.g. "year") and returns `None` when the filename has no
-/// match. The tag for that field is then simply left out.
+/// Logs a warning naming `what` (e.g. "year") and returns `None` when the filename has no match.
+/// The tag for that field is then simply left out.
 fn extract_number(pattern: &Regex, filename: &str, what: &str) -> Option<u32> {
     let number = pattern
         .captures(filename)

@@ -1,8 +1,5 @@
-//! Logging setup.
-//!
-//! The rest of the program logs through the standard `log` macros (`info!`, `warn!`, ...).
-//! This module decides what happens to those messages: they are printed to stderr with a
-//! colored `[LEVEL]` tag in front.
+//! Logging setup. The rest of the program logs through the standard `log` macros (`info!`, `warn!`, ...).
+//! This module decides what happens to those messages: they are printed to stderr with a colored `[LEVEL]` tag in front.
 
 use colored::Colorize;
 use log::{Level, LevelFilter, Metadata, Record};
@@ -34,11 +31,9 @@ impl log::Log for ColorLogger {
 /// `log::set_logger` needs a reference that lives for the whole program.
 static LOGGER: ColorLogger = ColorLogger;
 
-/// Install the logger. Call once, at startup.
-///
-/// With `verbose` set, DEBUG messages are shown too; otherwise only INFO and above.
-/// (The `colored` crate disables colors by itself when output is not a terminal or when
-/// the `NO_COLOR` environment variable is set.)
+/// Install the logger.
+/// Call once, at startup. With `verbose` set, DEBUG messages are shown too; otherwise only INFO and above.
+/// (The `colored` crate disables colors by itself when output is not a terminal or when the `NO_COLOR` environment variable is set.)
 pub fn init(verbose: bool) {
     // Older Windows consoles need ANSI color support switched on explicitly.
     #[cfg(windows)]

@@ -11,10 +11,8 @@ use crate::metadata::Catalog;
 use crate::tagger::{process_series, TagOptions};
 
 /// Shows `text` as a prompt and reads one line from the user.
-///
-/// The answer comes back trimmed and lowercased, so callers can compare it with plain
-/// strings. Returns `None` when input has ended (Ctrl-D / end of a pipe), which callers
-/// treat as "stop asking".
+/// The answer comes back trimmed and lowercased, so callers can compare it with plain strings.
+/// Returns `None` when input has ended (Ctrl-D / end of a pipe), which callers treat as "stop asking".
 fn prompt(text: &str) -> Option<String> {
     print!("{}", text.red());
     // `print!` does not end the line, so the text may sit in a buffer; flush to show it now.
@@ -22,7 +20,8 @@ fn prompt(text: &str) -> Option<String> {
 
     let mut line = String::new();
     match io::stdin().read_line(&mut line) {
-        // Zero bytes read means end of input. Move to a fresh line so later output is tidy.
+        // Zero bytes read means end of input.
+        // Move to a fresh line so later output is tidy.
         Ok(0) | Err(_) => {
             println!();
             None
@@ -51,7 +50,6 @@ fn parse_menu_choice(input: &str, item_count: usize) -> Option<usize> {
 }
 
 /// Shows the menu until the user picks a directory.
-///
 /// Returns `None` if the user quits with `q` or input ends.
 fn choose_directory(directories: &[PathBuf]) -> Option<&Path> {
     loop {
@@ -74,16 +72,15 @@ fn choose_directory(directories: &[PathBuf]) -> Option<&Path> {
     }
 }
 
-/// Asks a yes/no question. Anything starting with `y` counts as yes.
+/// Asks a yes/no question.
+/// Anything starting with `y` counts as yes.
 /// Returns `None` when input has ended.
 fn ask_yes_no(question: &str) -> Option<bool> {
     prompt(&format!("{question} (y/n): ")).map(|answer| answer.starts_with('y'))
 }
 
 /// Repeatedly lets the user pick a series and tags it, until they quit.
-///
-/// Whether to tag only recent files is asked for each series, so it overrides
-/// `options.recent_only` (the `--recent` flag is ignored in this mode).
+/// Whether to tag only recent files is asked for each series, so it overrides `options.recent_only` (the `--recent` flag is ignored in this mode).
 pub fn run(series_dirs: &[PathBuf], catalog: &Catalog, options: TagOptions) {
     while let Some(selected) = choose_directory(series_dirs) {
         let question = format!("Process only recent files in '{}'?", display_name(selected));

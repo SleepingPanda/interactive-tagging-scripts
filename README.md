@@ -117,6 +117,10 @@ credit: { "Cover, Inker, Penciller, Writer": "Hitoshi Iwaaki" }
 
 Any role names work, so western credits such as `Colorist` and `Letterer` are fine. An empty role name (for example, a stray comma) is an error.
 
+**Credits replace what the file already has.** On its own, ComicTagger *adds* credits to the ones already in the file, which would leave `Old Writer, New Writer`. So for each role you list, `dirtag` first removes that role's existing credits and then writes yours. Roles you don't list are left as they are. To remove a role, list it with an empty person, e.g. `Colorist: ""`.
+
+This relies on ComicTagger 1.5.x behavior and was tested with 1.5.5.
+
 ### Using one file per library
 
 A single file holds one set of `Defaults`, so for a mixed collection keep one file per library and pick it with `-m` and `-d`:

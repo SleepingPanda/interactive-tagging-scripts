@@ -1,7 +1,5 @@
 //! The JSON5 metadata file, and the `key=value,...` string that tells ComicTagger what to write.
-//!
 //! # File layout
-//!
 //! ```text
 //! {
 //!     Defaults: { ... },               // optional: fallback values for every series
@@ -10,9 +8,8 @@
 //!     },
 //! }
 //! ```
-//!
-//! Each series is matched to its folder by exact name. For every field, the value used is
-//! the first one found of: the series' own entry, then `Defaults`, then empty/`false`.
+//! Each series is matched to its folder by exact name.
+//! For every field, the value used is the first one found of: the series' own entry, then `Defaults`, then empty/`false`.
 
 use std::collections::HashMap;
 use std::fs;
@@ -30,7 +27,6 @@ const ISSUE_SENTINEL: i32 = -100_000;
 pub type Catalog = HashMap<String, Series>;
 
 /// Metadata for one series with every default already applied: what gets written to its files.
-///
 /// Built from the file by [`SeriesFields::resolve`].
 #[derive(Debug, Default)]
 pub struct Series {
@@ -50,8 +46,7 @@ pub struct Series {
 }
 
 impl Series {
-    /// The plain-text fields as `(ComicTagger key, value)` pairs, in the order they are
-    /// passed to ComicTagger.
+    /// The plain-text fields as `(ComicTagger key, value)` pairs, in the order they are passed to ComicTagger.
     fn text_fields(&self) -> [(&'static str, &str); 8] {
         [
             ("language", &self.language),
@@ -66,12 +61,10 @@ impl Series {
     }
 }
 
-/// The fields of a series exactly as written in the metadata file. The same shape is used
-/// for a series entry and for `Defaults`.
-///
-/// Every field is optional so that "left out" can be told apart from "set to empty": a series
-/// that leaves a field out inherits it from `Defaults`, while one that sets it to `""`
-/// deliberately clears it. Keys this struct does not know about are ignored.
+/// The fields of a series exactly as written in the metadata file.
+/// The same shape is used for a series entry and for `Defaults`.
+/// Every field is optional so that "left out" can be told apart from "set to empty": a series that leaves a field out inherits it from `Defaults`, while one that sets it to `""` deliberately clears it.
+/// Keys this struct does not know about are ignored.
 #[derive(Debug, Default, Deserialize)]
 #[serde(default)]
 struct SeriesFields {
@@ -88,8 +81,8 @@ struct SeriesFields {
     /// Groups related series (e.g. several parts of one franchise) together.
     series_group: Option<String>,
     web_link: Option<String>,
-    /// Role -> person, e.g. `Writer: "Jane Doe"`. A key may list several comma-separated
-    /// roles that share one person: `"Cover, Inker, Penciller": "Jane Doe"`.
+    /// Role -> person, e.g. `Writer: "Jane Doe"`.
+    /// A key may list several comma-separated roles that share one person: `"Cover, Inker, Penciller": "Jane Doe"`.
     #[serde(deserialize_with = "deserialize_credit")]
     credit: IndexMap<String, String>,
     characters: Option<Vec<String>>,
@@ -97,10 +90,10 @@ struct SeriesFields {
 
 impl SeriesFields {
     /// Layers this series' own values over `defaults`.
-    ///
     /// - Single values: the series' value wins; if it left the field out, the default is used.
-    /// - `credit`: merged role by role. A series can override one role and keep the rest.
-    ///   An overridden role keeps the position it had in the defaults.
+    /// - `credit`: merged role by role.
+    /// A series can override one role and keep the rest.
+    /// An overridden role keeps the position it had in the defaults.
     /// - `characters`: a list is replaced as a whole, never merged.
     fn resolve(self, defaults: &SeriesFields) -> Series {
         let mut credit = defaults.credit.clone();
@@ -138,10 +131,8 @@ where
 }
 
 /// Turns `{"Cover, Inker": "A", "Writer": "B"}` into `{"Cover": "A", "Inker": "A", "Writer": "B"}`.
-///
-/// Roles keep the order they were written in. If a role is named twice, the later entry
-/// wins but keeps the earlier position. An empty role name (e.g. a stray comma) is an error,
-/// because it would otherwise be sent to ComicTagger as a blank role.
+/// Roles keep the order they were written in. If a role is named twice, the later entry wins but keeps the earlier position.
+/// An empty role name (e.g. a stray comma) is an error, because it would otherwise be sent to ComicTagger as a blank role.
 fn expand_role_groups(
     grouped: IndexMap<String, String>,
 ) -> Result<IndexMap<String, String>, String> {
@@ -158,9 +149,8 @@ fn expand_role_groups(
 }
 
 /// The shape of the whole file.
-///
-/// Unknown top-level keys are rejected. Unlike unknown series fields, silently ignoring them
-/// would hide a misspelled `Defaults` and leave the whole library tagged without it.
+/// Unknown top-level keys are rejected.
+/// Unlike unknown series fields, silently ignoring them would hide a misspelled `Defaults` and leave the whole library tagged without it.
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
 struct MetadataFile {
@@ -182,7 +172,6 @@ fn parse_catalog(text: &str) -> Result<Catalog, json5::Error> {
 }
 
 /// Reads and parses the metadata file.
-///
 /// The error messages are shown to the user as-is, so they name the file involved.
 pub fn load_metadata(path: &Path) -> Result<Catalog> {
     let text = fs::read_to_string(path).map_err(|error| {
@@ -195,8 +184,7 @@ pub fn load_metadata(path: &Path) -> Result<Catalog> {
     parse_catalog(&text).with_context(|| format!("Failed to parse '{}'", path.display()))
 }
 
-/// Escapes `,` and `=` with a `^`, because ComicTagger uses them as delimiters in its
-/// `key=value,key=value` argument.
+/// Escapes `,` and `=` with a `^`, because ComicTagger uses them as delimiters in its `key=value,key=value` argument.
 fn escape(value: &str) -> String {
     value.replace(',', "^,").replace('=', "^=")
 }
@@ -209,15 +197,12 @@ fn yes_no(flag: bool) -> &'static str {
     }
 }
 
-/// Builds the value for ComicTagger's `-m` option: a comma-separated list of `key=value`
-/// pairs. For example (shortened):
-///
+/// Builds the value for ComicTagger's `-m` option: a comma-separated list of `key=value` pairs.
+/// For example (shortened):
 /// ```text
-/// manga=Yes,issue=-100000,black_and_white=Yes,language=en,...,volume=3,title=Volume 3,year=2021,credit=Writer:Jane Doe,characters=A^,B
+/// manga=Yes,issue=-100000,black_and_white=Yes,language=en,...,volume=3,title=Volume 3,year=2021,credit=Writer:,credit=Writer:Jane Doe,characters=A^,B
 /// ```
-///
-/// `volume` and `year` come from the filename (see the `filename` module); each is left out
-/// when `None`.
+/// `volume` and `year` come from the filename (see the `filename` module); each is left out when `None`.
 pub fn build_metadata_string(meta: &Series, volume: Option<u32>, year: Option<u32>) -> String {
     let mut pairs = vec![
         format!("manga={}", yes_no(meta.manga)),
@@ -239,17 +224,21 @@ pub fn build_metadata_string(meta: &Series, volume: Option<u32>, year: Option<u3
         pairs.push(format!("year={year}"));
     }
 
-    // One `credit=Role:Person` pair per entry.
-    pairs.extend(
-        meta.credit
-            .iter()
-            .map(|(role, person)| format!("credit={role}:{}", escape(person))),
-    );
+    // ComicTagger *adds* credits to the ones already stored in the file; it never replaces them.
+    // Tagging a file that already has a writer would leave "Old Writer, New Writer".
+    // A credit with an empty person is ComicTagger's way of saying "remove every existing credit for this role", so each role is cleared just before its real credit is added.
+    // Roles this series does not list are left untouched.
+    // Listing a role with an empty person therefore removes it.
+    for (role, person) in &meta.credit {
+        pairs.push(format!("credit={role}:"));
+        if !person.is_empty() {
+            pairs.push(format!("credit={role}:{}", escape(person)));
+        }
+    }
 
-    // All characters go into a single `characters=` value. Items are joined with an
-    // escaped comma (`^,`) so ComicTagger reads them as one list rather than as separate
-    // key=value pairs. Note that a comma *inside* a name is escaped the same way, so it is
-    // indistinguishable from the separator (behavior carried over from the original script).
+    // All characters go into a single `characters=` value.
+    // Items are joined with an escaped comma (`^,`) so ComicTagger reads them as one list rather than as separate key=value pairs.
+    // Note that a comma *inside* a name is escaped the same way, so it is indistinguishable from the separator (behavior carried over from the original script).
     if !meta.characters.is_empty() {
         let names: Vec<String> = meta.characters.iter().map(|name| escape(name)).collect();
         pairs.push(format!("characters={}", names.join("^,")));
@@ -288,9 +277,30 @@ mod tests {
             build_metadata_string(&meta, Some(3), Some(2021)),
             "manga=Yes,issue=-100000,black_and_white=No,language=en,genre=,maturity_rating=,\
              publisher=,imprint=,series=A^, B^=C,series_group=,web_link=,volume=3,title=Volume 3,\
-             year=2021,credit=Writer:W,credit=Cover:C,characters=X^,Y"
+             year=2021,credit=Writer:,credit=Writer:W,credit=Cover:,credit=Cover:C,characters=X^,Y"
         );
         assert!(!build_metadata_string(&meta, None, None).contains("volume="));
+    }
+
+    #[test]
+    fn each_credit_role_is_cleared_before_it_is_added() {
+        let meta = Series {
+            credit: IndexMap::from([
+                ("Writer".into(), "New, Writer".into()),
+                ("Colorist".into(), "".into()),
+            ]),
+            ..Series::default()
+        };
+        let metadata = build_metadata_string(&meta, None, None);
+        // Writer: a blank credit first (removes existing ones), then the real one.
+        assert!(
+            metadata.contains(",credit=Writer:,credit=Writer:New^, Writer,"),
+            "{metadata}"
+        );
+        // Colorist has no person: only the clear is sent, which removes the role.
+        assert!(metadata.ends_with(",credit=Colorist:"), "{metadata}");
+        // A role the series doesn't list is never mentioned, so it is left alone.
+        assert!(!metadata.contains("Letterer"), "{metadata}");
     }
 
     #[test]
